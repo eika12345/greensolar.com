@@ -3077,9 +3077,9 @@ input, select, textarea {
 		-webkit-transition: background-color 0.2s ease-in-out;
 		-ms-transition: background-color 0.2s ease-in-out;
 		transition: background-color 0.2s ease-in-out;
-		height: 3.5em;
+		height: 2.6em;
 		left: 0;
-		line-height: 3.5em;
+		line-height: 2.6em;
 		padding: 0 1.25em;
 		position: fixed;
 		top: 0;
@@ -3132,7 +3132,7 @@ input, select, textarea {
 			align-items: center;
 			height: 2em;
 			padding: 0 0.85em;
-			color: #fff;
+			color: var(--color-primary-green);
 			text-decoration: none;
 			border: 0;
 			border-radius: 4px;

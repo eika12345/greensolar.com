@@ -1,7 +1,7 @@
 :root {
-  /* Colors */
-  --color-primary-green: rgba(33, 211, 103);
-  --color-primary-green-dark: rgb(22, 134, 67);
+  /* Colours */
+  --color-primary-green: rgba(#95ca6c);
+  --color-primary-green-dark: rgb(#688d4c);
   --color-text: #111827;
   --color-background: #1B5038;
   --color-background-dark: #111827;
@@ -24,5 +24,5 @@
   --radius-lg: 1rem;
 }
 
-/* "MAIN BACKGROUND" = Background Colours */
+/* "MAIN BACKGROUND" */
 /* "NAVBAR TEXT" */
