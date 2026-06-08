@@ -1,0 +1,27 @@
+:root {
+  /* Colors */
+  --color-primary-green: rgba(33, 211, 103);
+  --color-primary-green-dark: rgb(22, 134, 67);
+  --color-text: #111827;
+  --color-background: #1B5038;
+  --color-background-dark: #111827;
+  --color-white: #ffffff;
+  --color-off-white: #f4f5f9;
+
+  /* Fonts */
+  --font-body:  "Coolvetica", sans-serif;
+
+  /* Spacing */
+  --spacing-xs: 0.25rem;
+  --spacing-sm: 0.5rem;
+  --spacing-md: 1rem;
+  --spacing-lg: 2rem;
+  --spacing-xl: 4rem;
+
+  /* Border Radius */
+  --radius-sm: 0.25rem;
+  --radius-md: 0.5rem;
+  --radius-lg: 1rem;
+}
+
+/* "MAIN BACKGROUND" = Background Colours */
