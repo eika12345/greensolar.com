@@ -1,0 +1,26 @@
+https://green-solar.es/
+https://green-solar.es/nosotros/
+
+https://green-solar.es/instalacion-placas-solares-valencia/
+https://green-solar.es/instalacion-placas-solares-alicante/
+https://green-solar.es/instalacion-placas-solares-murcia/
+
+https://green-solar.es/nuestras-instalaciones/ + 22 (trabajos)
+
+https://green-solar.es/pergola-solar-fotovoltaica/
+
+https://green-solar.es/conoce-mas/ + 8 (informacion)
+
+https://green-solar.es/fianciacion/	
+
+https://green-solar.es/contacto/
+
+https://green-solar.es/presupuesto/
+
+PLANS
+
+ 09/06/2026:
+
+- Fix colours and make standard for all pages
+- Finish front page content
+- Modularize CSS                                        - DONE
