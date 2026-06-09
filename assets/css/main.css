@@ -8,6 +8,20 @@
   font-style: normal;
 }
 
+@font-face {
+  font-family: "NeueMontreal-Medium";
+  src: url("/assets/fonts/NeueMontreal-Medium.otf") format("opentype");
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "NeueMontreal-Regular";
+  src: url("/assets/fonts/NeueMontreal-Regular.otf") format("opentype");
+  font-weight: 700;
+  font-style: normal;
+}
+
 html, body, div, span, applet, object,
 iframe, h1, h2, h3, h4, h5, h6, p, blockquote,
 pre, a, abbr, acronym, address, big, cite,
@@ -249,13 +263,14 @@ input, select, textarea {
 
 	p {
 		margin: 0 0 2em 0;
+		font-family: NeueMontreal-Regular;
 	}
 
 	h1, h2, h3, h4, h5, h6 {
 		color: #ffffff;
 		font-family: Coolvetica;
 		font-weight: 700;
-		letter-spacing: 0.1em;
+		letter-spacing: 0.05em;
 		margin: 0 0 1em 0;
 		text-transform: uppercase;
 	}
@@ -274,6 +289,16 @@ input, select, textarea {
 			padding-bottom: 1em;
 			border-bottom: solid 2px rgba(255, 255, 255, 0.125);
 		}
+
+		h2.major.black {
+			color: black;
+			font-size: 1.5em;
+		}
+
+		.button4 {
+			color: black;
+		}
+
 
 	h2 {
 		font-size: 1.2em;
