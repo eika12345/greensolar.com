@@ -218,7 +218,7 @@
 				box-shadow: inset 0 -1px 0 0 #555867, 0 1px 0 0 #555867;
 			}
 /* WRAPPER COLOURS*/ 
-/* wrapper 1*/
+/* wrapper 1 */
 		.wrapper.spotlight {
 			background-color: var(--color-primary-green-dark);
 		}
@@ -279,7 +279,7 @@
 			.wrapper.spotlight:nth-child(2n - 1) .image {
 				margin: 0 0 2em 3em;
 			}
-/* wrapper 2*/
+/* wrapper 2 */
 			.wrapper.spotlight.style2 {
 				background-color: var(--color-primary-green-darker);
 			}
@@ -295,7 +295,7 @@
 				.wrapper.spotlight.style2:after {
 					box-shadow: inset 0 -1px 0 0 var(--color-primary-green-darker), 0 1px 0 0 var(--color-primary-green-darker);
 				}
-/* wrapper 3*/
+/* wrapper 3 */
 			.wrapper.spotlight.style3 {
 				background-color: var(--color-primary-green-dark);
 			}
