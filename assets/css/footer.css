@@ -63,12 +63,7 @@
 	@media screen and (max-width: 1280px) {
 
 		#footer {
-			background-color: #2e3141;
-			background-image: linear-gradient(to top, rgba(46, 49, 65, 0.8), rgba(46, 49, 65, 0.8)), url("../../images/bg.jpg");
-			background-size: auto,
- cover;
-			background-position: center,
- center;
+			
 			margin-top: -6.5em;
 			padding-top: 6.5em;
 		}
@@ -147,3 +142,211 @@
 		}
 
 	}
+
+	#footer .inner .copyright {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#footer .footer-logo {
+    max-width: 80px;
+    display: block;
+}
+
+/* Footer Nav - full site footer */
+
+#footer-nav {
+    background-color: #2e3141;
+    color: rgba(255, 255, 255, 0.75);
+    width: 100%;
+    position: relative;
+    padding: 0;
+    font-family: 'Source Sans Pro', sans-serif;
+	margin-top: 5em;
+}
+
+/* Angled triangle top edge — matches wrapper.css pattern */
+#footer-nav::before {
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100' preserveAspectRatio='none'%3E%3Cpolygon points='0,100 100,0 100,100' style='fill:%232e3141%3B' /%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    box-shadow: inset 0 -1px 0 0 #232e3141, 0 1px 0 0 #232e3141;
+    content: '';
+    display: block;
+    height: 6.5em;
+    position: absolute;
+    width: 100%;
+    left: 0;
+    top: -6.5em;
+}
+
+@media screen and (max-width: 980px) {
+    #footer-nav::before {
+        height: 4.75em;
+        top: -4.75em;
+    }
+}
+
+@media screen and (max-width: 736px) {
+    #footer-nav::before {
+        height: 2.5em;
+        top: -2.5em;
+    }
+}
+
+.footer-nav-inner {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2.5em;
+    width: 100%;
+    max-width: 72em;
+    margin: 0 auto;
+    padding: 4em 2em 3em 2em;
+    box-sizing: border-box;
+}
+
+/* ... rest of the CSS stays exactly the same as before ... */
+
+.footer-col {
+    flex: 1;
+    min-width: 180px;
+}
+
+.footer-col.footer-brand {
+    flex: 1.5;
+    min-width: 220px;
+}
+
+.footer-nav-logo {
+    max-width: 90px;
+    margin-bottom: 1em;
+    display: block;
+}
+
+.footer-col p {
+    font-size: 0.9em;
+    line-height: 1.7;
+    color: rgba(255, 255, 255, 0.95);
+}
+
+.footer-col h4 {
+    font-size: 0.75em;
+    font-weight: 700;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: #ffffff;
+    margin-bottom: 1.2em;
+}
+
+.footer-col ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-col ul li {
+    margin-bottom: 0.6em;
+	padding-left: 0;
+}
+
+.footer-col ul li a {
+    color: rgba(255, 255, 255);
+    text-decoration: none;
+    font-size: 0.9em;
+    transition: color 0.2s ease;
+}
+
+.footer-col ul li a:hover {
+    color: #ffffff;
+}
+
+.footer-contact-list li {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.6em;
+    font-size: 0.9em;
+    color: rgba(255, 255, 255, 0.6);
+    margin-bottom: 0.75em;
+    line-height: 1.5;
+}
+
+.footer-contact-list li .icon {
+    margin-top: 2px;
+    flex-shrink: 0;
+    color: rgba(255, 255, 255, 0.4);
+}
+
+.footer-contact-list li a {
+    color: rgba(255, 255, 255, 0.6);
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.footer-contact-list li a:hover {
+    color: #ffffff;
+}
+
+.footer-cta {
+    display: inline-block;
+    border: 2px solid var(--color-primary-green);
+	background-color: var(--color-primary-green);
+    border-radius: 4px;
+    padding: 0.55em 1em;
+    color: black;
+    text-decoration: none;
+    font-size: 0.85em;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    transition: background-color 0.2s ease-in-out;
+	font-family: NeueMontreal-Medium;
+	margin-top: 5px;
+	
+	
+	
+}
+
+.footer-cta:hover {
+    background-color: transparent;
+    color: var(--color-primary-green) !important;
+    border-color: var(--color-primary-green); /* ensure border stays visible */
+}
+
+.footer-nav-bottom {
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 1.2em 2em;
+    max-width: 72em;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.8em;
+    color: rgba(255, 255, 255, 0.3);
+}
+
+/* Responsive */
+
+@media screen and (max-width: 768px) {
+    .footer-nav-inner {
+        gap: 2em;
+    }
+
+    .footer-col,
+    .footer-col.footer-brand {
+        flex: 1 1 calc(50% - 1em);
+        min-width: 140px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .footer-col,
+    .footer-col.footer-brand {
+        flex: 1 1 100%;
+    }
+
+    .footer-nav-bottom {
+        flex-direction: column;
+        gap: 0.5em;
+        text-align: center;
+    }
+}
