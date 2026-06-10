@@ -21,6 +21,12 @@ PLANS
 
  09/06/2026:
 
-- Fix colours and make standard for all pages
-- Finish front page content
+- Fix colours and make standard for all pages           - DONE
+- Finish front page content                             - finished 50% first day
 - Modularize CSS                                        - DONE
+
+010/06/2026:
+
+- Continue front page content
+- Fix nav bar
+- Fix hero image dissapearing on small vw

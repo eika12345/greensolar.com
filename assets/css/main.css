@@ -200,6 +200,12 @@ input, select, textarea {
 			color: #ffffff !important;
 		}
 
+
+    	.special.ver-todo:hover { 
+			color: black !important; 
+		}
+
+
 		a.special:not(.button) {
 			text-decoration: none;
 			border-bottom: 0;
@@ -261,6 +267,11 @@ input, select, textarea {
 		font-style: italic;
 	}
 
+	.hero-subtitle {
+		margin: 0 0 2em 0;
+		font-family: NeueMontreal-Regular;
+	}
+
 	p {
 		margin: 0 0 2em 0;
 		font-family: NeueMontreal-Regular;
@@ -297,6 +308,11 @@ input, select, textarea {
 
 		.button4 {
 			color: black;
+			font-family: Coolvetica;
+		font-weight: 700;
+		letter-spacing: 0.05em;
+		margin: 0 0 1em 0;
+		text-transform: uppercase;
 		}
 
 
