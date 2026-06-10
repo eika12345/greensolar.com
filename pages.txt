@@ -28,5 +28,5 @@ PLANS
 010/06/2026:
 
 - Continue front page content
-- Fix nav bar
+- Fix nav bar                                           - DONE
 - Fix hero image dissapearing on small vw
