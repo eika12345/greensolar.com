@@ -14,6 +14,8 @@
 		top: 0;
 		width: 100%;
 		z-index: 10000;
+		display: flex;              /* add */
+    	align-items: center;        /* add */
 	}
 
 		#header h1 {
@@ -113,9 +115,11 @@
 		}
 
 		#header nav {
-			top: 0;
 			right: 0;
 			height: 2.75em;
+			margin-top: 0.4em;
+			margin-right: 0.8em;
+			
 		}
 
 		#header nav a[href="#menu"] {
@@ -129,6 +133,7 @@
 			line-height: 2.75em;
 			color: #fff;
 			border: 0;
+			
 		}
 
 		#header nav a[href="#menu"]:before {
