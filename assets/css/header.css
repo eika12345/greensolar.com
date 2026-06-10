@@ -157,6 +157,15 @@
 			background-color: rgba(255, 255, 255, 0.075);
 		}
 
+		@media screen and (max-width: 920px) {
+
+    	#header.alt h1 {
+        	opacity: 1;
+        	visibility: visible;
+    	}
+
+		}
+
 	}
 
 		@media screen and (max-width: 480px) {
