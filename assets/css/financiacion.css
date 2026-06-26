@@ -1,0 +1,106 @@
+/* Override wrapper.css constraints for the financiacion page only */
+#two {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 0;
+}
+
+#wrapper {
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+#two .inner {
+    width: 100% !important;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 3em 2em 1em;
+    box-sizing: border-box;
+
+    /* Reset spotlight flex layout forced by wrapper.css */
+    display: block !important;
+    text-align: left !important;
+}
+
+#two .inner img {
+    display: block;
+    max-width: 100%;
+    margin: 1.5em auto 0;
+}
+
+#two .inner h2, p {
+    color: black;
+}
+
+/* Styles for the financing cards inside the wrapper */
+            .financing-container {
+                max-width: 1200px;
+                margin: 0 auto;
+                padding: 4em 2em;
+                display: grid;
+                grid-template-columns: repeat(3, 1fr);
+                gap: 2em;
+            }
+
+            .financing-card {
+               
+                border-radius: 6px;
+                display: flex;
+                flex-direction: column;
+            }
+
+            .financing-card h3 {
+                font-size: 1.6em;
+                font-weight: 700;
+                color: black;
+                margin-bottom: 1em;
+                padding-bottom: 0.5em;
+                border-bottom: solid 2px rgba(255, 255, 255, 0.125);
+                letter-spacing: 0.05em;
+            }
+
+            .financing-card ul {
+                list-style: none;
+                padding: 0;
+                margin: 0;
+                color: black;
+            }
+
+            .financing-card ul li {
+                position: relative;
+                padding-left: 1.5em;
+                margin-bottom: 0.8em;
+                line-height: 1.6;
+                font-size: 0.95em;
+                font-weight: 900;
+            }
+
+           
+
+            /* Responsive design for tablets and mobile phones */
+            @media screen and (max-width: 980px) {
+                .financing-container {
+                    grid-template-columns: repeat(2, 1fr);
+                }
+            }
+
+            @media screen and (max-width: 736px) {
+                .financing-container {
+                    grid-template-columns: 1fr;
+                    padding: 2em 1.5em;
+                }
+            }
+
+.wrapper.spotlight.style2 {
+    background-color: white;
+}
+
+
+.wrapper.spotlight.style2:before,
+.wrapper.spotlight.style2:after {
+
+background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100' preserveAspectRatio='none'%3E%3Cpolygon points='0,100 100,0 100,100' style='fill:%23ffffff%3B' /%3E%3C/svg%3E");
+box-shadow: inset 0 -1px 0 0 #ffffff, 0 1px 0 0 #ffffff;
+
+}
+
