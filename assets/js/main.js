@@ -148,6 +148,13 @@ $('a[href^="#"]').on('click', function(event) {
     }
 });
 
+// Close dropdown when clicking outside the header
+$(document).on('click', function(event) {
+    if (!$(event.target).closest('#header').length) {
+        $menu._hide();
+    }
+});
+
 
 })(jQuery);
 
