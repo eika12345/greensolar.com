@@ -1,0 +1,67 @@
+#stats {
+  padding: 6rem 2rem;
+  text-align: center;
+}
+#stats .stats-inner {
+  max-width: 900px;
+  margin: 0 auto;
+}
+#stats .stats-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+}
+#stats .stat-card {
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.12);
+  border-radius: 16px;
+  padding: 2.5rem 2rem;
+}
+#stats .stat-number {
+  font-size: clamp(48px, 8vw, 80px);
+  font-weight: 700;
+  color: #ffffff;
+  line-height: 1;
+  margin-bottom: 0.5rem;
+  font-family: NeueMontreal-Regular;
+
+}
+#stats .stat-suffix {
+  color: #52b788;
+  font-size: 0.65em;
+  
+}
+#stats .stat-desc {
+  font-size: 15px;
+  color: #ffffff;
+  margin-top: 0.5rem;
+}
+
+@media screen and (max-width: 736px) {
+  #stats {
+    padding: 3rem 1.5rem;
+  }
+
+  #stats .stats-grid {
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+  }
+
+  #stats .stat-card {
+    padding: 2rem 1.5rem;
+  }
+
+  #stats .stats-label {
+    margin-bottom: 1.75rem;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  #stats {
+    padding: 2.5rem 1rem;
+  }
+
+  #stats .stat-card {
+    padding: 1.75rem 1.25rem;
+  }
+}

@@ -148,4 +148,33 @@ $('a[href^="#"]').on('click', function(event) {
     }
 });
 
+
 })(jQuery);
+
+// counter
+function animateCount(el, target, duration) {
+  let start = null;
+  function step(ts) {
+    if (!start) start = ts;
+    const progress = Math.min((ts - start) / duration, 1);
+    const ease = 1 - Math.pow(1 - progress, 3);
+    el.textContent = Math.floor(ease * target);
+    if (progress < 1) requestAnimationFrame(step);
+    else el.textContent = target;
+  }
+  requestAnimationFrame(step);
+}
+
+const statsSection = document.getElementById('stats');
+let animated = false;
+
+const observer = new IntersectionObserver(function(entries) {
+  if (entries[0].isIntersecting && !animated) {
+    animated = true;
+    animateCount(document.getElementById('count-projects'), 760, 2000);
+    animateCount(document.getElementById('count-mw'), 20, 2000);
+  }
+}, { threshold: 0.3 });
+
+observer.observe(statsSection);
+
