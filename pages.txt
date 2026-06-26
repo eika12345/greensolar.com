@@ -38,6 +38,6 @@ PLANS
 26/06/2026:
 
 - create number counter                                - DONE
-- fix white logo name overlapping navbar
+- fix navbar                                           - DONE
 - t&s in footer
 - make proper contact page
