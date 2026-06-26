@@ -27,7 +27,7 @@
 
 }
 #stats .stat-suffix {
-  color: #52b788;
+  color: var(--color-primary-green);
   font-size: 0.65em;
   
 }
