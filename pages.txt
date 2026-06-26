@@ -39,3 +39,5 @@ PLANS
 
 - create number counter                                - DONE
 - fix white logo name overlapping navbar
+- t&s in footer
+- make proper contact page
