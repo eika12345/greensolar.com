@@ -39,5 +39,9 @@ PLANS
 
 - create number counter                                - DONE
 - fix navbar                                           - DONE
-- t&s in footer
+- t&s in footer                                        - DONE
 - make proper contact page
+
+27/06/2026:
+
+- finished financiacion page                           - DONE
