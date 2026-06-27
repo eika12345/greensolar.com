@@ -1,5 +1,4 @@
-
-	#contact .inner {
+#contact .inner {
 		padding: 5em 0 3em 0 ;
 		display: -moz-flex;
 		display: -webkit-flex;
@@ -70,6 +69,21 @@
 	#contact h3,
 	#contact h4 {
 		color: #2e3141;
+	}
+
+	#contact input[type="submit"] {
+    background-color: var(--color-primary-green);
+    color: #ffffff;
+	}
+
+	#contact input[type="submit"]:hover {
+    border: 2px solid var(--color-background-dark);
+	background-color: transparent;
+	color: var(--color-background-dark) !important;
+	}
+
+	#contact .field label {
+    color: rgba(0, 0, 0, 0.75) !important;
 	}
 
 	#contact p,
@@ -222,5 +236,88 @@
 @media screen and (max-width: 400px) {
     .page-contact #banner {
         height: 10em;
+    }
+}
+/* GDPR Table */
+.gdpr-table-wrapper {
+    width: 100%;
+    max-width: 55em;
+    margin: 2em auto;
+    padding: 0 2em 3em 2em;
+    box-sizing: border-box;
+}
+.gdpr-table-wrapper {
+    margin-top: 0;
+}
+
+.gdpr-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.85em;
+    color: rgba(0, 0, 0, 0.75);
+}
+
+.gdpr-table caption {
+    font-size: 0.8em;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: #2e3141;
+    text-align: left;
+    padding-bottom: 0.5em;
+    caption-side: top;
+}
+
+.gdpr-table th,
+.gdpr-table td {
+    padding: 0.6em 1em;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    vertical-align: top;
+    line-height: 1.5;
+}
+
+.gdpr-table th {
+    width: 30%;
+    font-weight: 600;
+    color: #2e3141;
+    background-color: rgba(0, 0, 0, 0.03);
+    text-align: left;
+}
+.gdpr-table-title {
+    text-align: center;
+    font-size: 0.8em;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: #ffffff;
+    background-color: #2e3141;
+    padding: 0.75em 1em;
+}
+
+
+@media screen and (max-width: 600px) {
+    .gdpr-table,
+    .gdpr-table thead,
+    .gdpr-table tbody,
+    .gdpr-table tr,
+    .gdpr-table th,
+    .gdpr-table td {
+        display: block;
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    .gdpr-table thead tr {
+        margin-bottom: 0;
+    }
+
+    .gdpr-table th {
+        border-bottom: none;
+        padding-bottom: 0.25em;
+    }
+
+    .gdpr-table td {
+        padding-top: 0.25em;
+        margin-bottom: 0.5em;
     }
 }
