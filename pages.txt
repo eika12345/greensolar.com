@@ -52,4 +52,4 @@ PLANS
 29/06/2026:
 
 - Change "Solicita tu presupuesto" button font         - DONE
-- start blog
+- make instalaciones page                              - 90% done, need to add all entries and fix X button                
