@@ -198,7 +198,7 @@
     letter-spacing: 0.08em;
     text-transform: uppercase;
     transition: background-color 0.2s ease-in-out;
-	font-family: NeueMontreal-Medium;
+	font-weight: 900;
 }
 
 #banner .banner-cta:hover {

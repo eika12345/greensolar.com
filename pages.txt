@@ -42,8 +42,14 @@ PLANS
 - create number counter                                - DONE
 - fix navbar                                           - DONE
 - t&s in footer                                        - DONE
-- make proper contact page
+- make proper contact page                             50%
 
 27/06/2026:
 
 - finished financiacion page                           - DONE
+- make proper contact page                             - DONE
+
+29/06/2026:
+
+- Change "Solicita tu presupuesto" button font         - DONE
+- start blog

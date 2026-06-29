@@ -1,0 +1,22 @@
+/* reset banner.css negative margins for this page */
+.page-contact #banner {
+    margin-bottom: 0;
+    height: auto;
+}
+@media screen and (max-width: 1100px) {
+    .page-contact #banner {
+        height: 13em;
+    }
+}
+/* only override where actually needed */
+@media screen and (max-width: 736px) {
+    .page-contact #banner {
+        height: 13em;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .page-contact #banner {
+        height: 10em;
+    }
+}
