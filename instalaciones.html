@@ -12,7 +12,7 @@
 		<link rel="stylesheet" href="assets/css/form.css" />
 		<link rel="stylesheet" href="assets/css/banner.css" />
 		<link rel="stylesheet" href="assets/css/header.css" />
-		<link rel="stylesheet" href="assets/css/button.css" />
+		<!--<link rel="stylesheet" href="assets/css/button.css" />-->
 		<link rel="stylesheet" href="assets/css/counter.css" />
 		<link rel="stylesheet" href="assets/css/miscellaneous.css" />
         <link rel="stylesheet" href="assets/css/instalaciones.css" />
@@ -64,9 +64,51 @@
            <!-- Nuestras instalaciones -->
 			<section id="Nuestras instalaciones" class="wrapper alt spotlight style4">
 				<div class="inner">
-			     
+                    <!-- Filter Buttons -->
+                    <div class="inst-filters">
+                        <button class="inst-filter-btn active" data-filter="all">Todos</button>
+                        <button class="inst-filter-btn" data-filter="residencial">Residencial</button>
+                        <button class="inst-filter-btn" data-filter="industrial">Industrial</button>
+                        <button class="inst-filter-btn" data-filter="comunidad">Comunidad</button>
+                    </div>
+
+                    <!-- Loading state -->
+                    <div id="inst-loading" class="inst-loading">
+                        <div class="inst-spinner"></div>
+                        <p>Cargando instalaciones…</p>
+                    </div>
+
+                    <!-- Error state -->
+                    <div id="inst-error" class="inst-error" style="display:none;">
+                        <p>No se pudieron cargar las instalaciones. Inténtalo de nuevo más tarde.</p>
+                    </div>
+
+                    <!-- Blog Grid -->
+                    <div id="inst-grid" class="inst-grid" style="display:none;"></div>
+
+                    <!-- Empty state -->
+                    <div id="inst-empty" class="inst-empty" style="display:none;">
+                        <p>No hay instalaciones en esta categoría todavía.</p>
+                    </div>
                 </div>                                                            
             </section>
+
+            <!-- Lightbox -->
+            <div id="inst-lightbox" class="inst-lightbox" role="dialog" aria-modal="true" aria-label="Galería de imágenes">
+                <button class="inst-lightbox-close" id="inst-lightbox-close" aria-label="Cerrar">&times;</button>
+                <div class="inst-lightbox-content">
+                    <img id="inst-lightbox-img" src="" alt="" />
+                    <div class="inst-lightbox-caption">
+                        <h3 id="inst-lightbox-title"></h3>
+                        <span id="inst-lightbox-location"></span>
+                        <span id="inst-lightbox-counter"></span>
+                    </div>
+                    <div class="inst-lightbox-nav">
+                        <button class="inst-lightbox-prev" id="inst-lightbox-prev" aria-label="Anterior">&#8249;</button>
+                        <button class="inst-lightbox-next" id="inst-lightbox-next" aria-label="Siguiente">&#8250;</button>
+                    </div>
+                </div>
+            </div>
 				
 <!--footer-->
 					<footer id="footer-nav">
@@ -110,6 +152,164 @@
         <span>Diseñado con energía solar ☀️</span>
     </div>
 </footer>
+
+        <script>
+        // ─── CONFIG ───────────────────────────────────────────────
+        const SHEET_ID = '13gH2h0Ve9FKyU-y3vAqj6JcFhFLe4f4Sn3v7ltBHYg8';
+        // GID 0 = first sheet tab. If your sheet tab is not the first, change this.
+        const SHEET_GID = '0';
+        const SHEET_URL = `https://docs.google.com/spreadsheets/d/${SHEET_ID}/export?format=csv&gid=${SHEET_GID}`;
+
+        // ─── STATE ────────────────────────────────────────────────
+        let allPosts = [];
+        let activeFilter = 'all';
+        let lightboxImages = [];
+        let lightboxIndex = 0;
+
+        // ─── FETCH DATA ───────────────────────────────────────────
+        async function loadInstalaciones() {
+            try {
+                const res = await fetch(SHEET_URL);
+                if (!res.ok) throw new Error('Network error: ' + res.status);
+                const csv = await res.text();
+
+                // Parse CSV (handles quoted fields with commas)
+                const lines = csv.trim().split('\n');
+                const headers = parseCSVLine(lines[0]).map(h => h.trim().toLowerCase());
+
+                allPosts = lines.slice(1)
+                    .map(line => {
+                        const values = parseCSVLine(line);
+                        const obj = {};
+                        headers.forEach((h, i) => { obj[h] = (values[i] || '').trim(); });
+                        return obj;
+                    })
+                    .filter(p => p.published?.toUpperCase() === 'TRUE');
+
+                document.getElementById('inst-loading').style.display = 'none';
+                renderGrid();
+            } catch (e) {
+                document.getElementById('inst-loading').style.display = 'none';
+                document.getElementById('inst-error').style.display = 'block';
+                console.error('Error loading sheet:', e);
+            }
+        }
+
+        // Simple CSV line parser (handles quoted fields)
+        function parseCSVLine(line) {
+            const result = [];
+            let cur = '', inQuote = false;
+            for (let i = 0; i < line.length; i++) {
+                const ch = line[i];
+                if (ch === '"') { inQuote = !inQuote; }
+                else if (ch === ',' && !inQuote) { result.push(cur); cur = ''; }
+                else { cur += ch; }
+            }
+            result.push(cur);
+            return result;
+        }
+
+        // ─── RENDER GRID ──────────────────────────────────────────
+        function renderGrid() {
+            const grid = document.getElementById('inst-grid');
+            const empty = document.getElementById('inst-empty');
+            const filtered = activeFilter === 'all'
+                ? allPosts
+                : allPosts.filter(p => p.category?.toLowerCase() === activeFilter);
+
+            grid.innerHTML = '';
+
+            if (filtered.length === 0) {
+                grid.style.display = 'none';
+                empty.style.display = 'block';
+                return;
+            }
+
+            empty.style.display = 'none';
+            grid.style.display = 'grid';
+
+            filtered.forEach((post, postIdx) => {
+                const images = ['image1','image2','image3','image4']
+                    .map(k => post[k]).filter(Boolean);
+                const thumb = images[0] || '';
+
+                const card = document.createElement('article');
+                card.className = 'inst-card';
+                card.innerHTML = `
+                    <div class="inst-card-thumb">
+                        <img src="${thumb}" alt="${post.title}" loading="lazy" />
+                        ${images.length > 1 ? `<span class="inst-card-count">+${images.length} fotos</span>` : ''}
+                    </div>
+                    <div class="inst-card-body">
+                        <h3>${post.title}</h3>
+                        ${post.location ? `<p class="inst-card-location">📍 ${post.location}</p>` : ''}
+                        ${post.category ? `<span class="inst-card-badge">${post.category}</span>` : ''}
+                    </div>
+                `;
+                card.addEventListener('click', () => openLightbox(images, post.title, post.location, 0));
+                grid.appendChild(card);
+            });
+        }
+
+        // ─── LIGHTBOX ─────────────────────────────────────────────
+        function openLightbox(images, title, location, startIndex) {
+            lightboxImages = images;
+            lightboxIndex = startIndex;
+            document.getElementById('inst-lightbox-title').textContent = title;
+            document.getElementById('inst-lightbox-location').textContent = location || '';
+            updateLightboxImage();
+            document.getElementById('inst-lightbox').classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeLightbox() {
+            document.getElementById('inst-lightbox').classList.remove('active');
+            document.body.style.overflow = '';
+        }
+
+        function updateLightboxImage() {
+            document.getElementById('inst-lightbox-img').src = lightboxImages[lightboxIndex];
+            document.getElementById('inst-lightbox-counter').textContent =
+                lightboxImages.length > 1 ? `${lightboxIndex + 1} / ${lightboxImages.length}` : '';
+            document.getElementById('inst-lightbox-prev').style.display = lightboxImages.length > 1 ? '' : 'none';
+            document.getElementById('inst-lightbox-next').style.display = lightboxImages.length > 1 ? '' : 'none';
+        }
+
+        document.getElementById('inst-lightbox-close').addEventListener('click', closeLightbox);
+        document.getElementById('inst-lightbox').addEventListener('click', e => {
+            if (e.target === e.currentTarget) closeLightbox();
+        });
+        document.getElementById('inst-lightbox-prev').addEventListener('click', e => {
+            e.stopPropagation();
+            lightboxIndex = (lightboxIndex - 1 + lightboxImages.length) % lightboxImages.length;
+            updateLightboxImage();
+        });
+        document.getElementById('inst-lightbox-next').addEventListener('click', e => {
+            e.stopPropagation();
+            lightboxIndex = (lightboxIndex + 1) % lightboxImages.length;
+            updateLightboxImage();
+        });
+        document.addEventListener('keydown', e => {
+            const lb = document.getElementById('inst-lightbox');
+            if (!lb.classList.contains('active')) return;
+            if (e.key === 'Escape') closeLightbox();
+            if (e.key === 'ArrowLeft') { lightboxIndex = (lightboxIndex - 1 + lightboxImages.length) % lightboxImages.length; updateLightboxImage(); }
+            if (e.key === 'ArrowRight') { lightboxIndex = (lightboxIndex + 1) % lightboxImages.length; updateLightboxImage(); }
+        });
+
+        // ─── FILTERS ──────────────────────────────────────────────
+        document.querySelectorAll('.inst-filter-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                document.querySelectorAll('.inst-filter-btn').forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+                activeFilter = btn.dataset.filter;
+                renderGrid();
+            });
+        });
+
+        // ─── INIT ─────────────────────────────────────────────────
+        loadInstalaciones();
+        </script>
 
 		<script src="assets/js/jquery.min.js"></script>
 			<script src="assets/js/jquery.scrollex.min.js"></script>
