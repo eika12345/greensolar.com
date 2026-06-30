@@ -100,6 +100,7 @@
                     <img id="inst-lightbox-img" src="" alt="" />
                     <div class="inst-lightbox-caption">
                         <h3 id="inst-lightbox-title"></h3>
+                        <span id="inst-lightbox-subtitle" class="inst-lightbox-subtitle"></span>
                         <span id="inst-lightbox-location"></span>
                         <span id="inst-lightbox-counter"></span>
                     </div>
@@ -242,20 +243,22 @@
                     </div>
                     <div class="inst-card-body">
                         <h3>${post.title}</h3>
+                        ${post.subtitle ? `<p class="inst-card-subtitle">${post.subtitle}</p>` : ''}
                         ${post.location ? `<p class="inst-card-location">📍 ${post.location}</p>` : ''}
                         ${post.category ? `<span class="inst-card-badge">${post.category}</span>` : ''}
                     </div>
                 `;
-                card.addEventListener('click', () => openLightbox(images, post.title, post.location, 0));
+                card.addEventListener('click', () => openLightbox(images, post.title, post.subtitle, post.location, 0));
                 grid.appendChild(card);
             });
         }
 
         // ─── LIGHTBOX ─────────────────────────────────────────────
-        function openLightbox(images, title, location, startIndex) {
+        function openLightbox(images, title, subtitle, location, startIndex) {
             lightboxImages = images;
             lightboxIndex = startIndex;
             document.getElementById('inst-lightbox-title').textContent = title;
+            document.getElementById('inst-lightbox-subtitle').textContent = subtitle || '';
             document.getElementById('inst-lightbox-location').textContent = location || '';
             updateLightboxImage();
             document.getElementById('inst-lightbox').classList.add('active');

@@ -52,4 +52,8 @@ PLANS
 29/06/2026:
 
 - Change "Solicita tu presupuesto" button font         - DONE
-- make instalaciones page                              - 90% done, need to add all entries and fix X button                
+- make instalaciones page                              - 90% done, need to add all entries and fix X button - Uses google sheets                 
+
+30/06/2026:
+
+- instalaciones page                                   - DONE
