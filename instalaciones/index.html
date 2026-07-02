@@ -5,19 +5,18 @@
 		<title>Nuestras instalaciones - Green Solar</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="assets/css/main.css" />
-		<link rel="stylesheet" href="assets/css/variables.css" />
-		<link rel="stylesheet" href="assets/css/wrapperstripped.css" />
-		<link rel="stylesheet" href="assets/css/footer.css" />		
-		<link rel="stylesheet" href="assets/css/form.css" />
-		<link rel="stylesheet" href="assets/css/banner.css" />
-		<link rel="stylesheet" href="assets/css/header.css" />
-		<!--<link rel="stylesheet" href="assets/css/button.css" />-->
-		<link rel="stylesheet" href="assets/css/counter.css" />
-		<link rel="stylesheet" href="assets/css/miscellaneous.css" />
-        <link rel="stylesheet" href="assets/css/instalaciones.css" />
+		<link rel="stylesheet" href="../assets/css/main.css" />
+        <link rel="stylesheet" href="../assets/css/variables.css" />
+        <link rel="stylesheet" href="../assets/css/wrapperstripped.css" />
+        <link rel="stylesheet" href="../assets/css/footer.css" />
+        <link rel="stylesheet" href="../assets/css/form.css" />
+        <link rel="stylesheet" href="../assets/css/banner.css" />
+        <link rel="stylesheet" href="../assets/css/header.css" />
+        <link rel="stylesheet" href="../assets/css/counter.css" />
+        <link rel="stylesheet" href="../assets/css/miscellaneous.css" />
+        <link rel="stylesheet" href="../assets/css/instalaciones.css" />
 
-		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+        <noscript><link rel="stylesheet" href="../assets/css/noscript.css" /></noscript>
 
         <style>
             #page-wrapper {
@@ -36,18 +35,33 @@
 		<div id="page-wrapper">
 <!-- navbar-->
 				<header id="header" class="alt">
-						<h1><a href="index.html">Green Solar</a></h1>
+						<h1><a href="../index.html">Green Solar</a></h1>
 		<nav>
     		<a href="#menu">Menú</a>
     			<ul>
-					<li><a href="trabajos.html">Trabajos</a></li>
-					<li><a href="#">Instalaciones</a></li>
-					<li><a href="#">Pérgolas</a></li>
-					<li><a href="#">Conoce más</a></li>
-					<li><a href="financiacion.html">Financiación</a></li>
-					<li><a href="#footer">Contacto</a></li>
-					<li><a href="#" class="nav-presupuesto">Presupuesto</a></li>
-   				 </ul>
+    <li><a href="trabajos.html">Trabajos</a></li>
+
+    <!-- Desktop dropdown -->
+    <li class="has-dropdown">
+        <a href="instalaciones.html">Instalaciones</a>
+        <ul class="dropdown">
+            <li><a href="instalaciones.html#valencia">Valencia</a></li>
+            <li><a href="instalaciones.html#alicante">Alicante</a></li>
+            <li><a href="instalaciones.html#murcia">Murcia</a></li>
+        </ul>
+    </li>
+
+    <!-- Mobile-only links -->
+    <li class="mobile-only"><a href="instalaciones.html#valencia">Valencia</a></li>
+    <li class="mobile-only"><a href="instalaciones.html#alicante">Alicante</a></li>
+    <li class="mobile-only"><a href="instalaciones.html#murcia">Murcia</a></li>
+
+    <li><a href="#">Pérgolas</a></li>
+    <li><a href="#">Conoce más</a></li>
+    <li><a href="financiacion.html">Financiación</a></li>
+    <li><a href="contacto.html">Contacto</a></li>
+    <li><a href="#" class="nav-presupuesto">Presupuesto</a></li>
+</ul>
 		</nav>	
 				</header>   
 
@@ -84,7 +98,14 @@
                 <h3>Instalación fotovoltaica de autoconsumo para empresas:</h3>
                     <p>En este tipo de instalación usarás la electricidad que tus placas generen durante el día y en la noche utilizarás energía de la red eléctrica. Pagarás únicamente por la electricidad que utilices de la red y no será necesaria la acumulación en baterías. La energía que produzcan tus placas y que tu no consumas, será enviada a la red eléctrica y verás en tu factura de la luz una compensación por dicha contribución.</p>
                     <p>Las facturas de luz tienden a ser uno de los mayores gastos en las empresas y con el paso del tiempo aumenta la demanda del uso de placas solares como la mejor alternativa de ahorro. Además, al ser el sector con mayor consumo energético, tenemos la responsabilidad de reducir el impacto medioambiental en tanto nos sea posible.</p>
-                </div>                                                            
+                
+                <a href="/instalaciones/valencia.html" class="special ver-todo" style="color: black;">Valencia</a>
+                <a href="/instalaciones/alicante.html" class="special ver-todo" style="color: black;">Alicante</a>
+                <a href="/instalaciones/murcia.html" class="special ver-todo" style="color: black;">Murcia</a>
+
+
+                </div>    
+                
             </section>
 
             
@@ -131,12 +152,12 @@
     </div>
 </footer>
 
-		    <script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/jquery.scrollex.min.js"></script>
-			<script src="assets/js/browser.min.js"></script>
-			<script src="assets/js/breakpoints.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<script src="assets/js/main.js"></script>
+		    <script src="../assets/js/jquery.min.js"></script>
+			<script src="../assets/js/jquery.scrollex.min.js"></script>
+			<script src="../assets/js/browser.min.js"></script>
+			<script src="../assets/js/breakpoints.min.js"></script>
+			<script src="../assets/js/util.js"></script>
+			<script src="../assets/js/main.js"></script>
 
 	</body>
 </html>

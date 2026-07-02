@@ -97,9 +97,81 @@
     	background-color: rgba(0, 0, 0, 0.3);
 }
 
-		
+/* Instalaciones dropdown (desktop) */
+#header nav ul li.has-dropdown {
+    position: relative;
+}
+
+#header nav ul li.has-dropdown > a:after {
+    content: '';
+    display: inline-block;
+    margin-left: 0.4em;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-top: 4px solid currentColor;
+    vertical-align: middle;
+}
+
+#header nav ul li.has-dropdown .dropdown {
+    position: absolute;
+    top: 2.75em;
+    left: 0;
+    min-width: 160px;
+    background-color: rgba(0, 0, 0, 0.3);
+    list-style: none;
+    margin: 0;
+    padding: 0.5em 0;
+    border-radius: 4px;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-6px);
+    transition: opacity 0.2s ease-in-out, transform 0.2s ease-in-out, visibility 0.2s;
+
+    
+}
+
+.mobile-only {
+    display: none;
+}
+
+#header nav ul li.has-dropdown:hover .dropdown,
+#header nav ul li.has-dropdown:focus-within .dropdown {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+#header nav ul li.has-dropdown .dropdown li a {
+    height: auto;
+    padding: 0.6em 1.2em;
+    white-space: nowrap;
+    border-radius: 0;
+}		
 
 @media screen and (max-width: 980px) {
+
+     /* Hide the desktop dropdown on mobile */
+#header nav ul li.has-dropdown .dropdown {
+    display: none;
+}
+
+/* Remove the desktop arrow */
+#header nav ul li.has-dropdown > a:after {
+    display: none;
+}
+
+/* Show the mobile-only links */
+.mobile-only {
+    display: list-item;
+}
+
+/* Indent them so they appear underneath Instalaciones */
+.mobile-only a {
+    padding-left: 3em !important;
+}
 
     #header {
         height: 2.75em;
@@ -109,6 +181,10 @@
     /* Hide nav links, show hamburger */
     #header nav ul {
         display: none;
+    }
+
+     body:not(.is-menu-visible) #header nav ul {
+        transition: max-height 0.35s ease 0.15s, padding 0.35s ease 0.15s;
     }
 
     #header nav {
@@ -175,8 +251,9 @@
 
     /* When body has is-menu-visible, expand the dropdown */
     body.is-menu-visible #header nav ul {
-        max-height: 30em;      /* tall enough for all items */
+        max-height: 40em;      
         padding: 0.5em 0;
+        
     }
 
     #header nav ul li a {
