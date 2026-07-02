@@ -1,0 +1,38 @@
+#instalaciones strong,
+#instalaciones b {
+    color: rgb(0, 0, 0);
+    font-family: NeueMontreal-Medium;
+    font-weight: 900;
+}
+
+#instalaciones p {
+    font-size: 17px;
+}
+
+/* split text/image feature */
+.split-feature {
+    display: flex;
+    align-items: center;
+    gap: 3em;
+    margin-top: 2em;
+}
+
+.split-feature-text,
+.split-feature-image {
+    flex: 1;
+}
+
+.split-feature-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+    display: block;
+}
+
+
+@media screen and (max-width: 736px) {
+    .split-feature {
+        flex-direction: column;
+        gap: 1.5em;
+    }
+}
