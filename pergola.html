@@ -78,9 +78,10 @@
 				</section>
 
 <!--content-->
-           <!-- pergola -->
+           <!-- pergola main -->
 			<section id="pergola" class="wrapper alt spotlight style4">
 				<div class="inner">
+
                     <p>Una pérgola solar fotovoltaica es más que una simple estructura; es la combinación entre la innovación y la estética. Estas pérgolas incorporan paneles solares en su diseño, creando una fuente de energía limpia y ecológica que complementa cualquier entorno exterior. Ya tengas un extenso patio trasero o una acogedora terraza, una pérgola solar fotovoltaica añade un aura de sofisticación al tiempo que contribuye a la producción de energía sostenible.</p>
                     <h2>Ventajas de una pérgola solar fotovoltaica</h2>
                     <p><strong>1. Generación de Energía Renovable:</strong> Las pérgolas solares fotovoltaicas utilizan paneles solares para convertir la luz solar en electricidad, reduciendo la dependencia de fuentes de energía no renovables.</p>
@@ -90,6 +91,7 @@
                     <p><strong>5. Impacto Ambiental:</strong> Al generar energía limpia, una pérgola solar fotovoltaica contribuye a un entorno más verde, mitigando el cambio climático.</p>
                     <p>Puedes ver ejemplos de grandes pérgolas solares fotovoltaicas, como la del <a href="https://arquitecturayempresa.es/noticia/pergola-fotovoltaica-en-el-forum-de-barcelona" target="_blank">Fórum de Barcelona</a></p>
                     <br>
+                    
                     <!-- 60:40 split image:text -->
                     <div class="pergola-feature">
                         <div class="pergola-feature-image">
@@ -173,8 +175,78 @@
                                 </div>
                             </div>
                         </div>
-
                     </div>
+                    <br>
+
+                    <!-- 40:60 split text:image -->
+                    <div class="pergola-feature">
+                        
+                        <div class="pergola-feature-text">
+                            <h2>Pérgola solar fotovoltaica de 15 placas</h2>
+                            <p>Ideal para grandes fincas. Aprovecha el espacio a la vez que ahorras en tu factura de la luz</p>
+                            <a href="contacto.html" class="special">Más información</a>
+                        </div>
+                        <div class="pergola-feature-image">
+                            <img src="images/pergola5.webp" alt="Pérgola solar fotovoltaica instalada" />
+                            <br>
+                        </div>
+                    </div>
+
+                    <!-- FAQ accordion -->
+                    <div class="pergola-faq">
+                        <h2 class="pergola-faq-title">Preguntas frecuentes sobre la pérgola solar fotovoltaica</h2>
+
+                        <div class="faq-item">
+                            <button class="faq-question" aria-expanded="false">
+                                <span class="faq-icon">&plus;</span>
+                                ¿Cuánta electricidad puede generar una pérgola solar fotovoltaica?
+                            </button>
+                            <div class="faq-answer">
+                                <p>La generación de electricidad depende de factores como la capacidad de los paneles, la disponibilidad de luz solar y la ubicación geográfica. En promedio, una pérgola puede generar suficiente electricidad para alimentar un gran porcentaje del consumo de una vivienda media.</p>
+                            </div>
+                        </div>
+
+                        <div class="faq-item">
+                            <button class="faq-question" aria-expanded="false">
+                                <span class="faq-icon">&plus;</span>
+                                ¿Son adecuadas las pérgolas solares fotovoltaicas para todos los climas?
+                            </button>
+                            <div class="faq-answer">
+                                <p>Sí, estas pérgolas se pueden personalizar para resistir diversas condiciones climáticas. Se pueden integrar características de carga de nieve y resistencia al viento para áreas con climas desafiantes. No obstante, tu pérgola solar fotovoltaica siempre funcionará mejor en climas soleados y despejados.</p>
+                            </div>
+                        </div>
+
+                        <div class="faq-item">
+                            <button class="faq-question" aria-expanded="false">
+                                <span class="faq-icon">&plus;</span>
+                                ¿Puedo vender el exceso de energía a la red eléctrica?
+                            </button>
+                            <div class="faq-answer">
+                                <p>En muchas regiones, es posible vender el excedente de energía a la red, lo que compensa aún más tus costos de electricidad.</p>
+                            </div>
+                        </div>
+
+                        <div class="faq-item">
+                            <button class="faq-question" aria-expanded="false">
+                                <span class="faq-icon">&plus;</span>
+                                ¿Una pérgola solar fotovoltaica requiere mucho mantenimiento?
+                            </button>
+                            <div class="faq-answer">
+                                <p>En general, los paneles solares requieren poco mantenimiento. La limpieza y las inspecciones ocasionales aseguran un rendimiento óptimo.</p>
+                            </div>
+                        </div>
+
+                        <div class="faq-item">
+                            <button class="faq-question" aria-expanded="false">
+                                <span class="faq-icon">&plus;</span>
+                                ¿Puedo instalar una pérgola solar fotovoltaica por mí mismo?
+                            </button>
+                            <div class="faq-answer">
+                                <p> Se recomienda contratar a profesionales para la instalación para garantizar la seguridad, el cableado adecuado y una producción de energía eficiente.</p>
+                            </div>
+                        </div>
+                    </div>
+
 
                 </div>
             </section>
@@ -230,6 +302,31 @@
 			<script src="../assets/js/breakpoints.min.js"></script>
 			<script src="../assets/js/util.js"></script>
 			<script src="../assets/js/main.js"></script>
+
+
+<script>
+document.querySelectorAll('.faq-item').forEach(function (item) {
+    var question = item.querySelector('.faq-question');
+    var icon = item.querySelector('.faq-icon');
+
+    question.addEventListener('click', function () {
+        var wasOpen = item.classList.contains('active');
+
+        document.querySelectorAll('.faq-item').forEach(function (other) {
+            other.classList.remove('active');
+            other.querySelector('.faq-question').setAttribute('aria-expanded', 'false');
+            other.querySelector('.faq-icon').innerHTML = '&plus;';
+        });
+
+        if (!wasOpen) {
+            item.classList.add('active');
+            question.setAttribute('aria-expanded', 'true');
+            icon.innerHTML = '&minus;';
+        }
+    });
+});
+</script>
+
 
 	</body>
 </html>
