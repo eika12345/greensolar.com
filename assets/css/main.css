@@ -306,6 +306,10 @@ input, select, textarea {
 			font-size: 1.5em;
 		}
 
+		.content p {
+			color: black;
+		}
+
 		.button4 {
 			color: black;
 			font-family: Coolvetica;
