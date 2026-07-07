@@ -5,19 +5,22 @@
 }
 @media screen and (max-width: 1100px) {
     .page-contact #banner {
-        height: 13em;
+        min-height: 13em;
+        height: auto;
     }
 }
-/* only override where actually needed */
+
 @media screen and (max-width: 736px) {
     .page-contact #banner {
-        height: 13em;
+        min-height: 13em;
+        height: auto;
     }
 }
 
 @media screen and (max-width: 400px) {
     .page-contact #banner {
-        height: 10em;
+        min-height: 10em;
+        height: auto;
     }
 }
 
@@ -48,6 +51,7 @@
     grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
     gap: 1.75em;
     margin-top: 2em;
+    margin-bottom: 4em;
 }
 .conoce-card {
     display: block;

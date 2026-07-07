@@ -80,7 +80,7 @@
 
 						<!-- Error / not found state -->
 						<div id="articulo-error" class="conoce-error" style="display:none;">
-							<p>No se pudo encontrar este artículo. <a href="conoce-más.html">Volver a Conoce más</a></p>
+							<p>No se pudo encontrar este artículo. <a href="conoce-más.html" class="err-link">Volver a Conoce más</a></p>
 						</div>
 
 						<!-- Rendered blocks go here -->
@@ -216,14 +216,12 @@
             document.getElementById('articulo-error').style.display = 'block';
         }
 
-        // ─── RENDER BLOCKS (text only) ──────────────────────────────
+        // ─── RENDER BLOCKS (text) ────────────────────────────────────
         function renderBlocks(blocks) {
             const container = document.getElementById('articulo-blocks');
             container.innerHTML = '';
 
             blocks.forEach(block => {
-                // if (block.block_type !== 'text') return; // only text blocks now
-
                 const section = document.createElement('div');
                 section.className = 'content-block';
                 section.innerHTML = `
