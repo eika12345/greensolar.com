@@ -79,7 +79,25 @@
 			<section id="Nuestras trabajos" class="wrapper alt spotlight style4">
 				<div class="inner">
                     <h2 style="text-align: center; color: black;">Noticias sobre energía fotovoltaica</h2>
-                   
+
+                    <!-- Loading state -->
+                    <div id="conoce-loading" class="conoce-loading">
+                        <div class="conoce-spinner"></div>
+                        <p>Cargando artículos…</p>
+                    </div>
+
+                    <!-- Error state -->
+                    <div id="conoce-error" class="conoce-error" style="display:none;">
+                        <p>No se pudieron cargar los artículos. Inténtalo de nuevo más tarde.</p>
+                    </div>
+
+                    <!-- Grid -->
+                    <div id="conoce-grid" class="conoce-grid" style="display:none;"></div>
+
+                    <!-- Empty state -->
+                    <div id="conoce-empty" class="conoce-empty" style="display:none;">
+                        <p>Todavía no hay artículos publicados.</p>
+                    </div>
                 </div>                                                            
             </section>
 
@@ -126,6 +144,110 @@
         <span>Diseñado con energía solar ☀️</span>
     </div>
 </footer>
+
+        <script>
+        // ─── CONFIG ───────────────────────────────────────────────
+        // Same spreadsheet as trabajos.html, but a different tab (gid).
+        // Replace SHEET_GID below with the gid of your "ConoceMas" tab
+        // (the number after gid= in the sheet URL when that tab is open).
+        const SHEET_ID = '18BciW2yb_PVQQYB0X2g0Z3zfDHlFhST4xdo9_naNvRw';
+        const SHEET_GID = '0';
+        const SHEET_URL = `https://docs.google.com/spreadsheets/d/${SHEET_ID}/export?format=csv&gid=${SHEET_GID}`;
+
+        // ─── CSV PARSER (handles quoted fields with commas) ────────
+        function parseCSVLine(line) {
+            const result = [];
+            let cur = '', inQuote = false;
+            for (let i = 0; i < line.length; i++) {
+                const ch = line[i];
+                if (ch === '"') { inQuote = !inQuote; }
+                else if (ch === ',' && !inQuote) { result.push(cur); cur = ''; }
+                else { cur += ch; }
+            }
+            result.push(cur);
+            return result;
+        }
+
+        // ─── LOAD ARTICLES ──────────────────────────────────────────
+        async function loadArticulos() {
+            try {
+                const res = await fetch(SHEET_URL);
+                if (!res.ok) throw new Error('Network error: ' + res.status);
+                const csv = await res.text();
+
+                const lines = csv.trim().split('\n');
+                const headers = parseCSVLine(lines[0]).map(h => h.trim().toLowerCase());
+
+                const rows = lines.slice(1)
+                    .map(line => {
+                        const values = parseCSVLine(line);
+                        const obj = {};
+                        headers.forEach((h, i) => { obj[h] = (values[i] || '').trim(); });
+                        return obj;
+                    })
+                    .filter(r => r.published?.toUpperCase() === 'TRUE');
+
+                // Group rows by page_slug, keep just the title/subtitle for the card
+                const articlesBySlug = {};
+                rows.forEach(r => {
+                    if (!articlesBySlug[r.page_slug]) {
+                        articlesBySlug[r.page_slug] = {
+                            page_slug: r.page_slug,
+                            article_title: '',
+                            article_subtitle: ''
+                        };
+                    }
+                    // Fill fields from whichever row has them
+                    const a = articlesBySlug[r.page_slug];
+                    a.article_title = a.article_title || r.article_title;
+                    a.article_subtitle = a.article_subtitle || r.article_subtitle;
+                });
+
+                const articles = Object.values(articlesBySlug).filter(a => a.article_title);
+
+                document.getElementById('conoce-loading').style.display = 'none';
+                renderGrid(articles);
+
+            } catch (e) {
+                document.getElementById('conoce-loading').style.display = 'none';
+                document.getElementById('conoce-error').style.display = 'block';
+                console.error('Error loading sheet:', e);
+            }
+        }
+
+        // ─── RENDER GRID ──────────────────────────────────────────
+        function renderGrid(articles) {
+            const grid = document.getElementById('conoce-grid');
+            const empty = document.getElementById('conoce-empty');
+
+            grid.innerHTML = '';
+
+            if (articles.length === 0) {
+                grid.style.display = 'none';
+                empty.style.display = 'block';
+                return;
+            }
+
+            empty.style.display = 'none';
+            grid.style.display = 'grid';
+
+            articles.forEach(article => {
+                const card = document.createElement('a');
+                card.className = 'conoce-card';
+                card.href = `articulo.html?slug=${encodeURIComponent(article.page_slug)}`;
+                card.innerHTML = `
+                    <div class="conoce-card-body">
+                        <h3>${article.article_title}</h3>
+                        ${article.article_subtitle ? `<p class="conoce-card-subtitle">${article.article_subtitle}</p>` : ''}
+                    </div>
+                `;
+                grid.appendChild(card);
+            });
+        }
+
+        // ─── INIT ─────────────────────────────────────────────────
+        loadArticulos();
+        </script>
 
 		<script src="assets/js/jquery.min.js"></script>
 			<script src="assets/js/jquery.scrollex.min.js"></script>
