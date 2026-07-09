@@ -1,0 +1,28 @@
+/* ── Mobile banner fix: financiacion only has an <h2>, so remove the
+   fixed height and oversized padding set in banner.css ── */
+@media screen and (max-width: 980px) {
+    #banner {
+        padding: 5em 3em 4em 3em;
+        margin-bottom: -2.75em;
+    }
+}
+
+@media screen and (max-width: 736px) {
+    #banner {
+        height: auto;
+        padding: 4em 2em 3em 2em;
+        margin-bottom: 0;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    #banner {
+        height: auto;
+        padding: 3.5em 1.5em 2.5em 1.5em;
+    }
+}
+
+#presupuesto .inner h2,
+#presupuesto .inner p {
+    color: black;
+}
