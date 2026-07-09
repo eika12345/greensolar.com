@@ -1888,6 +1888,125 @@ input, select, textarea {
 
 		}
 
+/* ── Testimonials carousel ── */
+.testimonials-wrapper {
+    max-width: 60em;
+    margin: 3em auto 1em auto;
+}
+
+.testimonials-title {
+    text-align: center;
+    margin-bottom: 1em;
+	color: black;
+}
+
+.testimonials-carousel {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 0.5em;
+}
+
+.testimonials-carousel .testimonial-arrow {
+    color: rgba(46, 49, 65, 0.35) !important;
+}
+
+.testimonials-carousel .testimonial-arrow:hover,
+.testimonials-carousel .testimonial-arrow:active {
+    color: rgba(46, 49, 65, 0.7) !important;
+}
+
+.testimonials-viewport {
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+
+.testimonials-viewport::-webkit-scrollbar {
+    display: none;
+}
+
+.testimonials-track {
+    display: flex;
+    gap: 1.5em;
+}
+
+.testimonial-card {
+    flex: 0 0 calc(50% - 0.75em);
+    scroll-snap-align: start;
+    background: #e7e7e728;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.testimonial-card-header {
+    background: var(--color-primary-green);
+    color: #ffffff;
+    font-family: Coolvetica, sans-serif;
+    font-size: 1.3em;
+    font-weight: 700;
+    padding: 0.7em 1em;
+}
+
+.testimonial-card-body {
+    padding: 1em 1.25em 1.5em 1.25em;
+}
+
+.testimonial-card-body p {
+    margin: 0;
+    color: #9a9a9a;
+    font-size: 0.95em;
+    line-height: 1.6;
+}
+
+.testimonial-arrow {
+    flex: 0 0 auto;
+    background: none;
+    border: 0;
+    box-shadow: none;
+    color: rgba(46, 49, 65, 0.35);
+    font-size: 1.3em;
+    line-height: 1;
+    cursor: pointer;
+    padding: 0.5em;
+    height: auto;
+}
+
+.testimonial-arrow:hover,
+.testimonial-arrow:active {
+    background: none !important;
+    color: rgba(46, 49, 65, 0.7);
+}
+
+.testimonials-dots {
+    display: flex;
+    justify-content: center;
+    gap: 0.5em;
+    margin-top: 1em;
+}
+
+.testimonial-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: rgba(46, 49, 65, 0.2);
+    border: 0;
+    box-shadow: none;
+    padding: 0;
+    cursor: pointer;
+}
+
+.testimonial-dot.active {
+    background: rgba(46, 49, 65, 0.7);
+}
+
+@media screen and (max-width: 736px) {
+    .testimonial-card {
+        flex: 0 0 100%;
+    }
+}
+
 /* Section/Article */
 
 	section.special, article.special {
