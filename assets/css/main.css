@@ -1888,16 +1888,121 @@ input, select, textarea {
 
 		}
 
+/* Workflow / Process line */
+.workflow-line {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    position: relative;
+    margin: 3em 0em; 
+    flex-wrap: wrap;
+    gap: 2em 1em;
+}
+
+.workflow-line::before {
+    content: '';
+    position: absolute;
+    top: 28px;
+    left: 5%;
+    right: 5%;
+    height: 3px;
+    background: var(--color-primary-green);
+    opacity: 0.3;
+    z-index: 0;
+}
+
+.workflow-step {
+    position: relative;
+    z-index: 1;
+    flex: 1 1 150px;
+    max-width: 200px;
+    text-align: center;
+}
+
+.workflow-icon {
+    width: 56px;
+    height: 56px;
+    margin: 0 auto 0.75em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #ffffff;
+    border: 3px solid var(--color-primary-green);
+    border-radius: 50%;
+    color: var(--color-primary-green);
+    font-size: 1.3em;
+}
+
+.workflow-number {
+    position: absolute;
+    top: -6px;
+    left: calc(50% + 16px);
+    background: var(--color-primary-green);
+    color: #ffffff;
+    font-size: 0.75em;
+    font-weight: bold;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.workflow-step h3 {
+    font-size: 1em;
+    margin-bottom: 0.4em;
+    color: #000;
+}
+
+.workflow-step p {
+    font-size: 0.85em;
+    color: #6a6a6a;
+    line-height: 1.4;
+}
+
+@media (max-width: 800px) {
+    .workflow-line::before {
+        left: 28px;
+        top: 5%;
+        bottom: 5%;
+        right: auto;
+        width: 3px;
+        height: auto;
+    }
+    .workflow-line {
+        flex-direction: column;
+        align-items: flex-start;
+        padding-left: 0;
+    }
+    .workflow-step {
+        max-width: 100%;
+        display: flex;
+        align-items: flex-start;
+        text-align: left;
+        gap: 1em;
+    }
+    .workflow-icon {
+        margin: 0;
+        flex-shrink: 0;
+    }
+    .workflow-number {
+        left: auto;
+        right: -22px;
+        top: -22px;
+    }
+}
+
 /* ── Testimonials carousel ── */
 .testimonials-wrapper {
     max-width: 60em;
     margin: 3em auto 1em auto;
+	padding: 5em 0em;
 }
 
 .testimonials-title {
     text-align: center;
     margin-bottom: 1em;
-	color: black;
 }
 
 .testimonials-carousel {
@@ -1905,15 +2010,6 @@ input, select, textarea {
     display: flex;
     align-items: center;
     gap: 0.5em;
-}
-
-.testimonials-carousel .testimonial-arrow {
-    color: rgba(46, 49, 65, 0.35) !important;
-}
-
-.testimonials-carousel .testimonial-arrow:hover,
-.testimonials-carousel .testimonial-arrow:active {
-    color: rgba(46, 49, 65, 0.7) !important;
 }
 
 .testimonials-viewport {
@@ -1955,7 +2051,7 @@ input, select, textarea {
 
 .testimonial-card-body p {
     margin: 0;
-    color: #9a9a9a;
+    color: #ffffffb0;
     font-size: 0.95em;
     line-height: 1.6;
 }
@@ -1965,18 +2061,12 @@ input, select, textarea {
     background: none;
     border: 0;
     box-shadow: none;
-    color: rgba(46, 49, 65, 0.35);
     font-size: 1.3em;
     line-height: 1;
     cursor: pointer;
     padding: 0.5em;
     height: auto;
-}
-
-.testimonial-arrow:hover,
-.testimonial-arrow:active {
-    background: none !important;
-    color: rgba(46, 49, 65, 0.7);
+	color: var(--color-primary-green) !important;
 }
 
 .testimonials-dots {
@@ -1986,19 +2076,19 @@ input, select, textarea {
     margin-top: 1em;
 }
 
-.testimonial-dot {
+#testimonials .testimonial-dot {
     width: 8px;
     height: 8px;
     border-radius: 50%;
-    background: rgba(46, 49, 65, 0.2);
+    background: rgba(255, 255, 255, 0.25);
     border: 0;
     box-shadow: none;
     padding: 0;
     cursor: pointer;
 }
 
-.testimonial-dot.active {
-    background: rgba(46, 49, 65, 0.7);
+#testimonials .testimonial-dot.active {
+    background: var(--color-primary-green);
 }
 
 @media screen and (max-width: 736px) {

@@ -233,7 +233,7 @@ body {
 }
 
 .porque-pergolas {
-    max-width: 30em;   /* adjust to taste — try 35em for narrower */
+    max-width: 30em; 
     margin: 2em auto;
     text-align: center;
 }
@@ -381,7 +381,7 @@ body {
 }
 
 .testimonial-dot.active {
-    background: rgba(46, 49, 65, 0.7);
+    background: var(--color-primary-green);
 }
 
 @media screen and (max-width: 736px) {

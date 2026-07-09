@@ -330,7 +330,7 @@
 				.wrapper.spotlight.style4:after {
 					box-shadow: inset 0 -1px 0 0 #39477c, 0 1px 0 0 #39477c;
 				}
-
+/* wrapper 5 */
 			.wrapper.spotlight.style5 {
 				background-color: #324072;
 			}
@@ -346,6 +346,7 @@
 				.wrapper.spotlight.style5:after {
 					box-shadow: inset 0 -1px 0 0 #324072, 0 1px 0 0 #324072;
 				}
+/* wrapper 6 */
 
 			.wrapper.spotlight.style6 {
 				background-color: #2d3a69;
@@ -363,17 +364,23 @@
 					box-shadow: inset 0 -1px 0 0 #2d3a69, 0 1px 0 0 #2d3a69;
 				}
 
-				#four:before, #four:after {
-    				background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100' preserveAspectRatio='none'%3E%3Cpolygon points='0,100 100,0 100,100' style='fill:%23ffffff%3B' /%3E%3C/svg%3E");
-			}
+				#four:before, #four:after,
+				#four-services:before, #four-services:after {
+					background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100' preserveAspectRatio='none'%3E%3Cpolygon points='0,100 100,0 100,100' style='fill:%23ffffff%3B' /%3E%3C/svg%3E");
+				}
 
-				#four:before {
-    				box-shadow: inset 0 -1px 0 0 #ffffff, 0 1px 0 0 #ffffff;
-			}
+				#four:before, #four-services:before {
+					box-shadow: inset 0 -1px 0 0 #ffffff, 0 1px 0 0 #ffffff;
+				}
 
-				#four:after {
-    				box-shadow: inset 0 -1px 0 0 #ffffff, 0 1px 0 0 #ffffff;
-			}
+				#four:after, #four-services:after {
+					box-shadow: inset 0 -1px 0 0 #ffffff, 0 1px 0 0 #ffffff;
+				}
+
+				#four-services .features {
+					margin-bottom: 12em;
+				}
+
 
 		@media screen and (max-width: 980px) {
 
