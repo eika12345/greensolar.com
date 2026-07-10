@@ -416,35 +416,34 @@ input, select, textarea {
 
 /* Workflow / Process line */
 .workflow-line {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    align-items: start;
     position: relative;
-    margin: 3em 0em; 
-    flex-wrap: wrap;
-    gap: 2em 1em;
+    margin: 3em 0em;
+    column-gap: 1em;
+    row-gap: 3em;
 }
-
+ 
 .workflow-line::before {
     content: '';
     position: absolute;
     top: 28px;
-    left: 5%;
-    right: 5%;
+    left: calc(100% / 12);
+    right: calc(100% / 12);
     height: 3px;
     background: var(--color-primary-green);
     opacity: 0.3;
     z-index: 0;
 }
-
+ 
 .workflow-step {
     position: relative;
     z-index: 1;
-    flex: 1 1 150px;
-    max-width: 200px;
     text-align: center;
+    padding: 0 0.5em;
 }
-
+ 
 .workflow-icon {
     width: 56px;
     height: 56px;
@@ -458,7 +457,7 @@ input, select, textarea {
     color: var(--color-primary-green);
     font-size: 1.3em;
 }
-
+ 
 .workflow-number {
     position: absolute;
     top: -6px;
@@ -474,21 +473,44 @@ input, select, textarea {
     align-items: center;
     justify-content: center;
 }
-
+ 
 .workflow-step h3 {
     font-size: 1em;
     margin-bottom: 0.4em;
     color: #000;
 }
-
+ 
 .workflow-step p {
     font-size: 0.85em;
     color: #6a6a6a;
     line-height: 1.4;
 }
-
-@media (max-width: 800px) {
+ 
+@media (max-width: 1000px) {
+    /* Tablet: 3 columns × 2 rows. The single connector line can no
+       longer honestly represent two rows, so it's dropped here
+       rather than overlapping the second row. */
+    .workflow-line {
+        grid-template-columns: repeat(3, 1fr);
+        row-gap: 3em;
+    }
     .workflow-line::before {
+        display: none;
+    }
+}
+ 
+@media (max-width: 600px) {
+    /* Mobile: single column, vertical timeline. */
+    .workflow-line {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 2em;
+        padding-left: 0;
+    }
+    .workflow-line::before {
+        display: block;
+        position: absolute;
         left: 28px;
         top: 5%;
         bottom: 5%;
@@ -496,17 +518,13 @@ input, select, textarea {
         width: 3px;
         height: auto;
     }
-    .workflow-line {
-        flex-direction: column;
-        align-items: flex-start;
-        padding-left: 0;
-    }
     .workflow-step {
         max-width: 100%;
         display: flex;
         align-items: flex-start;
         text-align: left;
         gap: 1em;
+        padding: 0;
     }
     .workflow-icon {
         margin: 0;
@@ -518,6 +536,7 @@ input, select, textarea {
         top: -22px;
     }
 }
+
 
 /* ── Testimonials carousel ── */
 .testimonials-wrapper {
