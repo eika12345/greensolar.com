@@ -36,7 +36,7 @@
 
 	/* Desktop nav: flex row of links, hamburger hidden */
 	#header nav {
-		font-family: Raleway, Helvetica, sans-serif;
+		font-family: "Title";
 		font-size: 0.75em;
 		font-weight: 700;
 		letter-spacing: 0.08em;

@@ -13,7 +13,7 @@ body {
 
 #pergola strong {
     color: rgb(0, 0, 0);
-    font-family: NeueMontreal-Medium;
+    font-family: "Text1";
     font-weight: 900;
 }
 
@@ -188,7 +188,7 @@ body {
     text-transform: none;
     letter-spacing: normal;
     white-space: normal;
-    font-family: inherit;
+    font-family: "Text1";
     font-size: 1.05em;
     font-weight: 700;
     border: 0;
@@ -326,7 +326,7 @@ body {
 .testimonial-card-header {
     background: var(--color-primary-green);
     color: #ffffff;
-    font-family: Coolvetica, sans-serif;
+    font-family: "Title";
     font-size: 1.3em;
     font-weight: 700;
     padding: 0.7em 1em;

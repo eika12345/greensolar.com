@@ -47,7 +47,7 @@
     font-weight: 400;
     cursor: pointer;
     transition: border-color 0.2s;
-    font-family: Coolvetica;
+    font-family: "Title";
 }
 
 .inst-filter-btn:hover {

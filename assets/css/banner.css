@@ -56,7 +56,7 @@
 			font-size: 2.25em;
 			margin-bottom: 0.8em;
 			padding-bottom: 0.4em;
-			font-family: "";
+			font-family: "Title";
 		}
 
 		/* #banner p {
@@ -201,7 +201,7 @@
     transition: background-color 0.2s ease-in-out;
 	font-weight: 900;
 	font-size: 16px;
-	font-family: "";
+	font-family: "Title";
 }
 
 #banner .banner-cta:hover {
