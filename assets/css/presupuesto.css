@@ -26,3 +26,333 @@
 #presupuesto .inner p {
     color: black;
 }
+/* ── Multi-step presupuesto form ── */
+
+#presupuesto form {
+    margin-top: 2em;
+}
+
+/* Progress bar */
+#presupuesto .progress-bar {
+    width: 100%;
+    height: 0.5em;
+    background: rgba(0, 0, 0, 0.1);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    margin-bottom: 0.6em;
+}
+
+#presupuesto .progress-fill {
+    height: 100%;
+    width: 16.666%; /* step 1 of 6 */
+    background: var(--color-primary-green);
+    border-radius: var(--radius-lg);
+    transition: width 0.3s ease-in-out;
+}
+
+#presupuesto .step-counter {
+    font-size: 0.8em;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--color-primary-green-darker);
+    margin-bottom: 2em;
+}
+
+/* Step visibility */
+#presupuesto .form-step {
+    display: none;
+}
+
+#presupuesto .form-step.active {
+    display: block;
+    animation: presupuesto-fade-in 0.35s ease-in-out;
+}
+
+@keyframes presupuesto-fade-in {
+    from { opacity: 0; transform: translateY(8px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+#presupuesto .form-step h3 {
+    color: black;
+    margin-bottom: 0.5em;
+}
+
+#presupuesto .form-step > p {
+    color: black;
+    margin-bottom: 1.5em;
+}
+
+/* Option cards (radio-as-card selection) */
+#presupuesto .option-cards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1em;
+    margin-bottom: 1.5em;
+}
+
+#presupuesto .option-card {
+    position: relative;
+    flex: 1 1 200px;
+    cursor: pointer;
+}
+
+#presupuesto .option-card input[type="radio"] {
+    position: absolute;
+    opacity: 0;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    cursor: pointer;
+}
+
+#presupuesto .option-card-label {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.6em;
+    text-align: center;
+    min-height: 6.5em;
+    padding: 1.25em 1.25em;
+    border-radius: var(--radius-md);
+    border: solid 2px rgba(0, 0, 0, 0.15);
+    background: rgba(255, 255, 255, 0.4);
+    color: black;
+    font-weight: 700;
+    letter-spacing: 0.03em;
+    transition: border-color 0.2s ease-in-out, background-color 0.2s ease-in-out;
+}
+
+#presupuesto .option-card-icon {
+    width: 2em;
+    height: 2em;
+    flex-shrink: 0;
+    color: var(--color-primary-green-darker);
+    transition: color 0.2s ease-in-out;
+}
+
+#presupuesto .option-card input[type="radio"]:checked + .option-card-label .option-card-icon {
+    color: #ffffff;
+}
+
+#presupuesto .option-card input[type="radio"]:checked + .option-card-label {
+    border-color: var(--color-primary-green);
+    background: var(--color-primary-green);
+    color: #ffffff;
+}
+
+#presupuesto .option-card input[type="radio"]:focus-visible + .option-card-label {
+    outline: 2px solid var(--color-primary-green-darker);
+    outline-offset: 2px;
+}
+
+/* Sliders */
+#presupuesto .slider-field {
+    margin-bottom: 1.5em;
+}
+
+#presupuesto .slider-field-header {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    margin-bottom: 0.6em;
+}
+
+#presupuesto .slider-field-header label {
+    color: black;
+    margin: 0;
+}
+
+#presupuesto .slider-readout {
+    font-weight: 700;
+    color: var(--color-primary-green-darker);
+}
+
+#presupuesto input[type="range"] {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 100%;
+    height: 0.4em;
+    border-radius: var(--radius-lg);
+    background: rgba(0, 0, 0, 0.15);
+    outline: none;
+}
+
+#presupuesto input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 1.4em;
+    height: 1.4em;
+    border-radius: 50%;
+    background: var(--color-primary-green);
+    border: 3px solid #ffffff;
+    box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.15);
+    cursor: pointer;
+}
+
+#presupuesto input[type="range"]::-moz-range-thumb {
+    width: 1.4em;
+    height: 1.4em;
+    border-radius: 50%;
+    background: var(--color-primary-green);
+    border: 3px solid #ffffff;
+    box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.15);
+    cursor: pointer;
+}
+
+#presupuesto .calc-preview {
+    color: black;
+    font-size: 0.95em;
+    padding: 0.9em 1.2em;
+    background: rgba(149, 202, 108, 0.15);
+    border-left: 4px solid var(--color-primary-green);
+    border-radius: var(--radius-sm);
+}
+
+#presupuesto .calc-preview strong {
+    color: var(--color-primary-green-darker);
+}
+
+/* Step 5/6 text fields need dark-on-light labels since form.css assumes a dark bg */
+#presupuesto .field label {
+    color: black;
+}
+
+#presupuesto input[type="text"],
+#presupuesto input[type="email"],
+#presupuesto input[type="tel"],
+#presupuesto input[type="file"] {
+    background: rgba(255, 255, 255, 0.5);
+    border-color: rgba(0, 0, 0, 0.15);
+    color: black;
+}
+
+#presupuesto input[type="text"]:focus,
+#presupuesto input[type="email"]:focus,
+#presupuesto input[type="tel"]:focus {
+    border-color: var(--color-primary-green);
+}
+
+/* Nav buttons */
+#presupuesto .form-nav {
+    display: flex;
+    justify-content: flex-end;
+    gap: 1em;
+    margin-top: 2em;
+}
+
+#presupuesto .form-nav #btn-prev {
+    display: none;
+    margin-right: auto;
+}
+
+#presupuesto .form-nav #btn-prev.visible {
+    display: inline-block;
+}
+
+#presupuesto .form-nav #btn-submit {
+    display: none;
+}
+
+#presupuesto .form-nav #btn-submit.visible {
+    display: inline-block;
+}
+
+#presupuesto .form-nav #btn-next.hidden {
+    display: none;
+}
+
+/* Confirmation screen */
+#presupuesto .confirmation-screen {
+    display: none;
+}
+
+#presupuesto .confirmation-screen.active {
+    display: block;
+    animation: presupuesto-fade-in 0.35s ease-in-out;
+}
+
+#presupuesto .confirmation-screen h3 {
+    color: black;
+}
+
+#presupuesto .confirmation-screen > p {
+    color: black;
+    margin-bottom: 1.5em;
+}
+
+#presupuesto .estimate-card {
+    background: rgba(255, 255, 255, 0.5);
+    border: solid 2px var(--color-primary-green);
+    border-radius: var(--radius-md);
+    padding: 1.75em;
+}
+
+#presupuesto .estimate-card h4 {
+    color: black;
+    margin-bottom: 1em;
+}
+
+#presupuesto .estimate-card p {
+    color: black;
+    margin-bottom: 0.6em;
+}
+
+#presupuesto .estimate-card small {
+    display: block;
+    margin-top: 1em;
+    color: rgba(0, 0, 0, 0.55);
+}
+
+@media screen and (max-width: 736px) {
+    #presupuesto .option-cards {
+        flex-direction: column;
+    }
+
+    #presupuesto .option-card {
+        flex: 1 1 auto;
+    }
+
+    #presupuesto .form-nav {
+        flex-direction: column-reverse;
+        align-items: stretch;
+        gap: 0.75em;
+    }
+
+    #presupuesto .form-nav #btn-prev {
+        margin-right: 0;
+    }
+
+    #presupuesto .form-nav .button {
+        width: 100%;
+    }
+}
+
+/* The theme's default (non-primary) button is styled for a dark background
+   (white text, faint white border) — invisible on this section's light
+   background, so give it dark-on-light contrast here instead. */
+#presupuesto .form-nav .button:not(.primary) {
+    color: black !important;
+    box-shadow: inset 0 0 0 2px rgba(0, 0, 0, 0.2);
+}
+
+#presupuesto .form-nav .button:not(.primary):hover {
+    background-color: rgba(0, 0, 0, 0.04);
+}
+
+#presupuesto .form-nav .button:not(.primary):active {
+    background-color: rgba(0, 0, 0, 0.08);
+}
+
+/* Invalid-step feedback on option cards */
+#presupuesto .option-cards.shake {
+    animation: presupuesto-shake 0.4s ease-in-out;
+}
+
+@keyframes presupuesto-shake {
+    0%, 100% { transform: translateX(0); }
+    20%, 60% { transform: translateX(-6px); }
+    40%, 80% { transform: translateX(6px); }
+}

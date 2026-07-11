@@ -76,13 +76,152 @@
 
 <!--------------------------- Wrapper ------------------------->
                     <section id="presupuesto" class="wrapper alt spotlight style4">
-								<div class="inner">
+								<div class="inner" style="padding-bottom: 3em;">
                                     <h2>Rellena el cuestionario y recibe tu presupuesto gratis en menos de 24 horas:</h2>
-								
-                               
-                               
+
+                                    <div class="progress-bar">
+                                        <div class="progress-fill" id="progress-fill"></div>
+                                    </div>
+                                    <div class="step-counter">Paso <span id="current-step-num">1</span> de 6</div>
+
+                                    <form id="presupuesto-form" novalidate>
+
+                                        <!-- Step 1: Tipo de instalacion -->
+                                        <div class="form-step active" data-step="1">
+                                            <h3>&#191;D&#243;nde te gustar&#237;a realizar la instalaci&#243;n?</h3>
+                                            <div class="option-cards">
+                                                <label class="option-card">
+                                                    <input type="radio" name="tipoInstalacion" value="vivienda-unifamiliar" required />
+                                                    <span class="option-card-label"><svg class="option-card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11.5L12 4l9 7.5"/><path d="M5.5 10v9a1 1 0 0 0 1 1h11a1 1 0 0 0 1-1v-9"/><path d="M9.5 20v-5.5a1 1 0 0 1 1-1h3a1 1 0 0 1 1 1V20"/></svg>Vivienda Unifamiliar</span>
+                                                </label>
+                                                <label class="option-card">
+                                                    <input type="radio" name="tipoInstalacion" value="comunidad-vecinos" required />
+                                                    <span class="option-card-label"><svg class="option-card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20V6a1 1 0 0 1 1-1h6a1 1 0 0 1 1 1v14"/><path d="M12 10h6a1 1 0 0 1 1 1v9"/><path d="M7 8.5h1M7 12h1M7 15.5h1"/><path d="M15.5 13.5h1M15.5 16.5h1"/><path d="M2.5 20h19"/></svg>Comunidad de Vecinos</span>
+                                                </label>
+                                                <label class="option-card">
+                                                    <input type="radio" name="tipoInstalacion" value="empresa" required />
+                                                    <span class="option-card-label"><svg class="option-card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="9" width="16" height="11" rx="1"/><path d="M9 20v-4a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v4"/><path d="M8.5 9V6a1.5 1.5 0 0 1 1.5-1.5h4A1.5 1.5 0 0 1 15.5 6v3"/></svg>Empresa</span>
+                                                </label>
+                                            </div>
+                                        </div>
+
+                                        <!-- Step 2: Tipo de tejado -->
+                                        <div class="form-step" data-step="2">
+                                            <h3>&#191;Qu&#233; tipo de tejado tienes?</h3>
+                                            <div class="option-cards">
+                                                <label class="option-card">
+                                                    <input type="radio" name="tipoTejado" value="plano" required />
+                                                    <span class="option-card-label"><svg class="option-card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8h18"/><rect x="4" y="8" width="16" height="10" rx="0.5"/></svg>Plano</span>
+                                                </label>
+                                                <label class="option-card">
+                                                    <input type="radio" name="tipoTejado" value="un-agua" required />
+                                                    <span class="option-card-label"><svg class="option-card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8l18-3v3"/><rect x="4" y="8" width="16" height="10" rx="0.5"/></svg>A un agua</span>
+                                                </label>
+                                                <label class="option-card">
+                                                    <input type="radio" name="tipoTejado" value="dos-aguas" required />
+                                                    <span class="option-card-label"><svg class="option-card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M2.5 8.5L12 4l9.5 4.5"/><rect x="4" y="8.5" width="16" height="9.5" rx="0.5"/></svg>A dos aguas</span>
+                                                </label>
+                                                <label class="option-card">
+                                                    <input type="radio" name="tipoTejado" value="otro" required />
+                                                    <span class="option-card-label"><svg class="option-card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M9.5 9.2a2.5 2.5 0 0 1 4.8.9c0 1.7-2.3 1.9-2.3 3.4"/><circle cx="12" cy="16.8" r="0.15" fill="currentColor" stroke-width="1"/></svg>Otro</span>
+                                                </label>
+                                            </div>
+                                        </div>
+
+                                        <!-- Step 3: Consumo -->
+                                        <div class="form-step" data-step="3">
+                                            <h3>&#191;Cu&#225;l es tu consumo el&#233;ctrico mensual medio?</h3>
+                                            <p>Ind&#237;canos tu consumo el&#233;ctrico mensual medio en kW. Esto nos permitir&#225; calcular cu&#225;ntos paneles solares necesitas para cubrir tus necesidades energ&#233;ticas.</p>
+                                            <div class="slider-field">
+                                                <div class="slider-field-header">
+                                                    <label for="consumo-slider">Consumo mensual</label>
+                                                    <span class="slider-readout"><span id="consumo-value">300</span> kW</span>
+                                                </div>
+                                                <input type="range" id="consumo-slider" min="0" max="2000" step="10" value="300" />
+                                            </div>
+                                            <p class="calc-preview">Tu consumo anual medio es de aproximadamente: <strong id="consumo-anual">3.600 kWh</strong></p>
+                                        </div>
+
+                                        <!-- Step 4: Superficie tejado -->
+                                        <div class="form-step" data-step="4">
+                                            <h3>&#191;Tienes suficiente espacio en tu tejado?</h3>
+                                            <p>Necesitamos saber si tienes espacio suficiente para instalar los paneles solares. Ind&#237;canos las medidas de tu tejado y lo calculamos por ti.</p>
+                                            <div class="slider-field">
+                                                <div class="slider-field-header">
+                                                    <label for="ancho-slider">Ancho</label>
+                                                    <span class="slider-readout"><span id="ancho-value">10</span> m</span>
+                                                </div>
+                                                <input type="range" id="ancho-slider" min="0" max="100" step="0.5" value="10" />
+                                            </div>
+                                            <div class="slider-field">
+                                                <div class="slider-field-header">
+                                                    <label for="alto-slider">Largo</label>
+                                                    <span class="slider-readout"><span id="alto-value">10</span> m</span>
+                                                </div>
+                                                <input type="range" id="alto-slider" min="0" max="100" step="0.5" value="10" />
+                                            </div>
+                                            <p class="calc-preview">La superficie total de tu tejado es de aproximadamente: <strong id="superficie-value">100 m&#178;</strong></p>
+                                        </div>
+
+                                        <!-- Step 5: Ubicacion -->
+                                        <div class="form-step" data-step="5">
+                                            <h3>&#191;En qu&#233; ubicaci&#243;n quieres la instalaci&#243;n?</h3>
+                                            <div class="option-cards">
+                                                <label class="option-card">
+                                                    <input type="radio" name="ubicacion" value="murcia" required />
+                                                    <span class="option-card-label">Murcia</span>
+                                                </label>
+                                                <label class="option-card">
+                                                    <input type="radio" name="ubicacion" value="alicante-valencia" required />
+                                                    <span class="option-card-label">Alicante / Valencia</span>
+                                                </label>
+                                                <label class="option-card">
+                                                    <input type="radio" name="ubicacion" value="otro" required />
+                                                    <span class="option-card-label">Otro</span>
+                                                </label>
+                                            </div>
+                                            <div class="fields">
+                                                <div class="field">
+                                                    <label for="direccion">Direcci&#243;n exacta de la ubicaci&#243;n</label>
+                                                    <input type="text" name="direccion" id="direccion" required />
+                                                </div>
+                                                <div class="field">
+                                                    <label for="factura">Sube una copia de tu &#250;ltima factura el&#233;ctrica (si dispones de ella)</label>
+                                                    <input type="file" name="factura" id="factura" accept=".pdf,.jpg,.jpeg,.png" />
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <!-- Step 6: Datos personales -->
+                                        <div class="form-step" data-step="6">
+                                            <h3>Tus datos de contacto</h3>
+                                            <div class="fields">
+                                                <div class="field">
+                                                    <label for="nombre">Nombre y apellidos</label>
+                                                    <input type="text" name="nombre" id="nombre" required />
+                                                </div>
+                                                <div class="field">
+                                                    <label for="telefono">Tel&#233;fono de contacto</label>
+                                                    <input type="tel" name="telefono" id="telefono" required />
+                                                </div>
+                                                <div class="field">
+                                                    <label for="email">Email</label>
+                                                    <input type="email" name="email" id="email" required />
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="form-nav">
+                                            <button type="button" class="button" id="btn-prev">Atr&#225;s</button>
+                                            <button type="button" class="button primary" id="btn-next">Siguiente</button>
+                                            <button type="submit" class="button primary" id="btn-submit">Enviar</button>
+                                        </div>
+
+                                    </form>
+
+                                    <div id="confirmation-screen" class="confirmation-screen"></div>
+
                                 </div>  
-							</section>
                     </section>
 
 
@@ -138,6 +277,7 @@
 			<script src="assets/js/breakpoints.min.js"></script>
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
+			<script src="assets/js/presupuesto.js"></script>
 
 	</body>
 </html>
