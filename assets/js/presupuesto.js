@@ -46,6 +46,12 @@
 		return n.toLocaleString('es-ES');
 	}
 
+	function escapeHtml(str) {
+    var div = document.createElement('div');
+    div.textContent = str;
+    return div.innerHTML;
+	}
+
 	// ── Step navigation ──
 	function goToStep(n) {
 		steps.forEach(function (el) {
@@ -135,36 +141,6 @@
 	anchoSlider.addEventListener('input', updateSuperficie);
 	altoSlider.addEventListener('input', updateSuperficie);
 
-	// ── Estimate calculation (shown on the confirmation screen) ──
-	function calculateEstimate() {
-		var consumoMensual = state.data.consumoMensual;
-		var tejadoAncho = state.data.tejadoAncho;
-		var tejadoAlto = state.data.tejadoAlto;
-
-		var consumoAnualKwh = consumoMensual * 12;
-		var horasSolPico = 4.5; // average for Alicante/Murcia/Valencia region
-		var eficienciaSistema = 0.8; // losses, inverter, wiring
-		var potenciaWattPanel = 450;
-
-		var potenciaNecesariaKw = consumoAnualKwh / (horasSolPico * 365 * eficienciaSistema);
-		var numPaneles = Math.max(1, Math.ceil((potenciaNecesariaKw * 1000) / potenciaWattPanel));
-
-		var superficieTejado = tejadoAncho * tejadoAlto;
-		var superficieNecesaria = numPaneles * 1.7; // m2 per panel incl. spacing/mounting
-		var cabeEnTejado = superficieTejado >= superficieNecesaria;
-
-		var precioKwh = 0.15;
-		var ahorroAnualEstimado = consumoAnualKwh * precioKwh * 0.7; // ~70% self-consumption offset
-
-		return {
-			potenciaKw: potenciaNecesariaKw.toFixed(2),
-			numPaneles: numPaneles,
-			superficieNecesaria: superficieNecesaria.toFixed(1),
-			cabeEnTejado: cabeEnTejado,
-			ahorroAnualEstimado: Math.round(ahorroAnualEstimado)
-		};
-	}
-
 	function collectFormData() {
 		var fd = new FormData(form);
 		state.data.tipoInstalacion = fd.get('tipoInstalacion') || '';
@@ -179,7 +155,7 @@
 
 	function renderConfirmation(estimate) {
 		var roofNote = estimate.cabeEnTejado
-			? '\u2705 Tu tejado tiene espacio suficiente para esta instalaci\u00F3n.'
+			? 'Tu tejado tiene espacio suficiente para esta instalaci\u00F3n.'
 			: '\u26A0\uFE0F El espacio es ajustado \u2014 uno de nuestros t\u00E9cnicos confirmar\u00E1 la distribuci\u00F3n exacta en la visita.';
 
 		confirmationScreen.innerHTML =
@@ -199,10 +175,22 @@
 		confirmationScreen.classList.add('active');
 	}
 
-	function escapeHtml(str) {
-		var div = document.createElement('div');
-		div.textContent = str;
-		return div.innerHTML;
+	var formError = document.getElementById('form-error');
+
+	function showError(message) {
+		formError.textContent = message;
+		formError.classList.add('visible');
+	}
+
+	function clearError() {
+		formError.textContent = '';
+		formError.classList.remove('visible');
+	}
+
+	function setSubmitting(isSubmitting) {
+		btnSubmit.disabled = isSubmitting;
+		btnPrev.disabled = isSubmitting;
+		btnSubmit.textContent = isSubmitting ? 'Enviando...' : 'Enviar';
 	}
 
 	form.addEventListener('submit', function (e) {
@@ -210,12 +198,32 @@
 		if (!isStepValid(TOTAL_STEPS)) return;
 
 		collectFormData();
-		var estimate = calculateEstimate();
+		clearError();
+		setSubmitting(true);
 
-		// TODO: send state.data + estimate to your backend/email endpoint here,
-		// e.g. via fetch('/api/presupuesto', { method: 'POST', body: new FormData(form) })
+		var formData = new FormData(form);
 
-		renderConfirmation(estimate);
+		fetch('procesar-presupuesto.php', {
+			method: 'POST',
+			body: formData
+		})
+			.then(function (response) {
+				return response.json().then(function (json) {
+					if (!response.ok || !json.success) {
+						throw new Error(json.error || 'Ha ocurrido un error al enviar el formulario.');
+					}
+					return json;
+				});
+			})
+			.then(function (json) {
+				renderConfirmation(json.estimate);
+			})
+			.catch(function (err) {
+				showError(err.message || 'No se ha podido enviar el formulario. Comprueba tu conexi\u00F3n e int\u00E9ntalo de nuevo.');
+			})
+			.finally(function () {
+				setSubmitting(false);
+			});
 	});
 
 	// init

@@ -26,10 +26,18 @@
 #presupuesto .inner p {
     color: black;
 }
+
+#presupuesto .estimate-card strong {
+    color: black;
+}
 /* ── Multi-step presupuesto form ── */
 
 #presupuesto form {
     margin-top: 2em;
+}
+
+#presupuesto .form-step h3:focus {
+    outline: none;
 }
 
 /* Progress bar */
@@ -55,7 +63,7 @@
     font-weight: 700;
     letter-spacing: 0.1em;
     text-transform: uppercase;
-    color: var(--color-primary-green-darker);
+    color: var(--color-primary-green);
     margin-bottom: 2em;
 }
 
@@ -129,7 +137,7 @@
     width: 2em;
     height: 2em;
     flex-shrink: 0;
-    color: var(--color-primary-green-darker);
+    color: var(--color-primary-green);
     transition: color 0.2s ease-in-out;
 }
 
@@ -144,7 +152,7 @@
 }
 
 #presupuesto .option-card input[type="radio"]:focus-visible + .option-card-label {
-    outline: 2px solid var(--color-primary-green-darker);
+    outline: 2px solid var(--color-primary-green);
     outline-offset: 2px;
 }
 
@@ -167,7 +175,7 @@
 
 #presupuesto .slider-readout {
     font-weight: 700;
-    color: var(--color-primary-green-darker);
+    color: var(--color-primary-green);
 }
 
 #presupuesto input[type="range"] {
@@ -212,7 +220,7 @@
 }
 
 #presupuesto .calc-preview strong {
-    color: var(--color-primary-green-darker);
+    color: var(--color-primary-green);
 }
 
 /* Step 5/6 text fields need dark-on-light labels since form.css assumes a dark bg */
@@ -236,6 +244,15 @@
 }
 
 /* Nav buttons */
+#presupuesto .form-nav #btn-next, #btn-submit {
+    background-color: var(--color-primary-green);
+}
+
+#presupuesto .form-nav #btn-next, #btn-submit:hover {
+    filter: brightness(1.08);
+    transition: 0.3s;
+}
+
 #presupuesto .form-nav {
     display: flex;
     justify-content: flex-end;
@@ -355,4 +372,25 @@
     0%, 100% { transform: translateX(0); }
     20%, 60% { transform: translateX(-6px); }
     40%, 80% { transform: translateX(6px); }
+}
+
+/* Submission error message */
+#presupuesto .form-error {
+    display: none;
+    margin-top: 1em;
+    padding: 0.9em 1.2em;
+    background: rgba(200, 60, 60, 0.1);
+    border-left: 4px solid #c83c3c;
+    border-radius: var(--radius-sm);
+    color: #7a2424;
+    font-size: 0.95em;
+}
+
+#presupuesto .form-error.visible {
+    display: block;
+}
+
+#presupuesto .form-nav .button:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
 }

@@ -76,7 +76,7 @@
 
 <!--------------------------- Wrapper ------------------------->
                     <section id="presupuesto" class="wrapper alt spotlight style4">
-								<div class="inner" style="padding-bottom: 3em;">
+								<div class="inner" style="padding-bottom: 5em; padding-top: 5em;">
                                     <h2>Rellena el cuestionario y recibe tu presupuesto gratis en menos de 24 horas:</h2>
 
                                     <div class="progress-bar">
@@ -137,7 +137,7 @@
                                                     <label for="consumo-slider">Consumo mensual</label>
                                                     <span class="slider-readout"><span id="consumo-value">300</span> kW</span>
                                                 </div>
-                                                <input type="range" id="consumo-slider" min="0" max="2000" step="10" value="300" />
+                                                <input type="range" id="consumo-slider" name="consumoMensual" min="0" max="2000" step="10" value="300" />
                                             </div>
                                             <p class="calc-preview">Tu consumo anual medio es de aproximadamente: <strong id="consumo-anual">3.600 kWh</strong></p>
                                         </div>
@@ -151,14 +151,14 @@
                                                     <label for="ancho-slider">Ancho</label>
                                                     <span class="slider-readout"><span id="ancho-value">10</span> m</span>
                                                 </div>
-                                                <input type="range" id="ancho-slider" min="0" max="100" step="0.5" value="10" />
+                                                <input type="range" id="ancho-slider" name="tejadoAncho" min="0" max="100" step="0.5" value="10" />
                                             </div>
                                             <div class="slider-field">
                                                 <div class="slider-field-header">
                                                     <label for="alto-slider">Largo</label>
                                                     <span class="slider-readout"><span id="alto-value">10</span> m</span>
                                                 </div>
-                                                <input type="range" id="alto-slider" min="0" max="100" step="0.5" value="10" />
+                                                <input type="range" id="alto-slider" name="tejadoAlto" min="0" max="100" step="0.5" value="10" />
                                             </div>
                                             <p class="calc-preview">La superficie total de tu tejado es de aproximadamente: <strong id="superficie-value">100 m&#178;</strong></p>
                                         </div>
@@ -216,6 +216,8 @@
                                             <button type="button" class="button primary" id="btn-next">Siguiente</button>
                                             <button type="submit" class="button primary" id="btn-submit">Enviar</button>
                                         </div>
+
+                                        <p class="form-error" id="form-error" role="alert"></p>
 
                                     </form>
 
