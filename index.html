@@ -15,6 +15,7 @@
 		<link rel="stylesheet" href="assets/css/button.css" />
 		<link rel="stylesheet" href="assets/css/counter.css" />
 		<link rel="stylesheet" href="assets/css/miscellaneous.css" />
+		<link rel="stylesheet" href="assets/css/cookie.css" />
 
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
 
@@ -372,7 +373,7 @@
             <h4>Textos Legales</h4>
             <ul>
                 <li><a href="politica-de-privacidad.html">Política de privacidad</a></li>
-                <li><a href="">Política de cookies</a></li>
+                <li><a href="politica-de-cookies.html">Política de cookies</a></li>
                 <li><a href="">Compromiso con la protección de datos personales</a></li>
             </ul>
         </div>
@@ -386,6 +387,107 @@
 
 			</div>
 
+		<!-- Cookie Consent -->
+			<div id="cookie-modal-overlay">
+				<div id="cookie-modal" role="dialog" aria-modal="true" aria-labelledby="cookie-modal-title">
+					<div id="cookie-modal-header">
+						<h2 id="cookie-modal-title">Configuración de cookies</h2>
+						<button type="button" id="cookie-modal-close" aria-label="Cerrar">&times;</button>
+					</div>
+
+					<div id="cookie-modal-body">
+						<p>Usamos cookies para que la web funcione correctamente y, con tu consentimiento, para analizarla, personalizarla y mostrar publicidad ajustada. Puedes activar o desactivar cada tipo a continuación. Para más detalle, consulta nuestra <a href="politica-de-cookies.html">Política de Cookies</a>.</p>
+
+						<div class="cookie-category" id="cookie-category-tecnicas">
+							<div class="cookie-category-header">
+								<div class="cookie-category-header-left">
+									<span class="cookie-category-caret">&#10095;</span>
+									<span class="cookie-category-name">Técnicas</span>
+								</div>
+								<span class="cookie-category-status">Siempre activas</span>
+							</div>
+							<div class="cookie-category-desc">
+								<p style="margin:0;">Necesarias para que la web funcione correctamente (navegación, recordar tus preferencias de cookies, etc.). No requieren tu autorización y no pueden desactivarse.</p>
+							</div>
+						</div>
+
+						<div class="cookie-category" id="cookie-category-analisis">
+							<div class="cookie-category-header">
+								<div class="cookie-category-header-left">
+									<span class="cookie-category-caret">&#10095;</span>
+									<span class="cookie-category-name">Análisis</span>
+								</div>
+								<label class="cookie-toggle">
+									<input type="checkbox" id="cookie-toggle-analisis" />
+									<span class="cookie-toggle-slider"></span>
+								</label>
+							</div>
+							<div class="cookie-category-desc">
+								<p style="margin:0;">Nos permiten estudiar cómo navegan los usuarios por la web (secciones más visitadas, funcionamiento de los servicios, etc.) para mejorarla. No tienen finalidad publicitaria.</p>
+							</div>
+						</div>
+
+						<div class="cookie-category" id="cookie-category-funcionalidad">
+							<div class="cookie-category-header">
+								<div class="cookie-category-header-left">
+									<span class="cookie-category-caret">&#10095;</span>
+									<span class="cookie-category-name">Funcionalidad y Personalización</span>
+								</div>
+								<label class="cookie-toggle">
+									<input type="checkbox" id="cookie-toggle-funcionalidad" />
+									<span class="cookie-toggle-slider"></span>
+								</label>
+							</div>
+							<div class="cookie-category-desc">
+								<p style="margin:0;">Recuerdan tus preferencias (idioma, secciones favoritas, tipo de navegador, etc.) para personalizar tu experiencia en la web.</p>
+							</div>
+						</div>
+
+						<div class="cookie-category" id="cookie-category-publicidad">
+							<div class="cookie-category-header">
+								<div class="cookie-category-header-left">
+									<span class="cookie-category-caret">&#10095;</span>
+									<span class="cookie-category-name">Publicidad</span>
+								</div>
+								<label class="cookie-toggle">
+									<input type="checkbox" id="cookie-toggle-publicidad" />
+									<span class="cookie-toggle-slider"></span>
+								</label>
+							</div>
+							<div class="cookie-category-desc">
+								<p style="margin:0;">Gestionan los espacios publicitarios según el contenido mostrado y la frecuencia de los anuncios, para que sean más útiles y menos repetitivos.</p>
+							</div>
+						</div>
+
+						<div class="cookie-category" id="cookie-category-publicidad_comportamental">
+							<div class="cookie-category-header">
+								<div class="cookie-category-header-left">
+									<span class="cookie-category-caret">&#10095;</span>
+									<span class="cookie-category-name">Publicidad Comportamental</span>
+								</div>
+								<label class="cookie-toggle">
+									<input type="checkbox" id="cookie-toggle-publicidad_comportamental" />
+									<span class="cookie-toggle-slider"></span>
+								</label>
+							</div>
+							<div class="cookie-category-desc">
+								<p style="margin:0;">Recogen información sobre tus hábitos de navegación para mostrarte publicidad ajustada a tus gustos e intereses personales.</p>
+							</div>
+						</div>
+					</div>
+
+					<div id="cookie-modal-footer">
+						<button type="button" class="cookie-btn cookie-btn-outline" data-cookie-action="reject-all">Rechazar todas</button>
+						<button type="button" class="cookie-btn cookie-btn-outline" data-cookie-action="save">Guardar preferencias</button>
+						<button type="button" class="cookie-btn cookie-btn-solid" data-cookie-action="accept-all">Aceptar todas</button>
+					</div>
+				</div>
+			</div>
+
+			<button type="button" id="cookie-reopen-tab" aria-label="Configuración de cookies" title="Configuración de cookies">
+				<i class="fas fa-cookie-bite"></i>
+			</button>
+
 		<!-- Scripts -->
 			<script src="assets/js/jquery.min.js"></script>
 			<script src="assets/js/jquery.scrollex.min.js"></script>
@@ -394,6 +496,7 @@
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
 			<script src="assets/js/carousel.js"></script>
+			<script src="assets/js/cookie.js"></script>
 
 	</body>
 </html>
