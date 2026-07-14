@@ -413,7 +413,61 @@ input, select, textarea {
 	.align-right {
 		text-align: right;
 	}
+	
+/* Pricing Plans */
+#one .plans-inner {
+	width: 100%;
+	padding-top: 2em;
+}
 
+#one .plans-grid {
+	display: flex;
+	gap: 2em;
+	width: 100%;
+}
+
+#one .plan-card {
+	flex: 1;
+	background: white;
+	border: 2px solid var(--color-primary-green);
+	border-radius: 0.6em;
+	padding: 2em 2.25em;
+}
+
+#one .plan-card-title {
+	font-family: "Title";
+	font-size: 1.5em;
+	color: #111;
+	margin-bottom: 0.75em;
+	text-align: left;
+}
+
+#one .plan-card-list {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	text-align: left;
+}
+
+#one .plan-card-list li {
+	display: flex;
+	align-items: baseline;
+	gap: 0.6em;
+	padding: 0.4em 0;
+	color: #1f2a44;
+	line-height: 1.4;
+}
+
+#one .plan-card-list li i {
+	color: var(--color-primary-green);
+	font-size: 0.8em;
+}
+
+@media screen and (max-width: 736px) {
+	#one .plans-grid {
+		flex-direction: column;
+	}
+}
 /* Workflow / Process line */
 .workflow-line {
     display: grid;

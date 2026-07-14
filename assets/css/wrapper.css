@@ -391,6 +391,10 @@
 					margin-bottom: 8em;
 				}
 
+				#one {
+   					 margin-top: -40px;
+				}
+
 
 		@media screen and (max-width: 980px) {
 
