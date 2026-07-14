@@ -560,17 +560,13 @@ input, select, textarea {
         flex-direction: column;
         align-items: flex-start;
         gap: 2em;
-        padding-left: 0;
+        padding: 0 1.25em;
     }
     .workflow-line::before {
-        display: block;
-        position: absolute;
-        left: 28px;
-        top: 5%;
-        bottom: 5%;
-        right: auto;
-        width: 3px;
-        height: auto;
+        /* Replaced by per-step connector segments below, since a single
+           line stretched to a % of the container overruns when step
+           text wraps to different heights. */
+        display: none;
     }
     .workflow-step {
         max-width: 100%;
@@ -579,6 +575,17 @@ input, select, textarea {
         text-align: left;
         gap: 1em;
         padding: 0;
+    }
+    .workflow-step:not(:last-child)::after {
+        content: '';
+        position: absolute;
+        left: 28px;
+        top: 56px;
+        bottom: -2em;
+        width: 3px;
+        background: var(--color-primary-green);
+        opacity: 0.3;
+        z-index: 0;
     }
     .workflow-icon {
         margin: 0;
@@ -813,6 +820,28 @@ input, select, textarea {
 			.image.main img {
 				width: 100%;
 			}
+
+/* Four Services - equal height images */
+
+	#four-services .features .image {
+		display: block;
+		height: 450px;
+		overflow: hidden;
+	}
+
+		#four-services .features .image img {
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+		}
+
+	@media screen and (max-width: 736px) {
+
+		#four-services .features .image {
+			height: 250px;
+		}
+
+	}
 
 /* List */
 
