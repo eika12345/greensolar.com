@@ -902,3 +902,144 @@ input, select, textarea {
 
 
 
+
+/* ==========================================================================
+   Why Green Solar (hero intro + feature grid)
+   ========================================================================== */
+
+#why-solar .inner {
+	width: 100%;
+	max-width: 1200px;
+	padding: 3em 3em 1em 3em;
+	box-sizing: border-box;
+}
+
+	.why-solar-grid {
+		display: grid;
+		grid-template-columns: 1fr 1.15fr;
+		gap: 4em;
+		align-items: center;
+	}
+
+	.why-solar-intro {
+		max-width: 26em;
+	}
+
+		.why-solar-title {
+			color: #14161f;
+			font-family: "Title";
+			font-weight: 800;
+			text-transform: none;
+			letter-spacing: normal;
+			border-bottom: none;
+			padding-bottom: 0;
+			font-size: 2.6em;
+			line-height: 1.15;
+			margin: 0 0 0.5em 0;
+		}
+
+			.why-solar-title-green {
+				color: var(--color-primary-green);
+			}
+
+		.why-solar-intro p {
+			font-family: "Text1";
+			color: #7a7d87;
+			font-size: 1.05em;
+			line-height: 1.6;
+			margin: 0 0 1.5em 0;
+		}
+
+		.why-solar-btn {
+			display: inline-block;
+			background-color: #14161f;
+			color: #ffffff;
+			font-family: "Title";
+			font-weight: 700;
+			font-size: 0.85em;
+			text-transform: none;
+			letter-spacing: normal;
+			padding: 1em 2em;
+			border-radius: 0.6em;
+			text-decoration: none;
+			transition: background-color 0.2s ease;
+		}
+
+			.why-solar-btn:hover {
+				background-color: var(--color-primary-green);
+			}
+
+	.why-solar-features {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		gap: 2.5em 2em;
+	}
+
+		.why-solar-item .why-solar-icon {
+			width: 64px;
+			height: 64px;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			background-color: #e4f7ea;
+			border-radius: 50%;
+			color: var(--color-primary-green);
+			font-size: 1.6em;
+			margin-bottom: 1em;
+		}
+
+		.why-solar-item h3 {
+			color: #14161f;
+			font-family: "Title";
+			font-weight: 700;
+			text-transform: none;
+			letter-spacing: normal;
+			font-size: 1.05em;
+			margin: 0 0 0.5em 0;
+		}
+
+		.why-solar-item p {
+			font-family: "Text1";
+			color: #9295a0;
+			font-size: 0.9em;
+			line-height: 1.6;
+			margin: 0;
+		}
+
+	@media screen and (max-width: 980px) {
+
+		.why-solar-grid {
+			grid-template-columns: 1fr;
+			gap: 3em;
+		}
+
+		.why-solar-intro {
+			max-width: none;
+		}
+
+	}
+
+	@media screen and (max-width: 736px) {
+
+		#why-solar .inner {
+			padding: 2em 2em 0.1em 2em;
+		}
+
+		.why-solar-title {
+			font-size: 2em;
+		}
+
+		.why-solar-features {
+			grid-template-columns: 1fr 1fr;
+			gap: 2em 1.25em;
+		}
+
+	}
+
+	@media screen and (max-width: 360px) {
+
+		#why-solar .inner {
+			padding: 2em 1.5em 0.1em 1.5em;
+		}
+
+	}

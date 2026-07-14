@@ -10,7 +10,6 @@
 		}
 
 		#wrapper > header h2 {
-			border-bottom: solid 2px rgba(255, 255, 255, 0.125);
 			font-size: 2em;
 			margin-bottom: 0.8em;
 			padding-bottom: 0.4em;
@@ -224,6 +223,10 @@
 			background-color: white;
 		}
 
+		.wrapper.spotlight.style1 {
+				border-top: 1px solid #ffffff;
+			}
+
 			.wrapper.spotlight:before, .wrapper.spotlight:after {
     background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100' preserveAspectRatio='none'%3E%3Cpolygon points='0,100 100,0 100,100' style='fill:%23ffffff%3B' /%3E%3C/svg%3E");
 }
@@ -365,15 +368,16 @@
 				}
 
 				#four:before, #four:after,
-				#four-services:before, #four-services:after {
+				#four-services:before, #four-services:after,
+				#why-solar:before, #why-solar:after {
 					background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100' preserveAspectRatio='none'%3E%3Cpolygon points='0,100 100,0 100,100' style='fill:%23ffffff%3B' /%3E%3C/svg%3E");
 				}
 
-				#four:before, #four-services:before {
+				#four:before, #four-services:before, #why-solar:before {
 					box-shadow: inset 0 -1px 0 0 #ffffff, 0 1px 0 0 #ffffff;
 				}
 
-				#four:after, #four-services:after {
+				#four:after, #four-services:after, #why-solar:after {
 					box-shadow: inset 0 -1px 0 0 #ffffff, 0 1px 0 0 #ffffff;
 				}
 
