@@ -1,9 +1,9 @@
-#privacy-content {
+        #textos-legales-content {
             padding: 8rem 2rem 4rem;
             flex: 1;
         }
 
-        #privacy-content .privacy-inner {
+        #textos-legales-content .textos-legales-inner {
             max-width: 800px;
             margin: 0 auto;
             color: var(--color-background-dark);
@@ -11,20 +11,20 @@
             padding: 3em 2em;
         }
 
-        #privacy-content h1 {
+        #textos-legales-content h1 {
             font-size: 2rem;
             font-weight: 700;
             color: var(--color-background-dark);
             margin-bottom: 0.5rem;
         }
 
-        #privacy-content {
+        #textos-legales-content {
             font-size: 1rem;
             color: #555;
             margin-bottom: 2rem;
         }
 
-        #privacy-content h2 {
+        #textos-legales-content h2 {
             font-size: 1.15rem;
             font-weight: 700;
             color: var(--color-background-dark);
@@ -32,19 +32,15 @@
             margin-bottom: 0.5rem;
         }
 
-        #privacy-content ul {
+        #textos-legales-content ul {
             padding-left: 1.25rem;
             margin-bottom: 1rem;
             font-weight: 900;
         }
 
-        #privacy-content ul li {
+        #textos-legales-content ul li {
             margin-bottom: 0.4rem;
         }
-
-        
-
-        
 
         @media screen and (max-width: 736px) {
             #privacy-content {
