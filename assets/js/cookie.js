@@ -179,6 +179,26 @@
 		}, 300);
 	}
 
+	function showBanner() {
+		var banner = document.getElementById("cookie-banner");
+		if (!banner) return;
+		banner.classList.add("visible");
+		requestAnimationFrame(function () {
+			requestAnimationFrame(function () {
+				banner.classList.add("open");
+			});
+		});
+	}
+
+	function hideBanner() {
+		var banner = document.getElementById("cookie-banner");
+		if (!banner) return;
+		banner.classList.remove("open");
+		setTimeout(function () {
+			banner.classList.remove("visible");
+		}, 250);
+	}
+
 	function showReopenTab() {
 		var tab = document.getElementById("cookie-reopen-tab");
 		if (tab) tab.classList.add("visible");
@@ -187,6 +207,7 @@
 	function finalizeConsent(consent) {
 		writeConsent(consent);
 		applyConsent(consent);
+		hideBanner();
 		hideModal();
 		showReopenTab();
 	}
@@ -208,8 +229,10 @@
 		var existing = readConsent();
 		if (existing) {
 			applyConsent(existing);
+			showReopenTab();
+		} else {
+			showBanner();
 		}
-		showReopenTab();
 
 		var acceptAllBtns = document.querySelectorAll("[data-cookie-action='accept-all']");
 		acceptAllBtns.forEach(function (btn) {
@@ -235,6 +258,7 @@
 		var customizeBtns = document.querySelectorAll("[data-cookie-action='customize']");
 		customizeBtns.forEach(function (btn) {
 			btn.addEventListener("click", function () {
+				hideBanner();
 				showModal();
 			});
 		});
