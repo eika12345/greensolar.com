@@ -1,0 +1,20 @@
+{
+	"nav.trabajos": "Projects",
+	"nav.calculadora": "Calculator",
+	"nav.instalaciones": "Installations",
+	"nav.valencia": "Valencia",
+	"nav.alicante": "Alicante",
+	"nav.murcia": "Murcia",
+	"nav.valencia_mobile": "- Valencia",
+	"nav.alicante_mobile": "- Alicante",
+	"nav.murcia_mobile": "- Murcia",
+	"nav.pergola": "Solar Pergola",
+	"nav.conoce_mas": "Learn more",
+	"nav.financiacion": "Financing",
+	"nav.contacto": "Contact",
+	"nav.presupuesto": "Get a quote",
+
+	"hero.subtitle": "The future of energy",
+	"hero.cta": "Request your quote",
+	"hero.logo_alt": "Solar energy logo"
+}

@@ -1,0 +1,20 @@
+{
+	"nav.trabajos": "Trabajos",
+	"nav.calculadora": "Calculadora",
+	"nav.instalaciones": "Instalaciones",
+	"nav.valencia": "Valencia",
+	"nav.alicante": "Alicante",
+	"nav.murcia": "Murcia",
+	"nav.valencia_mobile": "- Valencia",
+	"nav.alicante_mobile": "- Alicante",
+	"nav.murcia_mobile": "- Murcia",
+	"nav.pergola": "Pergola Solar",
+	"nav.conoce_mas": "Conoce más",
+	"nav.financiacion": "Financiación",
+	"nav.contacto": "Contacto",
+	"nav.presupuesto": "Presupuesto",
+
+	"hero.subtitle": "El futuro de la energía",
+	"hero.cta": "Solicita tu presupuesto",
+	"hero.logo_alt": "Logo de energía solar"
+}
