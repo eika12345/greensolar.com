@@ -1,7 +1,7 @@
 /* Banner */
 
 		#banner {
-    		padding: 13em 0 9em 0;
+    		padding: 13em 0 14.5em 0;
 		}
 
 		#banner .inner {
@@ -89,28 +89,28 @@
 			line-height: 2;
 			text-transform: uppercase;
 		}*/
+		@media screen and (max-width: 1500px) {
+			#banner {
+				padding: 7em 0 15em 0 ;
+			}
+		}
 
 		@media screen and (max-width: 1280px) {
-
 			#banner {
-				padding: 7em 0 8.25em 0 ;
-				/*background-color: #2e3141;
-				background-image: linear-gradient(to top, rgba(46, 49, 65, 0.8), rgba(46, 49, 65, 0.8)), url("../../images/bg.jpg");
-				background-size: auto, cover;
-				background-position: center, center;*/
+				padding: 7em 0 20em 0 ;
 				margin-bottom: -6.5em;
 			}
+
 			#banner .logo img {
 			width: 150px;
 			height: auto;
-		}
-
+		}	
 		}
 
 		@media screen and (max-width: 980px) {
 
 			#banner {
-				padding: 12em 3em 12.375em 3em ;
+				padding: 12em 3em 14em 3em ;
 				margin-bottom: -4.75em;
 			}
 
