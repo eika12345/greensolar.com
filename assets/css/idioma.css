@@ -1,0 +1,108 @@
+/* Language picker — sits next to the h1, left side of the header */
+
+#lang-picker {
+	position: relative;
+	margin-left: 1.25em;
+	font-family: "Title";
+	font-size: 0.7em;
+	font-weight: 700;
+	letter-spacing: 0.05em;
+}
+
+#lang-picker-toggle {
+	display: flex;
+	align-items: center;
+	gap: 0.6em;
+	background: transparent;
+	border-radius: 4px;
+	color: #ffffff;
+	padding: 0.35em 0.6em;
+	cursor: pointer;
+    line-height: 1;
+}
+
+.lang-picker-flag {
+	width: 1.3em;
+	height: 1.3em;
+	border-radius: 2px;
+	background-size: cover;
+	flex-shrink: 0;
+    line-height: 1;
+    padding-left: 20px;
+}
+
+#lang-picker-toggle:hover {
+	background-color: rgba(255, 255, 255, 0.1);
+}
+
+#lang-picker-toggle:after {
+	content: '';
+	display: inline-block;
+	margin-left: 0.2em;
+	border-left: 4px solid transparent;
+	border-right: 4px solid transparent;
+	border-top: 4px solid currentColor;
+	vertical-align: middle;
+}
+
+.lang-picker-code {
+	color: #ffffff;
+    line-height: 1;
+}
+
+#lang-picker-list {
+	position: absolute;
+	top: calc(100% + 0.4em);
+	left: 0;
+	min-width: 9em;
+	margin: 0;
+	padding: 0.4em 0;
+	list-style: none;
+	background-color: rgba(0, 0, 0, 0.9);
+	border-radius: 4px;
+	box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
+	opacity: 0;
+	visibility: hidden;
+	transform: translateY(-6px);
+	transition: opacity 0.2s ease-in-out, transform 0.2s ease-in-out, visibility 0.2s;
+}
+
+#lang-picker.open #lang-picker-list {
+	opacity: 1;
+	visibility: visible;
+	transform: translateY(0);
+}
+
+#lang-picker-list li {
+	display: flex;
+	align-items: center;
+	gap: 0.7em;
+	padding: 0.5em 1em;
+	color: #ffffff;
+	font-weight: 400;
+	text-transform: none;
+	letter-spacing: normal;
+	cursor: pointer;
+	transition: background-color 0.2s ease-in-out;
+}
+
+#lang-picker-list li:hover {
+	background-color: rgba(255, 255, 255, 0.1);
+}
+
+#lang-picker-list li[aria-selected="true"] {
+	color: var(--color-primary-green);
+	font-weight: 700;
+}
+
+@media screen and (max-width: 480px) {
+	#lang-picker {
+		margin-left: 0.75em;
+	}
+	.lang-picker-code {
+		display: none;
+	}
+	#lang-picker-toggle {
+		padding: 0.35em 0.5em;
+	}
+}
