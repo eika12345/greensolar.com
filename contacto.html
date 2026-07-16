@@ -15,6 +15,7 @@
 		<link rel="stylesheet" href="assets/css/button.css" />
 		<link rel="stylesheet" href="assets/css/counter.css" />
 		<link rel="stylesheet" href="assets/css/miscellaneous.css" />
+        <link rel="stylesheet" href="assets/css/cookie.css" />
         <link rel="stylesheet" href="assets/css/contacto.css" />
 
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
@@ -76,11 +77,11 @@
 								<div class="fields">
 									<div class="field">
 										<label for="name">Nombre</label>
-										<input type="text" name="name" id="name" required />
+										<input type="text" name="name" id="name" autocomplete="name" required />
 									</div>
 									<div class="field">
 										<label for="email">Email</label>
-										<input type="email" name="email" id="email" required />
+										<input type="email" name="email" id="email" autocomplete="email" required />
 									</div>
 									<div class="field">
 										<label for="message">Mensaje</label>
@@ -100,7 +101,7 @@
 								<li class="icon solid fa-home">Calle Yuca, 15 Pilar de la Horadada – Alicante (03190)</li>
 								<li class="icon solid fa-phone">633 571 267</li>
 								<li class="icon solid fa-phone">635 221 514</li>
-								<li class="icon solid fa-envelope"><a href="#">info@green-solar.es</a></li>
+								<li class="icon solid fa-envelope">info@green-solar.es</li>
 							</ul>
 
                             
@@ -150,7 +151,7 @@
                             </tbody>
                         </table>
                     </div>
-					<iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d100742.94711389976!2d-0.883007!3d37.901988!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd630b9146bc2283%3A0x56fd8a80731cf16b!2sC.%20Yuca%20Pc%2C%2015%2C%2003191%20Pinar%20de%20Campoverde%2C%20Alicante%2C%20Spain!5e0!3m2!1sen!2sus!4v1782571588867!5m2!1sen!2sus" style="border:0; width:100%; height:100%; min-height:400px;" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+					<iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d100742.94711389976!2d-0.883007!3d37.901988!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd630b9146bc2283%3A0x56fd8a80731cf16b!2sC.%20Yuca%20Pc%2C%2015%2C%2003191%20Pinar%20de%20Campoverde%2C%20Alicante%2C%20Spain!5e0!3m2!1sen!2sus!4v1782571588867!5m2!1sen!2sus" style="border:0; width:100%; height:100%; min-height:400px;" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" title="Ubicación Green Solar en Pinar de Campoverde, Alicante"></iframe>
                     </section>
 
         
@@ -199,12 +200,123 @@
     </div>
 </footer>
 
+<!------------------------------- Cookie Consent ------------------------------->
+			<div id="cookie-banner" role="dialog" aria-label="Aviso de cookies">
+				<p id="cookie-banner-text">Usamos cookies propias y de terceros para mejorar tu experiencia. Puedes aceptarlas, rechazarlas o personalizarlas. Más información en nuestra <a href="politica-de-cookies.html">Política de Cookies</a>.</p>
+				<div id="cookie-banner-actions">
+					<button type="button" class="cookie-btn cookie-btn-text" data-cookie-action="customize">Personalizar</button>
+					<button type="button" class="cookie-btn cookie-btn-outline" data-cookie-action="reject-all">Rechazar</button>
+					<button type="button" class="cookie-btn cookie-btn-solid" data-cookie-action="accept-all">Aceptar</button>
+				</div>
+			</div>
+
+			<div id="cookie-modal-overlay">
+				<div id="cookie-modal" role="dialog" aria-modal="true" aria-labelledby="cookie-modal-title">
+					<div id="cookie-modal-header">
+						<h2 id="cookie-modal-title">Configuración de cookies</h2>
+						<button type="button" id="cookie-modal-close" aria-label="Cerrar">&times;</button>
+					</div>
+
+					<div id="cookie-modal-body">
+						<p>Usamos cookies para que la web funcione correctamente y, con tu consentimiento, para analizarla, personalizarla y mostrar publicidad ajustada. Puedes activar o desactivar cada tipo a continuación. Para más detalle, consulta nuestra <a href="politica-de-cookies.html">Política de Cookies</a>.</p>
+
+						<div class="cookie-category" id="cookie-category-tecnicas">
+							<div class="cookie-category-header">
+								<div class="cookie-category-header-left">
+									<span class="cookie-category-caret">&#10095;</span>
+									<span class="cookie-category-name">Técnicas</span>
+								</div>
+								<span class="cookie-category-status">Siempre activas</span>
+							</div>
+							<div class="cookie-category-desc">
+								<p style="margin:0;">Necesarias para que la web funcione correctamente (navegación, recordar tus preferencias de cookies, etc.). No requieren tu autorización y no pueden desactivarse.</p>
+							</div>
+						</div>
+
+						<div class="cookie-category" id="cookie-category-analisis">
+							<div class="cookie-category-header">
+								<div class="cookie-category-header-left">
+									<span class="cookie-category-caret">&#10095;</span>
+									<span class="cookie-category-name">Análisis</span>
+								</div>
+								<label class="cookie-toggle">
+									<input type="checkbox" id="cookie-toggle-analisis" />
+									<span class="cookie-toggle-slider"></span>
+								</label>
+							</div>
+							<div class="cookie-category-desc">
+								<p style="margin:0;">Nos permiten estudiar cómo navegan los usuarios por la web (secciones más visitadas, funcionamiento de los servicios, etc.) para mejorarla. No tienen finalidad publicitaria.</p>
+							</div>
+						</div>
+
+						<div class="cookie-category" id="cookie-category-funcionalidad">
+							<div class="cookie-category-header">
+								<div class="cookie-category-header-left">
+									<span class="cookie-category-caret">&#10095;</span>
+									<span class="cookie-category-name">Funcionalidad y Personalización</span>
+								</div>
+								<label class="cookie-toggle">
+									<input type="checkbox" id="cookie-toggle-funcionalidad" />
+									<span class="cookie-toggle-slider"></span>
+								</label>
+							</div>
+							<div class="cookie-category-desc">
+								<p style="margin:0;">Recuerdan tus preferencias (idioma, secciones favoritas, tipo de navegador, etc.) para personalizar tu experiencia en la web.</p>
+							</div>
+						</div>
+
+						<div class="cookie-category" id="cookie-category-publicidad">
+							<div class="cookie-category-header">
+								<div class="cookie-category-header-left">
+									<span class="cookie-category-caret">&#10095;</span>
+									<span class="cookie-category-name">Publicidad</span>
+								</div>
+								<label class="cookie-toggle">
+									<input type="checkbox" id="cookie-toggle-publicidad" />
+									<span class="cookie-toggle-slider"></span>
+								</label>
+							</div>
+							<div class="cookie-category-desc">
+								<p style="margin:0;">Gestionan los espacios publicitarios según el contenido mostrado y la frecuencia de los anuncios, para que sean más útiles y menos repetitivos.</p>
+							</div>
+						</div>
+
+						<div class="cookie-category" id="cookie-category-publicidad_comportamental">
+							<div class="cookie-category-header">
+								<div class="cookie-category-header-left">
+									<span class="cookie-category-caret">&#10095;</span>
+									<span class="cookie-category-name">Publicidad Comportamental</span>
+								</div>
+								<label class="cookie-toggle">
+									<input type="checkbox" id="cookie-toggle-publicidad_comportamental" />
+									<span class="cookie-toggle-slider"></span>
+								</label>
+							</div>
+							<div class="cookie-category-desc">
+								<p style="margin:0;">Recogen información sobre tus hábitos de navegación para mostrarte publicidad ajustada a tus gustos e intereses personales.</p>
+							</div>
+						</div>
+					</div>
+
+					<div id="cookie-modal-footer">
+						<button type="button" class="cookie-btn cookie-btn-outline" data-cookie-action="reject-all">Rechazar todas</button>
+						<button type="button" class="cookie-btn cookie-btn-outline" data-cookie-action="save">Guardar preferencias</button>
+						<button type="button" class="cookie-btn cookie-btn-solid" data-cookie-action="accept-all">Aceptar todas</button>
+					</div>
+				</div>
+			</div>
+
+			<button type="button" id="cookie-reopen-tab" aria-label="Configuración de cookies" title="Configuración de cookies">
+				<i class="fas fa-cookie-bite"></i>
+			</button>
+
 		<script src="assets/js/jquery.min.js"></script>
 			<script src="assets/js/jquery.scrollex.min.js"></script>
 			<script src="assets/js/browser.min.js"></script>
 			<script src="assets/js/breakpoints.min.js"></script>
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
+            <script src="assets/js/cookie.js"></script>
 			<script src="assets/js/contacto.js"></script>
 
 	</body>

@@ -146,6 +146,10 @@
 		min-height: 1.2em;
 	}
 
+	#contact #form-status.success {
+		color: var(--color-primary-green);
+	}
+
 	@media screen and (max-width: 1280px) {
 
 
