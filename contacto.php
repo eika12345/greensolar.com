@@ -37,6 +37,10 @@ if (!filter_var($_POST['email'] ?? '', FILTER_VALIDATE_EMAIL)) {
     jsonError('El email no es válido');
 }
 
+if (trim($_POST['consent'] ?? '') === '') {
+    jsonError('Debes aceptar la política de privacidad');
+}
+
 $htmlBody = "
 <h2>Nuevo mensaje de contacto</h2>
 <p><strong>Nombre:</strong> {$data['name']}<br>

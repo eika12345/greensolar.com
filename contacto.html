@@ -68,31 +68,34 @@
 							<h2 class="major">Ahorra con Green Solar</h2>
 							<!--<p>Te asesoramos a elegir tus placas y la tarifa solar ideal para ti ¡así de fácil!</p>-->
 							<form id="contact-form" method="post">
-    <!-- honeypot, hidden from real users -->
-    <div style="position:absolute; left:-9999px;" aria-hidden="true">
-        <label for="website">Website</label>
-        <input type="text" name="website" id="website" tabindex="-1" autocomplete="off">
-    </div>
-
-    <div class="fields">
-        <div class="field">
-            <label for="name">Nombre</label>
-            <input type="text" name="name" id="name" required />
-        </div>
-        <div class="field">
-            <label for="email">Email</label>
-            <input type="email" name="email" id="email" required />
-        </div>
-        <div class="field">
-            <label for="message">Mensaje</label>
-            <textarea name="message" id="message" rows="4" required></textarea>
-        </div>
-    </div>
-    <ul class="actions">
-        <li><input type="submit" value="Enviar Mensaje" /></li>
-    </ul>
-    <p class="form-status" id="form-status" role="status"></p>
-</form>
+								<!-- honeypot, hidden from real users -->
+								<div style="position:absolute; left:-9999px;" aria-hidden="true">
+									<label for="website">Website</label>
+									<input type="text" name="website" id="website" tabindex="-1" autocomplete="off">
+								</div>
+								<div class="fields">
+									<div class="field">
+										<label for="name">Nombre</label>
+										<input type="text" name="name" id="name" required />
+									</div>
+									<div class="field">
+										<label for="email">Email</label>
+										<input type="email" name="email" id="email" required />
+									</div>
+									<div class="field">
+										<label for="message">Mensaje</label>
+										<textarea name="message" id="message" rows="4" required></textarea>
+									</div>
+									<div class="field">
+										<input type="checkbox" name="consent" id="consent" required />
+										<label for="consent">He leído y acepto la <a href="politica-de-privacidad.html">política de privacidad</a></label>
+									</div>
+								</div>
+								<ul class="actions">
+									<li><input type="submit" value="Enviar Mensaje" /></li>
+								</ul>
+								<p id="form-status" aria-live="polite"></p>
+							</form>
 							<ul class="contact">
 								<li class="icon solid fa-home">Calle Yuca, 15 Pilar de la Horadada – Alicante (03190)</li>
 								<li class="icon solid fa-phone">633 571 267</li>
@@ -202,8 +205,7 @@
 			<script src="assets/js/breakpoints.min.js"></script>
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
-            <script src="assets/js/contacto.js"></script>
-            
+			<script src="assets/js/contacto.js"></script>
 
 	</body>
 </html>

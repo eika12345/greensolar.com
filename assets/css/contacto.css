@@ -63,8 +63,6 @@
 					color: inherit;
 				}
 
-	/* Text colours for white background */
-
 	#contact h2,
 	#contact h3,
 	#contact h4 {
@@ -115,6 +113,37 @@
 	#contact input[type="email"]:focus,
 	#contact textarea:focus {
 		border-color: var(--color-primary-green);
+	}
+
+	#contact input[type="checkbox"] + label:before {
+		background: rgba(0, 0, 0, 0.05);
+		border-color: rgba(0, 0, 0, 0.25);
+		color: #2e3141;
+	}
+
+	#contact input[type="checkbox"]:checked + label:before {
+		background: var(--color-primary-green);
+		border-color: var(--color-primary-green);
+		color: #ffffff;
+	}
+
+	#contact input[type="checkbox"]:focus + label:before {
+		border-color: var(--color-primary-green);
+	}
+
+	#contact .field a {
+		color: #2e3141;
+		border-bottom-color: rgba(46, 49, 65, 0.35);
+	}
+
+	#contact .field a:hover {
+		color: var(--color-primary-green);
+	}
+
+	#contact #form-status {
+		margin-top: 1em;
+		font-weight: 600;
+		min-height: 1.2em;
 	}
 
 	@media screen and (max-width: 1280px) {
@@ -210,7 +239,6 @@
 .page-contact #banner {
    
 }
-/* reset banner.css negative margins for this page */
 .page-contact #banner {
     margin-bottom: 0;
     height: auto;
@@ -220,7 +248,6 @@
         height: 13em;
     }
 }
-/* only override where actually needed */
 @media screen and (max-width: 736px) {
     .page-contact #banner {
         height: 13em;
