@@ -151,7 +151,7 @@
     border-radius: 0;
 }		
 
-@media screen and (max-width: 1020px) {
+@media screen and (max-width: 1150px) {
 
      /* Hide the desktop dropdown on mobile */
 #header nav ul li.has-dropdown .dropdown {
