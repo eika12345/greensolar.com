@@ -26,7 +26,7 @@
 		document.querySelectorAll("[data-i18n]").forEach(function (el) {
 			var key = el.getAttribute("data-i18n");
 			var value = dict[key];
-			if (value === undefined) return; // leave default Spanish text if key missing
+			if (value === undefined) return;
 
 			var attr = el.getAttribute("data-i18n-attr");
 			if (attr) {
