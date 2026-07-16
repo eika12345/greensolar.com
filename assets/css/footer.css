@@ -288,10 +288,9 @@
 .footer-cta {
     display: inline-block;
     border: 2px solid var(--color-primary-green);
-	background-color: var(--color-primary-green);
+	color: var(--color-primary-green);
     border-radius: 4px;
     padding: 0.55em 1em;
-    color: black;
     text-decoration: none;
     font-size: 0.85em;
     letter-spacing: 0.08em;
@@ -299,12 +298,12 @@
     transition: background-color 0.2s ease-in-out;
 	margin-top: 5px;
 	font-weight: 900;
+	transform: 0.1s;
 }
 
 .footer-cta:hover {
-    background-color: transparent;
-    color: var(--color-primary-green) !important;
-    border-color: var(--color-primary-green);
+    color: white;
+	border: 2px solid white;
 }
 
 .footer-nav-bottom {
