@@ -30,7 +30,9 @@
 
 			var attr = el.getAttribute("data-i18n-attr");
 			if (attr) {
-				el.setAttribute(attr, value);
+				attr.split(",").forEach(function (a) {
+					el.setAttribute(a.trim(), value);
+				});
 			} else {
 				el.textContent = value;
 			}
@@ -111,4 +113,3 @@
 		init();
 	}
 })();
-
