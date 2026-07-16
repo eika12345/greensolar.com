@@ -9,6 +9,11 @@
 			width: 55em;
 		}
 
+		#banner .logo img {
+			width: 250px;
+			height: auto;
+		}
+
 		#banner .logo {
 			-moz-transition: opacity 2s ease, -moz-transform 1s ease;
 			-webkit-transition: opacity 2s ease, -webkit-transform 1s ease;
@@ -95,6 +100,10 @@
 				background-position: center, center;*/
 				margin-bottom: -6.5em;
 			}
+			#banner .logo img {
+			width: 150px;
+			height: auto;
+		}
 
 		}
 
@@ -207,4 +216,3 @@
     background-color: rgba(255, 255, 255, 0.00);
 	color: var(--color-primary-green) !important;
 }
-
