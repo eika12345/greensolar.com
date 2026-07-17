@@ -17,7 +17,7 @@ if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
 }
 
 // ── 1. Collect + validate fields (never trust client-side validation alone) ──
-$required = ['tipoInstalacion', 'tipoTejado', 'ubicacion', 'direccion', 'nombre', 'telefono', 'email'];
+$required = ['tipoInstalacion', 'tipoServicio', 'ubicacion', 'direccion', 'nombre', 'telefono', 'email'];
 $data = [];
 
 foreach ($required as $field) {
@@ -32,21 +32,50 @@ if (!filter_var($_POST['email'] ?? '', FILTER_VALIDATE_EMAIL)) {
     jsonError('El email no es válido');
 }
 
+// tipoTejado + consumo/superficie only exist in the form when tipoServicio === 'fotovoltaica'
+$esFotovoltaica = $data['tipoServicio'] === 'fotovoltaica';
+
+$data['tipoTejado'] = '';
+if ($esFotovoltaica) {
+    $tipoTejado = trim($_POST['tipoTejado'] ?? '');
+    if ($tipoTejado === '') {
+        jsonError('Falta el campo obligatorio: tipoTejado');
+    }
+    $data['tipoTejado'] = htmlspecialchars($tipoTejado, ENT_QUOTES, 'UTF-8');
+}
+
+// comentarios is always optional, free text
+$comentarios = trim($_POST['comentarios'] ?? '');
+$data['comentarios'] = htmlspecialchars($comentarios, ENT_QUOTES, 'UTF-8');
+
 $consumoMensual = (float) ($_POST['consumoMensual'] ?? 0);
 $tejadoAncho    = (float) ($_POST['tejadoAncho'] ?? 0);
 $tejadoAlto     = (float) ($_POST['tejadoAlto'] ?? 0);
 
 // ── 2. Recalculate the estimate server-side (never trust numbers computed in the browser) ──
-$consumoAnualKwh    = $consumoMensual * 12;
-$horasSolPico       = 4.5;
-$eficienciaSistema  = 0.8;
-$potenciaWattPanel  = 450;
+// Panel/kW/savings math only makes sense for a solar installation; other
+// services (EV charger, piscina, baterías) skip straight to a plain contact request.
+$consumoAnualKwh     = 0;
+$potenciaNecesariaKw = 0;
+$numPaneles          = 0;
+$superficieTejado    = 0;
+$superficieNecesaria = 0;
+$ahorroAnualEstimado = 0;
+$cabeEnTejado        = null;
 
-$potenciaNecesariaKw = $consumoAnualKwh / ($horasSolPico * 365 * $eficienciaSistema);
-$numPaneles          = max(1, (int) ceil(($potenciaNecesariaKw * 1000) / $potenciaWattPanel));
-$superficieTejado    = $tejadoAncho * $tejadoAlto;
-$superficieNecesaria = $numPaneles * 1.7;
-$ahorroAnualEstimado = round($consumoAnualKwh * 0.15 * 0.7);
+if ($esFotovoltaica) {
+    $consumoAnualKwh    = $consumoMensual * 12;
+    $horasSolPico       = 4.5;
+    $eficienciaSistema  = 0.8;
+    $potenciaWattPanel  = 450;
+
+    $potenciaNecesariaKw = $consumoAnualKwh / ($horasSolPico * 365 * $eficienciaSistema);
+    $numPaneles          = max(1, (int) ceil(($potenciaNecesariaKw * 1000) / $potenciaWattPanel));
+    $superficieTejado    = $tejadoAncho * $tejadoAlto;
+    $superficieNecesaria = $numPaneles * 1.7;
+    $ahorroAnualEstimado = round($consumoAnualKwh * 0.15 * 0.7);
+    $cabeEnTejado        = $superficieTejado >= $superficieNecesaria;
+}
 
 // ── 3. Handle the optional factura upload ──
 $attachments = [];
@@ -74,6 +103,10 @@ $labels = [
     'vivienda-unifamiliar' => 'Vivienda Unifamiliar',
     'comunidad-vecinos'    => 'Comunidad de Vecinos',
     'empresa'              => 'Empresa',
+    'fotovoltaica'         => 'Instalación Fotovoltaica',
+    'cargador-ev'          => 'Cargador Vehículo Eléctrico',
+    'piscina'              => 'Piscina',
+    'baterias'             => 'Baterías de Almacenamiento',
     'plano'                => 'Plano',
     'un-agua'               => 'A un agua',
     'dos-aguas'             => 'A dos aguas',
@@ -83,8 +116,31 @@ $labels = [
 ];
 
 $tipoInstalacionLabel = $labels[$data['tipoInstalacion']] ?? $data['tipoInstalacion'];
+$tipoServicioLabel    = $labels[$data['tipoServicio']] ?? $data['tipoServicio'];
 $tipoTejadoLabel      = $labels[$data['tipoTejado']] ?? $data['tipoTejado'];
 $ubicacionLabel       = $labels[$data['ubicacion']] ?? $data['ubicacion'];
+
+$consumoTejadoSection = '';
+$estimacionSection    = '';
+
+if ($esFotovoltaica) {
+    $consumoTejadoSection = "
+<h3>Consumo y tejado</h3>
+<p><strong>Tipo de tejado:</strong> {$tipoTejadoLabel}<br>
+<strong>Consumo mensual:</strong> {$consumoMensual} kW ({$consumoAnualKwh} kWh/año)<br>
+<strong>Superficie del tejado:</strong> {$tejadoAncho}m x {$tejadoAlto}m = {$superficieTejado} m²</p>";
+
+    $estimacionSection = "
+<h3>Estimación calculada</h3>
+<p><strong>Paneles estimados:</strong> {$numPaneles}<br>
+<strong>Potencia estimada:</strong> " . number_format($potenciaNecesariaKw, 2) . " kW<br>
+<strong>Superficie necesaria:</strong> {$superficieNecesaria} m²<br>
+<strong>Ahorro anual estimado:</strong> {$ahorroAnualEstimado} €</p>";
+}
+
+$comentariosSection = $data['comentarios'] !== ''
+    ? "<h3>Información adicional</h3><p>{$data['comentarios']}</p>"
+    : '';
 
 $htmlBody = "
 <h2>Nueva solicitud de presupuesto</h2>
@@ -95,19 +151,12 @@ $htmlBody = "
 
 <h3>Detalles de la instalación</h3>
 <p><strong>Tipo de instalación:</strong> {$tipoInstalacionLabel}<br>
-<strong>Tipo de tejado:</strong> {$tipoTejadoLabel}<br>
+<strong>Servicio de interés:</strong> {$tipoServicioLabel}<br>
 <strong>Ubicación:</strong> {$ubicacionLabel}<br>
 <strong>Dirección:</strong> {$data['direccion']}</p>
-
-<h3>Consumo y tejado</h3>
-<p><strong>Consumo mensual:</strong> {$consumoMensual} kW ({$consumoAnualKwh} kWh/año)<br>
-<strong>Superficie del tejado:</strong> {$tejadoAncho}m x {$tejadoAlto}m = {$superficieTejado} m²</p>
-
-<h3>Estimación calculada</h3>
-<p><strong>Paneles estimados:</strong> {$numPaneles}<br>
-<strong>Potencia estimada:</strong> " . number_format($potenciaNecesariaKw, 2) . " kW<br>
-<strong>Superficie necesaria:</strong> {$superficieNecesaria} m²<br>
-<strong>Ahorro anual estimado:</strong> {$ahorroAnualEstimado} €</p>
+{$consumoTejadoSection}
+{$estimacionSection}
+{$comentariosSection}
 " . (empty($attachments) ? '<p><em>No se adjuntó factura.</em></p>' : '<p>Factura adjunta.</p>');
 
 // ── 5. Send via Brevo's transactional email API ──
@@ -148,10 +197,11 @@ if ($curlError || $httpCode >= 300) {
 echo json_encode([
     'success' => true,
     'estimate' => [
+        'esFotovoltaica'      => $esFotovoltaica,
         'numPaneles'          => $numPaneles,
         'potenciaKw'          => number_format($potenciaNecesariaKw, 2),
         'superficieNecesaria' => $superficieNecesaria,
-        'cabeEnTejado'        => $superficieTejado >= $superficieNecesaria,
+        'cabeEnTejado'        => $cabeEnTejado,
         'ahorroAnualEstimado' => $ahorroAnualEstimado,
     ],
 ]);

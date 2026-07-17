@@ -50,7 +50,7 @@
 
 #presupuesto .progress-fill {
     height: 100%;
-    width: 16.666%; /* step 1 of 6 */
+    width: 0%; /* step 1 of 7 default; JS sets the real width based on the active flow */
     background: var(--color-primary-green);
     border-radius: var(--radius-lg);
     transition: width 0.3s ease-in-out;
@@ -121,6 +121,8 @@
     gap: 0.6em;
     text-align: center;
     min-height: 6.5em;
+    height: 100%;
+    box-sizing: border-box;
     padding: 1.25em 1.25em;
     border-radius: var(--radius-md);
     border: solid 2px rgba(0, 0, 0, 0.15);
@@ -221,7 +223,7 @@
     color: var(--color-primary-green);
 }
 
-/* Step 5/6 text fields need dark-on-light labels since form.css assumes a dark bg */
+/* Step 6/7 text fields need dark-on-light labels since form.css assumes a dark bg */
 #presupuesto .field label {
     color: black;
 }
@@ -229,7 +231,8 @@
 #presupuesto input[type="text"],
 #presupuesto input[type="email"],
 #presupuesto input[type="tel"],
-#presupuesto input[type="file"] {
+#presupuesto input[type="file"],
+#presupuesto textarea {
     background: rgba(255, 255, 255, 0.5);
     border-color: rgba(0, 0, 0, 0.15);
     color: black;
@@ -237,8 +240,19 @@
 
 #presupuesto input[type="text"]:focus,
 #presupuesto input[type="email"]:focus,
-#presupuesto input[type="tel"]:focus {
+#presupuesto input[type="tel"]:focus,
+#presupuesto textarea:focus {
     border-color: var(--color-primary-green);
+}
+
+#presupuesto textarea {
+    resize: vertical;
+    min-height: 6em;
+    font-family: inherit;
+}
+
+#presupuesto textarea::placeholder {
+    color: rgba(0, 0, 0, 0.45);
 }
 
 /* Nav buttons */

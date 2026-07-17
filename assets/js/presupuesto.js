@@ -4,12 +4,14 @@
 	var form = document.getElementById('presupuesto-form');
 	if (!form) return; // safety: script loaded on a page without the form
 
-	var TOTAL_STEPS = 6;
+	var ALL_STEPS = [1, 2, 3, 4, 5, 6, 7];
+	var SOLAR_ONLY_STEPS = [3, 4, 5]; // tipo de tejado, consumo, superficie tejado
 
 	var state = {
 		step: 1,
 		data: {
 			tipoInstalacion: '',
+			tipoServicio: '',
 			tipoTejado: '',
 			consumoMensual: 300,
 			tejadoAncho: 10,
@@ -19,13 +21,29 @@
 			factura: null,
 			nombre: '',
 			telefono: '',
-			email: ''
+			email: '',
+			comentarios: ''
 		}
 	};
+
+	function getSelectedService() {
+		var checked = form.querySelector('input[name="tipoServicio"]:checked');
+		return checked ? checked.value : '';
+	}
+
+	// Roof/consumption questions only make sense for a solar installation —
+	// every other service skips straight from "tipo de servicio" to "ubicacion".
+	function getVisibleSteps() {
+		if (getSelectedService() === 'fotovoltaica') return ALL_STEPS;
+		return ALL_STEPS.filter(function (s) {
+			return SOLAR_ONLY_STEPS.indexOf(s) === -1;
+		});
+	}
 
 	var steps = form.querySelectorAll('.form-step');
 	var progressFill = document.getElementById('progress-fill');
 	var currentStepNum = document.getElementById('current-step-num');
+	var totalStepsNum = document.getElementById('total-steps-num');
 	var btnPrev = document.getElementById('btn-prev');
 	var btnNext = document.getElementById('btn-next');
 	var btnSubmit = document.getElementById('btn-submit');
@@ -58,12 +76,18 @@
 			el.classList.toggle('active', Number(el.dataset.step) === n);
 		});
 		state.step = n;
-		currentStepNum.textContent = n;
-		progressFill.style.width = ((n - 1) / (TOTAL_STEPS - 1)) * 100 + '%';
 
-		btnPrev.classList.toggle('visible', n > 1);
+		var visible = getVisibleSteps();
+		var index = visible.indexOf(n);
+		if (index === -1) index = 0; // safety fallback
 
-		if (n === TOTAL_STEPS) {
+		currentStepNum.textContent = index + 1;
+		totalStepsNum.textContent = visible.length;
+		progressFill.style.width = (visible.length > 1 ? (index / (visible.length - 1)) * 100 : 0) + '%';
+
+		btnPrev.classList.toggle('visible', index > 0);
+
+		if (index === visible.length - 1) {
 			btnNext.classList.add('hidden');
 			btnSubmit.classList.add('visible');
 		} else {
@@ -113,11 +137,23 @@
 
 	btnNext.addEventListener('click', function () {
 		if (!isStepValid(state.step)) return;
-		if (state.step < TOTAL_STEPS) goToStep(state.step + 1);
+		var visible = getVisibleSteps();
+		var index = visible.indexOf(state.step);
+		if (index > -1 && index < visible.length - 1) goToStep(visible[index + 1]);
 	});
 
 	btnPrev.addEventListener('click', function () {
-		if (state.step > 1) goToStep(state.step - 1);
+		var visible = getVisibleSteps();
+		var index = visible.indexOf(state.step);
+		if (index > 0) goToStep(visible[index - 1]);
+	});
+
+	// ── Step 2: tipo de servicio (affects whether solar-only steps 3-5 are shown) ──
+	form.querySelectorAll('input[name="tipoServicio"]').forEach(function (radio) {
+		radio.addEventListener('change', function () {
+			state.data.tipoServicio = radio.value;
+			goToStep(state.step); // re-render counter/progress bar against the new visible-steps list
+		});
 	});
 
 	// ── Step 3: consumo slider ──
@@ -144,30 +180,38 @@
 	function collectFormData() {
 		var fd = new FormData(form);
 		state.data.tipoInstalacion = fd.get('tipoInstalacion') || '';
+		state.data.tipoServicio = fd.get('tipoServicio') || '';
 		state.data.tipoTejado = fd.get('tipoTejado') || '';
 		state.data.ubicacion = fd.get('ubicacion') || '';
 		state.data.direccion = fd.get('direccion') || '';
 		state.data.nombre = fd.get('nombre') || '';
 		state.data.telefono = fd.get('telefono') || '';
 		state.data.email = fd.get('email') || '';
+		state.data.comentarios = fd.get('comentarios') || '';
 		state.data.factura = fd.get('factura');
 	}
 
 	function renderConfirmation(estimate) {
-		var roofNote = estimate.cabeEnTejado
-			? 'Tu tejado tiene espacio suficiente para esta instalaci\u00F3n.'
-			: '\u26A0\uFE0F El espacio es ajustado \u2014 uno de nuestros t\u00E9cnicos confirmar\u00E1 la distribuci\u00F3n exacta en la visita.';
+		var greeting = '<h3>\u00A1Formulario enviado!</h3>' +
+			'<p>Gracias, ' + escapeHtml(state.data.nombre.split(' ')[0] || '') + '. Nuestros agentes se pondr\u00E1n en contacto contigo lo antes posible.</p>';
 
-		confirmationScreen.innerHTML =
-			'<h3>\u00A1Formulario enviado!</h3>' +
-			'<p>Gracias, ' + escapeHtml(state.data.nombre.split(' ')[0] || '') + '. Nuestros agentes se pondr\u00E1n en contacto contigo lo antes posible.</p>' +
-			'<div class="estimate-card">' +
-			'<h4>Tu estimaci\u00F3n orientativa</h4>' +
-			'<p><strong>' + estimate.numPaneles + '</strong> paneles solares (\u2248 ' + estimate.potenciaKw + ' kW de potencia)</p>' +
-			'<p>Superficie necesaria: ' + estimate.superficieNecesaria + ' m\u00B2 \u2014 ' + roofNote + '</p>' +
-			'<p>Ahorro anual estimado: <strong>' + formatNumber(estimate.ahorroAnualEstimado) + ' \u20AC</strong></p>' +
-			'<small>Esta es una estimaci\u00F3n orientativa calculada a partir de los datos que nos has facilitado. Un t\u00E9cnico confirmar\u00E1 los datos exactos tras la visita.</small>' +
-			'</div>';
+		var estimateCard = '';
+		if (estimate.esFotovoltaica) {
+			var roofNote = estimate.cabeEnTejado
+				? 'Tu tejado tiene espacio suficiente para esta instalaci\u00F3n.'
+				: '\u26A0\uFE0F El espacio es ajustado \u2014 uno de nuestros t\u00E9cnicos confirmar\u00E1 la distribuci\u00F3n exacta en la visita.';
+
+			estimateCard =
+				'<div class="estimate-card">' +
+				'<h4>Tu estimaci\u00F3n orientativa</h4>' +
+				'<p><strong>' + estimate.numPaneles + '</strong> paneles solares (\u2248 ' + estimate.potenciaKw + ' kW de potencia)</p>' +
+				'<p>Superficie necesaria: ' + estimate.superficieNecesaria + ' m\u00B2 \u2014 ' + roofNote + '</p>' +
+				'<p>Ahorro anual estimado: <strong>' + formatNumber(estimate.ahorroAnualEstimado) + ' \u20AC</strong></p>' +
+				'<small>Esta es una estimaci\u00F3n orientativa calculada a partir de los datos que nos has facilitado. Un t\u00E9cnico confirmar\u00E1 los datos exactos tras la visita.</small>' +
+				'</div>';
+		}
+
+		confirmationScreen.innerHTML = greeting + estimateCard;
 
 		form.style.display = 'none';
 		document.querySelector('#presupuesto .progress-bar').style.display = 'none';
@@ -195,7 +239,9 @@
 
 	form.addEventListener('submit', function (e) {
 		e.preventDefault();
-		if (!isStepValid(TOTAL_STEPS)) return;
+		var visible = getVisibleSteps();
+		var lastStep = visible[visible.length - 1];
+		if (!isStepValid(lastStep)) return;
 
 		collectFormData();
 		clearError();
