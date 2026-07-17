@@ -37,19 +37,24 @@
     }
 }
 
+.page-vlcalcmrc #banner {
+    margin-bottom: 0;
+    height: auto;
+}
 @media screen and (max-width: 1100px) {
-    .page-contact #banner {
-        height: 15em;
+    .page-vlcalcmrc #banner {
+        height: 13em;
     }
 }
 @media screen and (max-width: 736px) {
-    .page-contact #banner {
-        height: 15em;
+    .page-vlcalcmrc #banner {
+        height: 14em;
     }
 }
 
 @media screen and (max-width: 400px) {
-    .page-contact #banner {
-        height: 15em;
+    .page-vlcalcmrc #banner {
+        height: 12em;
     }
 }
+

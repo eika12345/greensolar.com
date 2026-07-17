@@ -5,6 +5,20 @@
 	var STORAGE_KEY = "green_solar_lang";
 	var dictionaries = {};
 
+	// Resolve the lang/ folder relative to THIS script's own location,
+	// so it works no matter how deep the page is (root, /instalaciones/, etc.)
+	var LANG_DIR = (function () {
+		var src = document.currentScript && document.currentScript.src;
+		if (!src) {
+			// Fallback for older browsers: find the <script> tag by filename
+			var scripts = document.getElementsByTagName("script");
+			for (var i = 0; i < scripts.length; i++) {
+				if (scripts[i].src.indexOf("idioma.js") !== -1) { src = scripts[i].src; break; }
+			}
+		}
+		return src.substring(0, src.lastIndexOf("/js/")) + "/lang/";
+	})();
+
 	var flagIcon, textCode, list;
 
 	function getSavedLang() {
@@ -14,7 +28,7 @@
 
 	function loadDictionary(lang) {
 		if (dictionaries[lang]) return Promise.resolve(dictionaries[lang]);
-		return fetch("assets/lang/" + lang + ".json")
+		return fetch(LANG_DIR + lang + ".json")
 			.then(function (res) { return res.json(); })
 			.then(function (data) {
 				dictionaries[lang] = data;
