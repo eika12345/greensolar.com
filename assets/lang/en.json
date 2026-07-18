@@ -374,5 +374,11 @@
 	"pergola.testimonials.card4.name": "Carlos R.",
 	"pergola.testimonials.card4.text": "Green Solar's solar pergola has been an incredible addition to our home. Besides providing shade and protection from the elements, we're generating our own electricity and saving on our monthly expenses. The Green Solar team was very attentive",
 	"pergola.testimonials.card5.name": "Ana P.",
-	"pergola.testimonials.card5.text": "The installation of our solar photovoltaic pergola was flawless and the Green Solar team was extremely professional and friendly. We now enjoy a beautiful, functional outdoor space, and we're doing our part for the environment by using solar energy. We're thrilled with our decision to choose Green Solar!"
+	"pergola.testimonials.card5.text": "The installation of our solar photovoltaic pergola was flawless and the Green Solar team was extremely professional and friendly. We now enjoy a beautiful, functional outdoor space, and we're doing our part for the environment by using solar energy. We're thrilled with our decision to choose Green Solar!",
+
+	"conocemas.banner.title": "Learn More",
+	"conocemas.section.title": "Solar Energy News",
+	"conocemas.loading": "Loading articles…",
+	"conocemas.error": "The articles could not be loaded. Please try again later.",
+	"conocemas.empty": "No articles published yet."
 }

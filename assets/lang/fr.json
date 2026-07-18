@@ -374,5 +374,11 @@
 	"pergola.testimonials.card4.name": "Carlos R.",
 	"pergola.testimonials.card4.text": "La pergola solaire de Green Solar a été un ajout formidable à notre maison. En plus de nous offrir de l'ombre et une protection contre les éléments, nous produisons notre propre électricité et faisons des économies sur nos dépenses mensuelles. L'équipe de Green Solar a été très attentionnée",
 	"pergola.testimonials.card5.name": "Ana P.",
-	"pergola.testimonials.card5.text": "L'installation de notre pergola solaire photovoltaïque s'est déroulée sans accroc et l'équipe de Green Solar a été extrêmement professionnelle et chaleureuse. Nous profitons désormais d'un bel espace extérieur fonctionnel, tout en faisant notre part pour l'environnement grâce à l'énergie solaire. Nous sommes ravis d'avoir choisi Green Solar !"
+	"pergola.testimonials.card5.text": "L'installation de notre pergola solaire photovoltaïque s'est déroulée sans accroc et l'équipe de Green Solar a été extrêmement professionnelle et chaleureuse. Nous profitons désormais d'un bel espace extérieur fonctionnel, tout en faisant notre part pour l'environnement grâce à l'énergie solaire. Nous sommes ravis d'avoir choisi Green Solar !",
+
+	"conocemas.banner.title": "En savoir plus",
+	"conocemas.section.title": "Actualités sur l'énergie solaire",
+	"conocemas.loading": "Chargement des articles…",
+	"conocemas.error": "Impossible de charger les articles. Veuillez réessayer plus tard.",
+	"conocemas.empty": "Aucun article publié pour le moment."
 }
