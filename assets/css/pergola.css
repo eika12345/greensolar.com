@@ -21,10 +21,6 @@ body {
     color: rgb(161, 0, 0);
 }
 
-#pergola a:hover {
-    color: red !important;
-}
-
 #pergola a.special {
     color: black;
 }
@@ -60,7 +56,6 @@ body {
     margin-top: 0;
 }
 
-/* Stack on smaller screens */
 @media screen and (max-width: 736px) {
     .pergola-feature {
         flex-direction: column;
@@ -68,8 +63,6 @@ body {
     }
 }
 
-/* ── Mobile banner fix: financiacion only has an <h2>, so remove the
-   fixed height and oversized padding set in banner.css ── */
 @media screen and (max-width: 980px) {
     #banner {
         padding: 5em 3em 4em 3em;
