@@ -13,6 +13,10 @@
 	"nav.financiacion": "Financing",
 	"nav.contacto": "Contact",
 	"nav.presupuesto": "Get a quote",
+	"nav.bomba_calor": "Heat Pump",
+	"nav.carga_vehiculos": "EV Charging",
+	"nav.bomba_calor_mobile": "- Heat Pump",
+	"nav.carga_vehiculos_mobile": "- EV Charging",
 
 	"hero.subtitle": "The future of energy",
 	"hero.cta": "Request your quote",
@@ -73,6 +77,11 @@
 	"installations.item4.title": "Installation in Novelda",
 	"installations.item4.desc": "Installation of 6 solar panels, 460 Wp, with inverter",
 	"installations.cta": "See all",
+	"footer.brand.logo_alt": "Green Solar logo",
+	"installations.item1.img_alt": "Industrial installation in Alicante",
+	"installations.item2.img_alt": "Installation in Alicante",
+	"installations.item3.img_alt": "Installation in Alicante",
+	"installations.item4.img_alt": "Installation in Novelda",
 
 	"testimonials.title": "What do our customers say?",
 	"testimonials.arrow_prev": "Previous",

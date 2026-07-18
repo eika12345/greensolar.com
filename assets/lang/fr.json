@@ -13,6 +13,10 @@
 	"nav.financiacion": "Financement",
 	"nav.contacto": "Contact",
 	"nav.presupuesto": "Demander un devis",
+	"nav.bomba_calor": "Pompe à Chaleur",
+	"nav.carga_vehiculos": "Recharge de Véhicules Électriques",
+	"nav.bomba_calor_mobile": "- Pompe à Chaleur",
+	"nav.carga_vehiculos_mobile": "- Recharge de Véhicules Électriques",
 
 	"hero.subtitle": "L'avenir de l'énergie",
 	"hero.cta": "Demandez votre devis",
@@ -73,6 +77,11 @@
 	"installations.item4.title": "Installation à Novelda",
 	"installations.item4.desc": "Installation de 6 panneaux solaires de 460 Wc avec onduleur",
 	"installations.cta": "Voir tout",
+	"footer.brand.logo_alt": "Logo Green Solar",
+	"installations.item1.img_alt": "Installation industrielle à Alicante",
+	"installations.item2.img_alt": "Installation à Alicante",
+	"installations.item3.img_alt": "Installation à Alicante",
+	"installations.item4.img_alt": "Installation à Novelda",
 
 	"testimonials.title": "Que disent nos clients ?",
 	"testimonials.arrow_prev": "Précédent",

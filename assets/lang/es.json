@@ -13,6 +13,10 @@
 	"nav.financiacion": "Financiación",
 	"nav.contacto": "Contacto",
 	"nav.presupuesto": "Presupuesto",
+	"nav.bomba_calor": "Bomba de Calor",
+	"nav.carga_vehiculos": "Carga de Vehículos Eléctricos",
+	"nav.bomba_calor_mobile": "- Bomba de Calor",
+	"nav.carga_vehiculos_mobile": "- Carga de Vehículos Eléctricos",
 
 	"hero.subtitle": "El futuro de la energía",
 	"hero.cta": "Solicita tu presupuesto",
@@ -73,6 +77,11 @@
 	"installations.item4.title": "Instalación en Novelda",
 	"installations.item4.desc": "Instalación de 6 placas solares de 460 Wp con inversor",
 	"installations.cta": "Ver todo",
+	"footer.brand.logo_alt": "Logo de Green Solar",
+	"installations.item1.img_alt": "Instalación industrial en Alicante",
+	"installations.item2.img_alt": "Instalación en Alicante",
+	"installations.item3.img_alt": "Instalación en Alicante",
+	"installations.item4.img_alt": "Instalación en Novelda",
 
 	"testimonials.title": "¿Qué opinan nuestros clientes?",
 	"testimonials.arrow_prev": "Anterior",
