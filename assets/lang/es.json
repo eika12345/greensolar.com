@@ -314,6 +314,33 @@
 	"conocemas.section.title": "Noticias sobre energía fotovoltaica",
 	"conocemas.loading": "Cargando artículos…",
 	"conocemas.error": "No se pudieron cargar los artículos. Inténtalo de nuevo más tarde.",
-	"conocemas.empty": "Todavía no hay artículos publicados."
+	"conocemas.empty": "Todavía no hay artículos publicados.",
+
+	"seo.title": "Calculadora de Ahorro Solar | Green Solar",
+	"seo.description": "Calcula gratis tu ahorro con placas solares. Introduce tu factura eléctrica y descubre la potencia recomendada, el coste estimado y el tiempo de amortización de tu instalación fotovoltaica.",
+	"seo.keywords": "calculadora solar, ahorro placas solares, autoconsumo fotovoltaico, presupuesto placas solares, Green Solar, Valencia, Alicante, Murcia",
+	"seo.og_title": "Calculadora de Ahorro Solar | Green Solar",
+	"seo.og_description": "Calcula gratis tu ahorro con placas solares en pocos segundos: potencia recomendada, coste estimado y amortización.",
+
+	"calculadora.banner_title": "Calculadora",
+	"calculadora.form.bill_label": "Factura eléctrica mensual (€)",
+	"calculadora.form.bill_placeholder": "Ej. 80",
+	"calculadora.form.price_label": "Precio actual del kWh (€)",
+	"calculadora.form.price_placeholder": "Ej. 0.18",
+	"calculadora.form.province_label": "Provincia",
+	"calculadora.form.province_valencia": "Valencia",
+	"calculadora.form.province_alicante": "Alicante",
+	"calculadora.form.province_murcia": "Murcia",
+	"calculadora.form.submit": "Calcular mi ahorro",
+	"calculadora.results.heading": "Tu estimación solar",
+	"calculadora.results.consumption_label": "Consumo anual estimado",
+	"calculadora.results.power_label": "Potencia recomendada",
+	"calculadora.results.output_label": "Producción anual estimada",
+	"calculadora.results.cost_label": "Coste estimado de la instalación",
+	"calculadora.results.savings_label": "Ahorro anual estimado",
+	"calculadora.results.payback_label": "Amortización",
+	"calculadora.results.lifetime_label": "Ahorro estimado a 25 años",
+	"calculadora.results.disclaimer": "Estimación orientativa. El importe final depende de un estudio personalizado de tu vivienda o negocio.",
+	"calculadora.results.cta": "Solicita tu presupuesto"
 }
 

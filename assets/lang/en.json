@@ -380,5 +380,32 @@
 	"conocemas.section.title": "Solar Energy News",
 	"conocemas.loading": "Loading articles…",
 	"conocemas.error": "The articles could not be loaded. Please try again later.",
-	"conocemas.empty": "No articles published yet."
+	"conocemas.empty": "No articles published yet.",
+
+	"seo.title": "Solar Savings Calculator | Green Solar",
+	"seo.description": "Calculate your solar panel savings for free. Enter your electricity bill and discover the recommended power, estimated cost, and payback period for your solar installation.",
+	"seo.keywords": "solar calculator, solar panel savings, self-consumption photovoltaic, solar panel quote, Green Solar, Valencia, Alicante, Murcia",
+	"seo.og_title": "Solar Savings Calculator | Green Solar",
+	"seo.og_description": "Calculate your solar panel savings in seconds: recommended power, estimated cost, and payback period.",
+
+	"calculadora.banner_title": "Calculator",
+	"calculadora.form.bill_label": "Monthly electricity bill (€)",
+	"calculadora.form.bill_placeholder": "E.g. 80",
+	"calculadora.form.price_label": "Current kWh price (€)",
+	"calculadora.form.price_placeholder": "E.g. 0.18",
+	"calculadora.form.province_label": "Province",
+	"calculadora.form.province_valencia": "Valencia",
+	"calculadora.form.province_alicante": "Alicante",
+	"calculadora.form.province_murcia": "Murcia",
+	"calculadora.form.submit": "Calculate my savings",
+	"calculadora.results.heading": "Your solar estimate",
+	"calculadora.results.consumption_label": "Estimated annual consumption",
+	"calculadora.results.power_label": "Recommended power",
+	"calculadora.results.output_label": "Estimated annual output",
+	"calculadora.results.cost_label": "Estimated installation cost",
+	"calculadora.results.savings_label": "Estimated annual savings",
+	"calculadora.results.payback_label": "Payback period",
+	"calculadora.results.lifetime_label": "Estimated 25-year savings",
+	"calculadora.results.disclaimer": "Indicative estimate. The final amount depends on a personalized assessment of your home or business.",
+	"calculadora.results.cta": "Request your quote"
 }

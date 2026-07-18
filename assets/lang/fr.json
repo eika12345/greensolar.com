@@ -380,5 +380,32 @@
 	"conocemas.section.title": "Actualités sur l'énergie solaire",
 	"conocemas.loading": "Chargement des articles…",
 	"conocemas.error": "Impossible de charger les articles. Veuillez réessayer plus tard.",
-	"conocemas.empty": "Aucun article publié pour le moment."
+	"conocemas.empty": "Aucun article publié pour le moment.",
+
+	"seo.title": "Calculateur d'Économies Solaires | Green Solar",
+	"seo.description": "Calculez gratuitement vos économies avec des panneaux solaires. Indiquez votre facture d'électricité et découvrez la puissance recommandée, le coût estimé et le délai d'amortissement de votre installation photovoltaïque.",
+	"seo.keywords": "calculateur solaire, économies panneaux solaires, autoconsommation photovoltaïque, devis panneaux solaires, Green Solar, Valencia, Alicante, Murcia",
+	"seo.og_title": "Calculateur d'Économies Solaires | Green Solar",
+	"seo.og_description": "Calculez vos économies solaires en quelques secondes : puissance recommandée, coût estimé et amortissement.",
+
+	"calculadora.banner_title": "Calculateur",
+	"calculadora.form.bill_label": "Facture électrique mensuelle (€)",
+	"calculadora.form.bill_placeholder": "Ex. 80",
+	"calculadora.form.price_label": "Prix actuel du kWh (€)",
+	"calculadora.form.price_placeholder": "Ex. 0.18",
+	"calculadora.form.province_label": "Province",
+	"calculadora.form.province_valencia": "Valencia",
+	"calculadora.form.province_alicante": "Alicante",
+	"calculadora.form.province_murcia": "Murcia",
+	"calculadora.form.submit": "Calculer mes économies",
+	"calculadora.results.heading": "Votre estimation solaire",
+	"calculadora.results.consumption_label": "Consommation annuelle estimée",
+	"calculadora.results.power_label": "Puissance recommandée",
+	"calculadora.results.output_label": "Production annuelle estimée",
+	"calculadora.results.cost_label": "Coût estimé de l'installation",
+	"calculadora.results.savings_label": "Économies annuelles estimées",
+	"calculadora.results.payback_label": "Amortissement",
+	"calculadora.results.lifetime_label": "Économies estimées sur 25 ans",
+	"calculadora.results.disclaimer": "Estimation indicative. Le montant final dépend d'une étude personnalisée de votre logement ou entreprise.",
+	"calculadora.results.cta": "Demandez votre devis"
 }

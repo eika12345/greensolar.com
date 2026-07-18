@@ -9,9 +9,6 @@
 var GS_CALC_CONFIG = {
 
     // Horas de Sol Pico (HSP) media diaria por provincia, en kWh/m²/día.
-    // Son valores aproximados de irradiancia media anual. Si Green Solar
-    // dispone de datos más precisos (p. ej. de PVGIS para las zonas donde
-    // trabajáis), sustituidlos aquí.
     hsp: {
         valencia: 4.6,
         alicante: 4.8,
@@ -19,23 +16,15 @@ var GS_CALC_CONFIG = {
     },
 
     // Coste de la instalación por cada kWp instalado (€/kWp).
-    // ⚠️ ESTE ES UN VALOR DE NEGOCIO — Green Solar debe indicar el precio
-    // real que aplica (incluye paneles, inversor, mano de obra, etc.).
-    // El valor de abajo es solo un marcador de posición orientativo.
     costPerKwp: 1300,
 
-    // Rendimiento global del sistema (pérdidas por cableado, inversor,
-    // suciedad, temperatura, etc.). Valor típico entre 0.75 y 0.80.
+    // Rendimiento global del sistema.
     performanceRatio: 0.78,
 
-    // Porcentaje de la energía producida que se autoconsume directamente
-    // (el resto se vierte a la red). Depende del perfil de consumo del
-    // cliente; 0.70 es una estimación típica para vivienda residencial.
+    // Porcentaje de la energía producida que se autoconsume directamente.
     selfConsumptionRatio: 0.70,
 
     // Precio de compensación por excedentes vertidos a la red (€/kWh).
-    // Green Solar debe confirmar la tarifa de compensación que ofrece
-    // la comercializadora con la que trabaja.
     exportPrice: 0.05,
 
     // Años de vida útil considerados para el cálculo de ahorro a largo plazo.
@@ -43,27 +32,87 @@ var GS_CALC_CONFIG = {
 
 };
 
+// -------------------------------------------------------------------------
+// i18n: locale + unit strings per language. Add a new entry here whenever
+// idioma.js supports a new language.
+// -------------------------------------------------------------------------
+var GS_CALC_I18N = {
+    es: {
+        locale: 'es-ES',
+        currency: 'EUR',
+        yearsUnit: 'años',
+        yearUnit: 'año',
+        perYear: '/ año'
+    },
+    en: {
+        locale: 'en-GB',
+        currency: 'EUR',
+        yearsUnit: 'years',
+        yearUnit: 'year',
+        perYear: '/ year'
+    },
+    fr: {
+        locale: 'fr-FR',
+        currency: 'EUR',
+        yearsUnit: 'ans',
+        yearUnit: 'an',
+        perYear: '/ an'
+    }
+};
+
 (function () {
     'use strict';
 
+    // Returns the current 2-letter language code (es/en/fr).
+    // idioma.js stores the chosen language synchronously in localStorage
+    // under 'green_solar_lang', and also mirrors it onto
+    // document.documentElement.lang once the dictionary fetch resolves.
+    // We check localStorage first since it's available immediately;
+    // the lang attribute is a fallback for the very first page load.
+    function getLang() {
+        try {
+            var saved = localStorage.getItem('green_solar_lang');
+            if (saved && GS_CALC_I18N[saved]) {
+                return saved;
+            }
+        } catch (e) {
+            // localStorage unavailable (private browsing, etc.) — fall through
+        }
+
+        var htmlLang = document.documentElement.lang;
+        if (htmlLang && GS_CALC_I18N[htmlLang]) {
+            return htmlLang;
+        }
+
+        return 'es';
+    }
+
+    function i18n() {
+        return GS_CALC_I18N[getLang()];
+    }
+
     function euros(value) {
-        return value.toLocaleString('es-ES', {
+        var t = i18n();
+        return value.toLocaleString(t.locale, {
             style: 'currency',
-            currency: 'EUR',
+            currency: t.currency,
             maximumFractionDigits: 0
         });
     }
 
     function kwh(value) {
-        return value.toLocaleString('es-ES', { maximumFractionDigits: 0 }) + ' kWh';
+        var t = i18n();
+        return value.toLocaleString(t.locale, { maximumFractionDigits: 0 }) + ' kWh';
     }
 
     function kwp(value) {
-        return value.toLocaleString('es-ES', { maximumFractionDigits: 2 }) + ' kWp';
+        var t = i18n();
+        return value.toLocaleString(t.locale, { maximumFractionDigits: 2 }) + ' kWp';
     }
 
     function years(value) {
-        return value.toLocaleString('es-ES', { maximumFractionDigits: 1 }) + ' años';
+        var t = i18n();
+        return value.toLocaleString(t.locale, { maximumFractionDigits: 1 }) + ' ' + t.yearsUnit;
     }
 
     function calculate(monthlyBill, pricePerKwh, province) {
@@ -75,7 +124,6 @@ var GS_CALC_CONFIG = {
         var annualConsumptionKwh = (monthlyBill / pricePerKwh) * 12;
 
         // 2. Potencia recomendada para cubrir ese consumo.
-        //    kWp = consumo_anual / (HSP * 365 * rendimiento)
         var recommendedKwp = annualConsumptionKwh / (hsp * 365 * config.performanceRatio);
 
         // 3. Producción anual estimada de esa instalación.
@@ -84,8 +132,7 @@ var GS_CALC_CONFIG = {
         // 4. Coste estimado de la instalación.
         var installCost = recommendedKwp * config.costPerKwp;
 
-        // 5. Ahorro anual: parte autoconsumida (ahorra el precio del kWh)
-        //    + parte exportada (se paga a precio de compensación).
+        // 5. Ahorro anual.
         var selfConsumedKwh = annualOutputKwh * config.selfConsumptionRatio;
         var exportedKwh = annualOutputKwh * (1 - config.selfConsumptionRatio);
         var annualSavings = (selfConsumedKwh * pricePerKwh) + (exportedKwh * config.exportPrice);
@@ -119,12 +166,13 @@ var GS_CALC_CONFIG = {
         }
 
         var result = calculate(bill, price, province);
+        var t = i18n();
 
         document.getElementById('gs-calc-consumption').textContent = kwh(result.annualConsumptionKwh);
         document.getElementById('gs-calc-power').textContent = kwp(result.recommendedKwp);
         document.getElementById('gs-calc-output').textContent = kwh(result.annualOutputKwh);
         document.getElementById('gs-calc-cost').textContent = euros(result.installCost);
-        document.getElementById('gs-calc-savings').textContent = euros(result.annualSavings) + ' / año';
+        document.getElementById('gs-calc-savings').textContent = euros(result.annualSavings) + ' ' + t.perYear;
         document.getElementById('gs-calc-payback').textContent = years(result.paybackYears);
         document.getElementById('gs-calc-lifetime').textContent = euros(Math.max(result.lifetimeSavings, 0));
 
