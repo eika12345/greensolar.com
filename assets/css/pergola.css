@@ -244,7 +244,7 @@ body {
 	background-color: var(--color-primary-green);
     border-radius: 4px;
     padding: 1em 1.5em;
-    color: black;
+    color: white !important;
     text-decoration: none;
     font-size: 0.85em;
     letter-spacing: 0.08em;
@@ -252,12 +252,8 @@ body {
 	margin-top: 5px;
 	font-weight: 550;
     cursor: pointer;
-}
-
-.porque-pergolas-cta:hover {
-    background-color: transparent;
-    color: var(--color-primary-green) !important;
-    border-color: var(--color-primary-green); /* ensure border stays visible */
+    font-family: Title;
+    text-transform: uppercase;
 }
 
 /* Stack image above content on smaller screens */
