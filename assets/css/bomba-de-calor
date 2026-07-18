@@ -1,0 +1,29 @@
+.carga-de-vehiculos-electricos #banner {
+    margin-bottom: 0;
+    height: auto;
+}
+
+@media screen and (max-width: 1100px) {
+    .carga-de-vehiculos-electricos #banner {
+        min-height: 13em;
+        height: auto;
+    }
+}
+
+@media screen and (max-width: 736px) {
+    .carga-de-vehiculos-electricos #banner {
+        min-height: 13em;
+        height: auto;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .carga-de-vehiculos-electricos #banner {
+        min-height: 10em;
+        height: auto;
+    }
+}
+
+#footer-nav {
+    margin-top: auto;
+}

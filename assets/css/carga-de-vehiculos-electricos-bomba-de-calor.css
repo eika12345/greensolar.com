@@ -1,24 +1,24 @@
-.carga-de-vehiculos-electricos #banner {
+.carga-bomba #banner {
     margin-bottom: 0;
     height: auto;
 }
 
 @media screen and (max-width: 1100px) {
-    .carga-de-vehiculos-electricos #banner {
+    .carga-bomba #banner {
         min-height: 13em;
         height: auto;
     }
 }
 
 @media screen and (max-width: 736px) {
-    .carga-de-vehiculos-electricos #banner {
+    .carga-bomba #banner {
         min-height: 13em;
         height: auto;
     }
 }
 
 @media screen and (max-width: 400px) {
-    .carga-de-vehiculos-electricos #banner {
+    .carga-bomba #banner {
         min-height: 10em;
         height: auto;
     }
@@ -28,17 +28,14 @@
     margin-top: auto;
 }
 
-.carga-de-vehiculos-electricos #banner {
+.carga-bomba #banner {
     margin-bottom: 0;
     height: auto;
 }
 
-body.carga-de-vehiculos-electricos {
-    background-image: linear-gradient(to top, rgba(46, 49, 65, 0.8), rgba(46, 49, 65, 0.8)), url("/images/evchargerheader.jpeg");
-}
 
-#carga-de-vehiculos-electricos p,
-#carga-de-vehiculos-electricos h2 {
+#carga-bomba p,
+#carga-bomba h2 {
     color: black;
 }
 
@@ -46,22 +43,22 @@ body.carga-de-vehiculos-electricos {
     color: white;
 }
 
-#carga-de-vehiculos-electricos strong {
+#carga-bomba strong {
     color: rgb(0, 0, 0);
     font-family: "Text1";
     font-weight: 900;
 }
 
-#carga-de-vehiculos-electricos a {
+#carga-bomba a {
     color: rgb(161, 0, 0);
 }
 
 
-#carga-de-vehiculos-electricos a.special {
+#carga-bomba a.special {
     color: black;
 }
 
-#carga-de-vehiculos-electricos a.special:hover {
+#carga-bomba a.special:hover {
     color: black !important;
 }
 
@@ -272,21 +269,21 @@ body.carga-de-vehiculos-electricos {
 }
 
 @media screen and (max-width: 1100px) {
-    .carga-de-vehiculos-electricos #banner {
+    .carga-bomba #banner {
         min-height: 13em;
         height: auto;
     }
 }
 
 @media screen and (max-width: 736px) {
-    .carga-de-vehiculos-electricos #banner {
+    .carga-bomba #banner {
         min-height: 13em;
         height: auto;
     }
 }
 
 @media screen and (max-width: 400px) {
-    .carga-de-vehiculos-electricos #banner {
+    .carga-bomba #banner {
         min-height: 10em;
         height: auto;
     }
