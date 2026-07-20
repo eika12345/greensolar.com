@@ -60,8 +60,21 @@
 	var altoValue = document.getElementById('alto-value');
 	var superficieValue = document.getElementById('superficie-value');
 
+	// Thin wrapper around window.i18n.t() so this file never hard-crashes if
+	// idioma.js hasn't initialized yet, and falls back to the key itself.
+	function t(key, params) {
+		if (window.i18n && typeof window.i18n.t === 'function') {
+			return window.i18n.t(key, params);
+		}
+		return key;
+	}
+
+	function getNumberLocale() {
+		return (window.i18n && window.i18n.getNumberLocale) ? window.i18n.getNumberLocale() : 'es-ES';
+	}
+
 	function formatNumber(n) {
-		return n.toLocaleString('es-ES');
+		return n.toLocaleString(getNumberLocale());
 	}
 
 	function escapeHtml(str) {
@@ -191,23 +204,41 @@
 		state.data.factura = fd.get('factura');
 	}
 
+	// Kept so the confirmation screen can be re-rendered in the new language
+	// if the user switches languages after submitting (see i18n:change below).
+	var lastEstimate = null;
+
 	function renderConfirmation(estimate) {
-		var greeting = '<h3>\u00A1Formulario enviado!</h3>' +
-			'<p>Gracias, ' + escapeHtml(state.data.nombre.split(' ')[0] || '') + '. Nuestros agentes se pondr\u00E1n en contacto contigo lo antes posible.</p>';
+		lastEstimate = estimate;
+
+		var greeting = '<h3>' + t('presupuesto.confirmation.title') + '</h3>' +
+			'<p>' + t('presupuesto.confirmation.thanks', { nombre: escapeHtml(state.data.nombre.split(' ')[0] || '') }) + '</p>';
 
 		var estimateCard = '';
 		if (estimate.esFotovoltaica) {
 			var roofNote = estimate.cabeEnTejado
-				? 'Tu tejado tiene espacio suficiente para esta instalaci\u00F3n.'
-				: '\u26A0\uFE0F El espacio es ajustado \u2014 uno de nuestros t\u00E9cnicos confirmar\u00E1 la distribuci\u00F3n exacta en la visita.';
+				? t('presupuesto.confirmation.roof_fits')
+				: t('presupuesto.confirmation.roof_tight');
+
+			var panelsLine = t('presupuesto.confirmation.panels_line', {
+				num: '<strong>' + estimate.numPaneles + '</strong>',
+				kw: estimate.potenciaKw
+			});
+			var surfaceLine = t('presupuesto.confirmation.surface_line', {
+				surface: estimate.superficieNecesaria,
+				roofNote: roofNote
+			});
+			var savingsLine = t('presupuesto.confirmation.savings_line', {
+				amount: '<strong>' + formatNumber(estimate.ahorroAnualEstimado) + ' \u20AC</strong>'
+			});
 
 			estimateCard =
 				'<div class="estimate-card">' +
-				'<h4>Tu estimaci\u00F3n orientativa</h4>' +
-				'<p><strong>' + estimate.numPaneles + '</strong> paneles solares (\u2248 ' + estimate.potenciaKw + ' kW de potencia)</p>' +
-				'<p>Superficie necesaria: ' + estimate.superficieNecesaria + ' m\u00B2 \u2014 ' + roofNote + '</p>' +
-				'<p>Ahorro anual estimado: <strong>' + formatNumber(estimate.ahorroAnualEstimado) + ' \u20AC</strong></p>' +
-				'<small>Esta es una estimaci\u00F3n orientativa calculada a partir de los datos que nos has facilitado. Un t\u00E9cnico confirmar\u00E1 los datos exactos tras la visita.</small>' +
+				'<h4>' + t('presupuesto.confirmation.estimate_title') + '</h4>' +
+				'<p>' + panelsLine + '</p>' +
+				'<p>' + surfaceLine + '</p>' +
+				'<p>' + savingsLine + '</p>' +
+				'<small>' + t('presupuesto.confirmation.disclaimer') + '</small>' +
 				'</div>';
 		}
 
@@ -218,6 +249,15 @@
 		document.querySelector('#presupuesto .step-counter').style.display = 'none';
 		confirmationScreen.classList.add('active');
 	}
+
+	// If the confirmation screen is already showing and the user switches
+	// language via the picker, re-render it so it isn't left stuck in
+	// whatever language it was originally submitted in.
+	document.addEventListener('i18n:change', function () {
+		if (lastEstimate && confirmationScreen.classList.contains('active')) {
+			renderConfirmation(lastEstimate);
+		}
+	});
 
 	var formError = document.getElementById('form-error');
 
@@ -234,7 +274,10 @@
 	function setSubmitting(isSubmitting) {
 		btnSubmit.disabled = isSubmitting;
 		btnPrev.disabled = isSubmitting;
-		btnSubmit.textContent = isSubmitting ? 'Enviando...' : 'Enviar';
+		// Restoring to t('presupuesto.nav.submit') (rather than a hardcoded
+		// 'Enviar') keeps this correct even if the user changed language
+		// while the request was in flight.
+		btnSubmit.textContent = isSubmitting ? t('presupuesto.nav.sending') : t('presupuesto.nav.submit');
 	}
 
 	form.addEventListener('submit', function (e) {
@@ -256,7 +299,15 @@
 			.then(function (response) {
 				return response.json().then(function (json) {
 					if (!response.ok || !json.success) {
-						throw new Error(json.error || 'Ha ocurrido un error al enviar el formulario.');
+						// errorCode is a machine-readable key from the server
+						// (e.g. 'invalid_email', 'file_too_large') that we can
+						// translate; json.error is a Spanish-only fallback in
+						// case the server sends a code we don't have a key for.
+						var translated = json.errorCode ? t('presupuesto.error.' + json.errorCode) : null;
+						var message = (translated && translated.indexOf('presupuesto.error.') !== 0)
+							? translated
+							: (json.error || t('presupuesto.error.generic'));
+						throw new Error(message);
 					}
 					return json;
 				});
@@ -265,7 +316,7 @@
 				renderConfirmation(json.estimate);
 			})
 			.catch(function (err) {
-				showError(err.message || 'No se ha podido enviar el formulario. Comprueba tu conexi\u00F3n e int\u00E9ntalo de nuevo.');
+				showError(err.message || t('presupuesto.error.generic'));
 			})
 			.finally(function () {
 				setSubmitting(false);

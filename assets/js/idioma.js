@@ -20,6 +20,11 @@
 	})();
 
 	var flagIcon, textCode, list;
+	var currentLang = "es";
+
+	// Locale to use for Number/Date formatting per language (not just the
+	// 2-letter dictionary code, since e.g. English should format as en-GB here).
+	var NUMBER_LOCALES = { es: "es-ES", en: "en-GB", fr: "fr-FR" };
 
 	function getSavedLang() {
 		var saved = localStorage.getItem(STORAGE_KEY);
@@ -74,11 +79,48 @@
 				document.documentElement.setAttribute("lang", lang);
 				localStorage.setItem(STORAGE_KEY, lang);
 				syncPickerUI(lang);
+				currentLang = lang;
+				// Let other scripts (e.g. ones that render text dynamically,
+				// like presupuesto.js's confirmation screen) know the
+				// language changed and re-render anything they've already
+				// put on the page.
+				document.dispatchEvent(new CustomEvent("i18n:change", { detail: { lang: lang } }));
 			})
 			.catch(function (err) {
 				console.error("Failed to load language file:", lang, err);
 			});
 	}
+
+	// ── Public API for other scripts ──
+	// Any script that builds text at runtime (confirmation messages, error
+	// strings, formatted numbers, etc.) can't rely on the data-i18n DOM scan
+	// above, since that only touches markup that exists when it runs. Those
+	// scripts should call window.i18n.t('some.key', { placeholder: value })
+	// instead of hardcoding Spanish strings, and listen for the "i18n:change"
+	// event on document if they need to re-render already-visible text when
+	// the user switches language.
+	window.i18n = {
+		t: function (key, params) {
+			var dict = dictionaries[currentLang] || dictionaries.es || {};
+			var value = dict[key];
+			if (value === undefined) {
+				console.warn("Missing i18n key:", key);
+				return key;
+			}
+			if (params) {
+				Object.keys(params).forEach(function (name) {
+					value = value.split("{" + name + "}").join(params[name]);
+				});
+			}
+			return value;
+		},
+		getLang: function () {
+			return currentLang;
+		},
+		getNumberLocale: function () {
+			return NUMBER_LOCALES[currentLang] || "es-ES";
+		}
+	};
 
 	function init() {
 		var picker = document.getElementById("lang-picker");

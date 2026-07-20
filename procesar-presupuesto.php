@@ -6,14 +6,16 @@ ini_set('display_errors', '0');
 
 require __DIR__ . '/config.php';
 
-function jsonError($message, $code = 400) {
+function jsonError($message, $code = 400, $errorCode = 'generic') {
     http_response_code($code);
-    echo json_encode(['success' => false, 'error' => $message]);
+    // 'error' stays as a Spanish fallback (useful in logs/curl testing);
+    // 'errorCode' is what the frontend maps to a translated string via i18n.
+    echo json_encode(['success' => false, 'error' => $message, 'errorCode' => $errorCode]);
     exit;
 }
 
 if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
-    jsonError('Método no permitido', 405);
+    jsonError('Método no permitido', 405, 'method_not_allowed');
 }
 
 // ── 1. Collect + validate fields (never trust client-side validation alone) ──
@@ -23,13 +25,13 @@ $data = [];
 foreach ($required as $field) {
     $value = trim($_POST[$field] ?? '');
     if ($value === '') {
-        jsonError('Falta el campo obligatorio: ' . $field);
+        jsonError('Falta el campo obligatorio: ' . $field, 400, 'missing_field');
     }
     $data[$field] = htmlspecialchars($value, ENT_QUOTES, 'UTF-8');
 }
 
 if (!filter_var($_POST['email'] ?? '', FILTER_VALIDATE_EMAIL)) {
-    jsonError('El email no es válido');
+    jsonError('El email no es válido', 400, 'invalid_email');
 }
 
 // tipoTejado + consumo/superficie only exist in the form when tipoServicio === 'fotovoltaica'
@@ -39,7 +41,7 @@ $data['tipoTejado'] = '';
 if ($esFotovoltaica) {
     $tipoTejado = trim($_POST['tipoTejado'] ?? '');
     if ($tipoTejado === '') {
-        jsonError('Falta el campo obligatorio: tipoTejado');
+        jsonError('Falta el campo obligatorio: tipoTejado', 400, 'missing_field');
     }
     $data['tipoTejado'] = htmlspecialchars($tipoTejado, ENT_QUOTES, 'UTF-8');
 }
@@ -86,10 +88,10 @@ if (isset($_FILES['factura']) && $_FILES['factura']['error'] === UPLOAD_ERR_OK) 
     $maxSizeBytes = 5 * 1024 * 1024; // 5MB
 
     if (!in_array($file['type'], $allowedTypes, true)) {
-        jsonError('El archivo de la factura debe ser PDF, JPG o PNG');
+        jsonError('El archivo de la factura debe ser PDF, JPG o PNG', 400, 'invalid_file_type');
     }
     if ($file['size'] > $maxSizeBytes) {
-        jsonError('El archivo de la factura no puede superar 5MB');
+        jsonError('El archivo de la factura no puede superar 5MB', 400, 'file_too_large');
     }
 
     $attachments[] = [
@@ -190,7 +192,7 @@ $curlError  = curl_error($ch);
 
 if ($curlError || $httpCode >= 300) {
     error_log('Brevo API error: ' . $curlError . ' | HTTP ' . $httpCode . ' | ' . $response);
-    jsonError('No se pudo enviar el email. Inténtalo de nuevo más tarde.', 502);
+    jsonError('No se pudo enviar el email. Inténtalo de nuevo más tarde.', 502, 'send_failed');
 }
 
 // ── 6. Respond with the estimate so the frontend confirmation screen can show it ──
