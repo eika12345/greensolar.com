@@ -241,9 +241,6 @@
 }
 
 .page-contact #banner {
-   
-}
-.page-contact #banner {
     margin-bottom: 0;
     height: auto;
 }
@@ -263,6 +260,10 @@
         height: 10em;
     }
 }
+ #footer-nav {
+     margin-top: auto;
+}
+
 /* GDPR Table */
 .gdpr-table-wrapper {
     width: 100%;

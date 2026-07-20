@@ -1,7 +1,7 @@
 body {
     background-image: linear-gradient(to top, rgba(46, 49, 65, 0.8), rgba(46, 49, 65, 0.8)), url("../../images/financiacion.png");
 }
-#two {
+#financiacion {
     display: flex;
     flex-direction: column;
     margin-bottom: 0;
@@ -12,7 +12,7 @@ body {
     padding-bottom: 0;
 }
 
-#two .inner {
+#financiacion .inner {
     width: 100% !important;
     max-width: 1200px;
     margin: 0 auto;
@@ -24,18 +24,16 @@ body {
     text-align: left !important;
 }
 
-#two .inner img {
+#financiacion .inner img {
     display: block;
     max-width: 100%;
     margin: 1.5em auto 0;
 }
 
-#two .inner h2,
-#two .inner p {
+#financiacion .inner h2,
+#financiacion .inner p {
     color: black;
 }
-
-
 
 /* Styles for the financing cards inside the wrapper */
             .financing-container {
@@ -80,9 +78,6 @@ body {
                 font-weight: 900;
             }
 
-           
-
-            /* Responsive design for tablets and mobile phones */
             @media screen and (max-width: 980px) {
                 .financing-container {
                     grid-template-columns: repeat(2, 1fr);
@@ -97,39 +92,28 @@ body {
                 }
             }
 
-/* ── Mobile banner fix: financiacion only has an <h2>, so remove the
-   fixed height and oversized padding set in banner.css ── */
-@media screen and (max-width: 980px) {
-    #banner {
-        padding: 5em 3em 4em 3em;
-        margin-bottom: -2.75em;
+.page-financiacion #banner {
+    margin-bottom: 0;
+    height: auto;
+}
+@media screen and (max-width: 1100px) {
+    .page-financiacion #banner {
+        height: 13em;
     }
 }
-
 @media screen and (max-width: 736px) {
-    #banner {
-        height: auto;
-        padding: 4em 2em 3em 2em;
-        margin-bottom: 0;
+    .page-financiacion #banner {
+        height: 13em;
     }
 }
 
 @media screen and (max-width: 400px) {
-    #banner {
-        height: auto;
-        padding: 3.5em 1.5em 2.5em 1.5em;
+    .page-financiacion #banner {
+        height: 10em;
     }
 }
 
-.wrapper.spotlight.style2 {
-    background-color: white;
-}
+    #footer-nav {
+         margin-top: auto;
+    }
 
-
-.wrapper.spotlight.style2:before,
-.wrapper.spotlight.style2:after {
-
-background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100' preserveAspectRatio='none'%3E%3Cpolygon points='0,100 100,0 100,100' style='fill:%23ffffff%3B' /%3E%3C/svg%3E");
-box-shadow: none;
-
-}
