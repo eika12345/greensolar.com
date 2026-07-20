@@ -728,5 +728,25 @@
 	"trabajos.lightbox.close": "Fermer",
 	"trabajos.lightbox.prev": "Précédent",
 	"trabajos.lightbox.next": "Suivant",
-	"trabajos.photos_label": "photos"
+	"trabajos.photos_label": "photos",
+
+	"instalaciones_index.title": "Installations | Green Solar",
+    "instalaciones_index.banner.title": "Installations",
+    "instalaciones_index.unifamiliar.heading": "Installations pour Maisons Individuelles",
+    "instalaciones_index.unifamiliar.autoconsumo.heading": "Installation photovoltaïque en autoconsommation :",
+    "instalaciones_index.unifamiliar.autoconsumo.text": "Avec ce type d'installation, vous utiliserez l'électricité produite par vos panneaux pendant la journée et l'énergie du réseau électrique la nuit. Vous ne payez que l'électricité que vous consommez du réseau, sans besoin d'accumulation en batteries. L'énergie produite par vos panneaux que vous ne consommez pas est envoyée au réseau électrique, et vous verrez une compensation pour cette contribution sur votre facture d'électricité.",
+    "instalaciones_index.unifamiliar.aislada.heading": "Installation photovoltaïque autonome :",
+    "instalaciones_index.unifamiliar.aislada.text": "Dans ce cas, vous serez complètement déconnecté du réseau électrique. Pendant la journée, vous utiliserez l'électricité produite par vos panneaux, qui chargera les batteries alimentant votre maison la nuit.",
+    "instalaciones_index.comunidad.heading": "Installations pour Copropriétés",
+    "instalaciones_index.comunidad.zonas_comunes.heading": "Installation en autoconsommation pour les parties communes :",
+    "instalaciones_index.comunidad.zonas_comunes.text": "Avec cette option, vous pourrez réduire les charges de copropriété. L'énergie produite par les panneaux solaires est destinée à la consommation générale de l'immeuble et est payée à parts égales par tous les copropriétaires.",
+    "instalaciones_index.comunidad.compartido.heading": "Installation en autoconsommation partagée :",
+    "instalaciones_index.comunidad.compartido.text": "Chaque copropriétaire reçoit de l'énergie solaire dans son logement pendant la journée et utilise l'électricité conventionnelle du réseau la nuit. Tous constateront une baisse de leur facture d'électricité grâce à l'utilisation des panneaux solaires.",
+    "instalaciones_index.empresas.heading": "Installations pour Entreprises",
+    "instalaciones_index.empresas.autoconsumo.heading": "Installation photovoltaïque en autoconsommation pour entreprises :",
+    "instalaciones_index.empresas.autoconsumo.text": "Avec ce type d'installation, vous utiliserez l'électricité produite par vos panneaux pendant la journée et l'énergie du réseau électrique la nuit. Vous ne payez que l'électricité que vous consommez du réseau, sans besoin d'accumulation en batteries. L'énergie produite par vos panneaux que vous ne consommez pas est envoyée au réseau électrique, et vous verrez une compensation pour cette contribution sur votre facture d'électricité.",
+    "instalaciones_index.empresas.autoconsumo.text2": "Les factures d'électricité représentent souvent l'une des plus grandes dépenses des entreprises, et la demande de panneaux solaires en tant que meilleure alternative d'économie ne cesse d'augmenter. De plus, en tant que secteur à plus forte consommation énergétique, nous avons la responsabilité de réduire notre impact environnemental autant que possible.",
+    "instalaciones_index.links.valencia": "Valence",
+    "instalaciones_index.links.alicante": "Alicante",
+    "instalaciones_index.links.murcia": "Murcie"
 }
