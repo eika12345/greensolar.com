@@ -1,4 +1,11 @@
 {
+
+	"home.title": "Installation de panneaux solaires à Murcie, Alicante et Valence | Green Solar",
+	"conoce-mas.title": "Blog sur l'énergie solaire | Green Solar",
+	"pergola.title": "Pergola photovoltaïque solaire | Green Solar",
+	"bomba.title": "Pompe à chaleur solaire | Green Solar",
+	"carga.title": "Recharger les véhicules électriques grâce à l'énergie solaire | Green Solar",
+
 	"nav.trabajos": "Réalisations",
 	"nav.calculadora": "Calculateur",
 	"nav.instalaciones": "Installations",
@@ -579,5 +586,73 @@
 	"cookies_policy.sections.manage.browser_links.safari": "Safari",
 	"cookies_policy.sections.manage.browser_links.safari_ios": "Safari pour iPhone et iPad",
 	"cookies_policy.sections.manage.browser_links.chrome_android": "Google Chrome pour Android",
-	"cookies_policy.sections.manage.browser_links.chrome_ios": "Google Chrome pour iPhone et iPad"
+	"cookies_policy.sections.manage.browser_links.chrome_ios": "Google Chrome pour iPhone et iPad",
+
+	"privacy.title": "Politique de Confidentialité | Green Solar",
+	"privacy.h1": "Politique de confidentialité",
+	"privacy.intro.p1": "Informations conformes à la réglementation relative à la protection des données personnelles",
+	"privacy.intro.p2": "En Europe et en Espagne, il existe des règles de protection des données destinées à protéger vos informations personnelles, dont le respect est obligatoire pour notre entreprise.",
+	"privacy.intro.p3": "C'est pourquoi il est très important pour nous que vous compreniez parfaitement ce que nous allons faire des données personnelles que nous vous demandons.",
+	"privacy.intro.p4": "Ainsi, nous serons transparents et vous donnerons le contrôle de vos données, avec un langage simple et des options claires qui vous permettront de décider de l'usage de vos informations personnelles.",
+	"privacy.intro.p5": "Si, après avoir lu ces informations, il vous reste des doutes, n'hésitez pas à nous contacter.",
+	"privacy.intro.p6": "Merci beaucoup pour votre collaboration.",
+
+	"privacy.section1.h2": "Qui sommes-nous ?",
+	"privacy.section1.li1": "Dénomination : GREEN SOLAR POWER 2021 S.L.",
+	"privacy.section1.li2": "CIF / NIF : B06774053",
+	"privacy.section1.li3": "Activité principale : Vente et installation de panneaux solaires.",
+	"privacy.section1.li4": "Adresse : C/ Yuca, 15, 03191, Pinar de Campoverde (Alicante), Espagne",
+	"privacy.section1.li5": "Téléphone : 691 251 864",
+	"privacy.section1.li6": "Notre adresse e-mail de contact : info@green-solar.es",
+	"privacy.section1.li7": "Notre site web : https://green-solar.es",
+	"privacy.section1.p1": "Nous restons à votre disposition, n'hésitez pas à nous contacter.",
+
+	"privacy.section2.h2": "Pourquoi allons-nous utiliser vos données ?",
+	"privacy.section2.p1": "De manière générale, vos données personnelles seront utilisées pour établir une relation avec vous et vous fournir nos services. Elles pourront également être utilisées à d'autres fins, comme l'envoi de publicités ou la promotion de nos activités.",
+
+	"privacy.section3.h2": "Pourquoi avons-nous besoin d'utiliser vos données ?",
+	"privacy.section3.p1": "Vos données personnelles sont nécessaires pour établir une relation avec vous et vous fournir nos services. À cet égard, nous mettrons à votre disposition une série d'options qui vous permettront de décider, de manière claire et simple, de l'usage de vos informations personnelles.",
+
+	"privacy.section4.h2": "Qui aura connaissance des informations que nous vous demandons ?",
+	"privacy.section4.p1": "En règle générale, seul le personnel dûment autorisé de notre entreprise pourra avoir connaissance des informations que nous vous demandons.",
+	"privacy.section4.p2": "De même, pourront avoir connaissance de vos informations personnelles les entités qui doivent y avoir accès afin que nous puissions vous fournir nos services. Par exemple, notre banque connaîtra vos données si le paiement de nos services est effectué par carte ou par virement bancaire.",
+	"privacy.section4.p3": "De même, les entités publiques ou privées auxquelles nous sommes tenus de communiquer vos données personnelles en vertu d'une loi en auront connaissance. Par exemple, la législation fiscale nous oblige à communiquer à l'administration fiscale certaines informations sur les opérations économiques dépassant un certain montant.",
+	"privacy.section4.p4": "Si, en dehors des cas mentionnés ci-dessus, nous devions communiquer vos informations personnelles à d'autres entités, nous vous demanderons toujours au préalable votre autorisation, au moyen d'options claires qui vous permettront de décider.",
+
+	"privacy.section5.h2": "Comment allons-nous protéger vos données ?",
+	"privacy.section5.p1": "Nous protégerons vos données au moyen de mesures de sécurité efficaces, adaptées aux risques liés à l'utilisation de vos informations.",
+	"privacy.section5.p2": "À cette fin, notre entreprise a approuvé une politique de protection des données, et des contrôles ainsi que des audits annuels sont réalisés afin de vérifier que vos données personnelles restent sécurisées à tout moment.",
+
+	"privacy.section6.h2": "Vos données seront-elles envoyées vers d'autres pays ?",
+	"privacy.section6.p1": "Dans le monde, certains pays offrent un niveau de sécurité élevé pour vos données, d'autres moins. L'Union européenne, par exemple, constitue un environnement sûr pour vos données. Notre politique consiste à ne pas transmettre vos informations personnelles vers un pays qui ne serait pas sûr du point de vue de la protection des données.",
+	"privacy.section6.p2": "Si, dans le cadre de la fourniture du service, il devenait indispensable d'envoyer vos données vers un pays offrant un niveau de sécurité inférieur à celui de l'Espagne, nous vous demanderons toujours votre autorisation au préalable et appliquerons des mesures de sécurité efficaces afin de réduire les risques liés à cet envoi.",
+
+	"privacy.section7.h2": "Pendant combien de temps allons-nous conserver vos données ?",
+	"privacy.section7.p1": "Nous conserverons vos données pendant toute la durée de notre relation et aussi longtemps que la loi nous y oblige. Une fois les délais légaux applicables écoulés, nous procéderons à leur suppression de manière sécurisée et respectueuse de l'environnement.",
+
+	"privacy.section8.h2": "Quels sont vos droits en matière de protection des données ?",
+	"privacy.section8.p1": "Vous pouvez à tout moment nous contacter pour savoir quelles informations nous détenons à votre sujet, les rectifier si elles sont inexactes, et les faire supprimer une fois notre relation terminée, dans la mesure où cela est légalement possible.",
+	"privacy.section8.p2": "Vous avez également le droit de demander le transfert de vos informations vers une autre entité. Ce droit est appelé « portabilité » et peut s'avérer utile dans certaines situations.",
+	"privacy.section8.p3": "Pour exercer l'un de ces droits, vous devez adresser une demande écrite à notre adresse, accompagnée d'une copie de votre pièce d'identité, afin de pouvoir vous identifier.",
+	"privacy.section8.p4": "Nos bureaux disposent de formulaires spécifiques pour exercer ces droits, et nous vous proposons notre aide pour les remplir.",
+	"privacy.section8.p5": "Pour en savoir plus sur vos droits en matière de protection des données, vous pouvez consulter le site web de l'",
+	"privacy.section8.p5_link": "Agence espagnole de protection des données (AEPD)",
+
+	"privacy.section9.h2": "Pouvez-vous retirer votre consentement si vous changez d'avis ultérieurement ?",
+	"privacy.section9.p1": "Vous pouvez retirer votre consentement concernant l'utilisation de vos données à tout moment si vous changez d'avis.",
+	"privacy.section9.p2": "Par exemple, si vous étiez auparavant intéressé(e) par la réception de publicités sur nos produits ou services mais que vous ne souhaitez plus en recevoir, vous pouvez nous en informer via le formulaire d'opposition au traitement disponible dans nos bureaux.",
+
+	"privacy.section10.h2": "Où pouvez-vous déposer une réclamation ?",
+	"privacy.section10.p1": "Si vous estimez que vos droits n'ont pas été respectés par notre entreprise, vous pouvez déposer une réclamation auprès de l'Agence espagnole de protection des données (AEPD) via :",
+	"privacy.section10.li1": "Siège électronique : www.aepd.es",
+	"privacy.section10.li2": "Adresse postale : Agencia Española de Protección de Datos, C/ Jorge Juan, 6, 28001 Madrid, Espagne",
+	"privacy.section10.li3": "Téléphone : 901 100 099 / 91 266 35 17",
+	"privacy.section10.p2": "Déposer une réclamation est entièrement gratuit et ne nécessite pas l'assistance d'un avocat.",
+
+	"privacy.section11.h2": "Établirons-nous des profils vous concernant ?",
+	"privacy.section11.p1": "Notre politique consiste à ne pas établir de profils des utilisateurs de nos services. Toutefois, il peut arriver que, à des fins de prestation de services, commerciales ou autres, nous ayons besoin d'établir des profils d'informations vous concernant.",
+	"privacy.section11.p2": "Dans ce cas, nous appliquerons des mesures de sécurité efficaces afin de protéger vos informations à tout moment contre toute personne non autorisée cherchant à les utiliser à son propre avantage.",
+
+	"privacy.section12.h2": "Utiliserons-nous vos données à d'autres fins ?",
+	"privacy.section12.p1": "Notre politique consiste à ne pas utiliser vos données à des fins autres que celles que nous vous avons expliquées. Si, néanmoins, nous devions utiliser vos données pour des activités différentes, nous vous demanderons toujours au préalable votre autorisation, au moyen d'options claires qui vous permettront de décider."
 }
