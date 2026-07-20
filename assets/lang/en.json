@@ -513,5 +513,70 @@
 	"financiacion.industria.item4": "Compatible with grant access.",
 	"financiacion.industria.item5": "Insurance included.",
 	"financiacion.industria.item6": "Does not count toward CIRBE.",
-	"financiacion.industria.item7": "Fast, individualized quotes for each project."
+	"financiacion.industria.item7": "Fast, individualized quotes for each project.",
+
+	"cookies_policy.seo.title": "Cookie Policy | Green Solar",
+	"cookies_policy.seo.description": "Read Green Solar's Cookie Policy. Learn which cookies we use, why we use them, and how you can manage them.",
+	"cookies_policy.seo.keywords": "cookie policy, Green Solar cookies, website cookies, privacy, data protection",
+	"cookies_policy.seo.og_title": "Cookie Policy | Green Solar",
+	"cookies_policy.seo.og_description": "Read Green Solar's Cookie Policy.",
+	"cookies_policy.seo.twitter_title": "Cookie Policy | Green Solar",
+	"cookies_policy.seo.twitter_description": "Read Green Solar's Cookie Policy.",
+
+	"cookies_policy.title": "Cookie Policy",
+	"cookies_policy.intro": "Welcome to the COOKIE POLICY of the GREEN SOLAR POWER 2021 S.L. website, holder of Tax ID B06774053. Here we explain, in clear and simple language, everything you need to know so you can remain in control of your personal decisions regarding cookies.",
+
+	"cookies_policy.sections.what_are.title": "WHAT ARE COOKIES AND WHY DO WE USE THEM?",
+	"cookies_policy.sections.what_are.p1": "A cookie is a small information file that is stored on your computer, smartphone or tablet each time you visit our website.",
+	"cookies_policy.sections.what_are.p2": "In principle, a cookie is harmless: it does not contain viruses, trojans, worms or any other malicious software that could damage your device. However, it does have some impact on your right to personal data protection, as it collects certain information about you (browsing habits, identity, preferences, etc.).",
+	"cookies_policy.sections.what_are.p3": "For this reason, in accordance with the applicable legislation (LSSI and current personal data protection regulations), the activation of certain types of cookies requires your prior consent.",
+	"cookies_policy.sections.what_are.p4": "Before making your decision, we would like to provide you with some additional information that may help you make an informed choice:",
+	"cookies_policy.sections.what_are.p5": "1. Cookies can be classified into different types depending on their purpose. Technical cookies are necessary for our website to function properly, do not require your consent, and are the only cookies enabled by default. The remaining cookies are used to improve our website, personalise it according to your preferences, or display advertising tailored to your searches, preferences and interests. You can accept all these cookies by clicking ACCEPT, reject them by clicking REJECT, or configure them by selecting COOKIE SETTINGS.",
+	"cookies_policy.sections.what_are.p6": "2. Some cookies belong to us (known as first-party cookies), while others belong to external companies that provide services for our website (known as third-party cookies, such as cookies from providers like Google). Some of these external providers may be located outside Spain.",
+	"cookies_policy.sections.what_are.p7": "Globally, not all countries provide the same level of data protection, with some offering greater protection than others (for example, the European Union is considered a safe environment for your data). Our policy is to work only with trusted providers who, regardless of whether they are located within or outside the European Union, have adopted appropriate safeguards to protect your personal information. In the section 'WHAT TYPES OF COOKIES DO WE USE ON OUR WEBSITE?', you can consult the privacy and data protection policies of each external provider in order to make an informed decision about enabling or disabling their cookies.",
+	"cookies_policy.sections.what_are.p8": "3. Finally, depending on how long they remain active, cookies can be divided into two categories:",
+	"cookies_policy.sections.what_are.p9": "Session cookies: these expire automatically when you end your session on your computer, smartphone or tablet. They are generally used to retain the information required while providing a service on a single occasion. Persistent cookies: these remain stored on your computer, smartphone or tablet for a defined period of time, ranging from a few minutes to several years.",
+
+	"cookies_policy.sections.types.title": "WHAT TYPES OF COOKIES MAY WE USE ON OUR WEBSITE?",
+
+	"cookies_policy.sections.technical.title": "Technical Cookies:",
+	"cookies_policy.sections.technical.p1": "Technical cookies are strictly necessary for our website to function correctly and allow you to browse it. For example, they enable us to identify you, provide access to restricted areas when necessary, or remember options or services you have already selected, such as your privacy preferences. These cookies are enabled by default and therefore do not require your consent.",
+	"cookies_policy.sections.technical.p2": "You may block or be alerted about these cookies through your browser settings; however, blocking them may affect the proper functioning of certain features of our website.",
+
+	"cookies_policy.sections.analytics.title": "Analytics Cookies:",
+	"cookies_policy.sections.analytics.p1": "Analytics cookies allow us to study how users navigate our website (for example, which sections are visited most frequently, which services are used most often, and whether they function correctly).",
+	"cookies_policy.sections.analytics.p2": "Using statistical information about website usage, we can improve both the website itself and the services we provide. These cookies are therefore not used for advertising purposes, but solely to improve the performance of our website and better adapt it to our users. By enabling them, you contribute to this continuous improvement.",
+	"cookies_policy.sections.analytics.p3": "You may enable or disable these cookies using the corresponding option. They are disabled by default.",
+
+	"cookies_policy.sections.functionality.title": "Functionality and Personalisation Cookies:",
+	"cookies_policy.sections.functionality.p1": "Functionality cookies allow us to remember your preferences so we can personalise certain features and general options of our website each time you visit it (for example, the language in which information is displayed, your favourite sections, or your browser type).",
+	"cookies_policy.sections.functionality.p2": "These cookies are not used for advertising purposes. By enabling them, you improve the website's functionality (for example, adapting it to your browser type) and its personalisation according to your preferences (for example, displaying information in the language you previously selected), making your browsing experience easier, more convenient and more user-friendly.",
+	"cookies_policy.sections.functionality.p3": "You may enable or disable these cookies using the corresponding option. They are disabled by default.",
+
+	"cookies_policy.sections.advertising.title": "Advertising Cookies:",
+	"cookies_policy.sections.advertising.p1": "Advertising cookies allow us to manage the advertising spaces on our website based on criteria such as the content displayed or how frequently advertisements are shown.",
+	"cookies_policy.sections.advertising.p2": "For example, if you have been shown the same advertisement several times on our website and have not shown any interest by clicking on it, it will no longer be displayed. In short, enabling these cookies makes the advertising you see more relevant, more varied and less repetitive.",
+	"cookies_policy.sections.advertising.p3": "You may enable or disable these cookies using the corresponding option. They are disabled by default.",
+
+	"cookies_policy.sections.behavioural.title": "Behavioural Advertising Cookies:",
+	"cookies_policy.sections.behavioural.p1": "Behavioural advertising cookies allow us to gather information by observing your browsing habits and behaviour in order to display advertising content that better matches your interests and preferences.",
+	"cookies_policy.sections.behavioural.p2": "To explain this simply, imagine your recent web searches were related to mystery novels. In that case, we might show you advertisements for mystery books.",
+	"cookies_policy.sections.behavioural.p3": "Therefore, by enabling these cookies, the advertising displayed on our website will not be generic, but tailored specifically to your searches, preferences and interests.",
+	"cookies_policy.sections.behavioural.p4": "You may enable or disable these cookies using the corresponding option. They are disabled by default.",
+
+	"cookies_policy.sections.manage.title": "WHAT CAN YOU DO ABOUT COOKIES?",
+	"cookies_policy.sections.manage.p1": "When you first visit our website, you will see a notice informing you that cookies may be of different types.",
+	"cookies_policy.sections.manage.p2": "Technical cookies are necessary for our website to function and do not require your consent. They are the only cookies enabled by default. All other cookies are used to improve our website, personalise it according to your preferences, or display advertising tailored to your searches, preferences and interests. You can accept all cookies by clicking ACCEPT, reject them by clicking REJECT, or configure them by selecting COOKIE SETTINGS.",
+	"cookies_policy.sections.manage.p3": "Please note that once you have enabled any type of cookie, you can disable it at any time simply by unchecking the corresponding option in the COOKIE SETTINGS section of our website. Enabling or disabling our own cookies is always straightforward.",
+	"cookies_policy.sections.manage.p4": "You should also remember that, through your browser settings, you can block or receive alerts about cookies. However, blocking technical cookies may affect the proper functioning of some features of our website.",
+	"cookies_policy.sections.manage.p5": "Finally, if you enable third-party cookies (from external companies providing services to our website) and later decide to disable them, you can do so either through your browser's cookie management tools or through the systems provided by those third-party providers.",
+	"cookies_policy.sections.manage.browser_links_title": "To make things easier, below you will find links to cookie management instructions for the most commonly used web browsers:",
+
+	"cookies_policy.sections.manage.browser_links.chrome": "Google Chrome",
+	"cookies_policy.sections.manage.browser_links.firefox": "Mozilla Firefox",
+	"cookies_policy.sections.manage.browser_links.internet_explorer": "Internet Explorer",
+	"cookies_policy.sections.manage.browser_links.safari": "Safari",
+	"cookies_policy.sections.manage.browser_links.safari_ios": "Safari for iPhone and iPad",
+	"cookies_policy.sections.manage.browser_links.chrome_android": "Google Chrome for Android",
+	"cookies_policy.sections.manage.browser_links.chrome_ios": "Google Chrome for iPhone and iPad"
 }

@@ -513,5 +513,71 @@
 	"financiacion.industria.item4": "Compatible avec l'accès aux subventions.",
 	"financiacion.industria.item5": "Assurance incluse.",
 	"financiacion.industria.item6": "Ne compte pas dans le CIRBE.",
-	"financiacion.industria.item7": "Devis rapide et individualisé pour chaque projet."
+	"financiacion.industria.item7": "Devis rapide et individualisé pour chaque projet.",
+
+
+	"cookies_policy.seo.title": "Politique relative aux cookies | Green Solar",
+	"cookies_policy.seo.description": "Consultez la Politique relative aux cookies de Green Solar. Découvrez quels cookies nous utilisons, dans quel but et comment vous pouvez les gérer.",
+	"cookies_policy.seo.keywords": "politique relative aux cookies, cookies Green Solar, cookies du site web, confidentialité, protection des données",
+	"cookies_policy.seo.og_title": "Politique relative aux cookies | Green Solar",
+	"cookies_policy.seo.og_description": "Consultez la Politique relative aux cookies de Green Solar.",
+	"cookies_policy.seo.twitter_title": "Politique relative aux cookies | Green Solar",
+	"cookies_policy.seo.twitter_description": "Consultez la Politique relative aux cookies de Green Solar.",
+
+	"cookies_policy.title": "Politique relative aux cookies",
+	"cookies_policy.intro": "Bienvenue dans la POLITIQUE RELATIVE AUX COOKIES du site web de GREEN SOLAR POWER 2021 S.L., titulaire du NIF B06774053. Nous vous expliquons ici, dans un langage clair et simple, tout ce que vous devez savoir afin que vous puissiez garder le contrôle de vos décisions personnelles concernant les cookies.",
+
+	"cookies_policy.sections.what_are.title": "QUE SONT LES COOKIES ET POURQUOI LES UTILISONS-NOUS ?",
+	"cookies_policy.sections.what_are.p1": "Un cookie est un petit fichier d’information enregistré sur votre ordinateur, smartphone ou tablette chaque fois que vous visitez notre site web.",
+	"cookies_policy.sections.what_are.p2": "En principe, un cookie est inoffensif : il ne contient ni virus, ni chevaux de Troie, ni vers, ni aucun autre logiciel malveillant pouvant endommager votre appareil. Cependant, il a une certaine incidence sur votre droit à la protection des données personnelles, car il collecte certaines informations vous concernant (habitudes de navigation, identité, préférences, etc.).",
+	"cookies_policy.sections.what_are.p3": "C’est pourquoi, conformément à la législation applicable (LSSI et réglementation en vigueur relative à la protection des données personnelles), l’activation de certains types de cookies nécessite votre consentement préalable.",
+	"cookies_policy.sections.what_are.p4": "Avant de prendre votre décision, nous souhaitons vous fournir quelques informations supplémentaires qui pourront vous aider à faire un choix éclairé :",
+	"cookies_policy.sections.what_are.p5": "1. Les cookies peuvent être classés en plusieurs catégories selon leur finalité. Les cookies techniques sont nécessaires au bon fonctionnement de notre site web, ne nécessitent pas votre consentement et sont les seuls activés par défaut. Les autres cookies servent à améliorer notre site, à le personnaliser selon vos préférences ou à afficher des publicités adaptées à vos recherches, goûts et centres d’intérêt. Vous pouvez accepter tous ces cookies en cliquant sur ACCEPTER, les refuser en cliquant sur REFUSER, ou les configurer en sélectionnant PARAMÈTRES DES COOKIES.",
+	"cookies_policy.sections.what_are.p6": "2. Certains cookies nous appartiennent (cookies internes), tandis que d’autres appartiennent à des sociétés externes qui fournissent des services pour notre site web (cookies tiers, tels que ceux de fournisseurs comme Google). Certains de ces prestataires peuvent être situés en dehors de l’Espagne.",
+	"cookies_policy.sections.what_are.p7": "Au niveau mondial, tous les pays n’offrent pas le même niveau de protection des données ; certains garantissent une protection plus élevée que d’autres (par exemple, l’Union européenne est considérée comme un environnement sûr pour vos données). Notre politique consiste à travailler uniquement avec des fournisseurs de confiance qui, qu’ils soient situés dans ou hors de l’Union européenne, ont mis en place des garanties appropriées pour protéger vos informations personnelles. Dans la section « QUELS TYPES DE COOKIES UTILISONS-NOUS SUR NOTRE SITE WEB ? », vous pouvez consulter les politiques de confidentialité et de protection des données de chaque fournisseur externe afin de prendre une décision éclairée concernant l’activation ou la désactivation de leurs cookies.",
+	"cookies_policy.sections.what_are.p8": "3. Enfin, selon leur durée de conservation, les cookies peuvent être répartis en deux catégories :",
+	"cookies_policy.sections.what_are.p9": "Cookies de session : ils expirent automatiquement lorsque vous fermez votre session sur votre ordinateur, smartphone ou tablette. Ils sont généralement utilisés pour conserver les informations nécessaires pendant la fourniture d’un service ponctuel. Cookies persistants : ils restent stockés sur votre ordinateur, smartphone ou tablette pendant une période déterminée, pouvant aller de quelques minutes à plusieurs années.",
+
+	"cookies_policy.sections.types.title": "QUELS TYPES DE COOKIES POUVONS-NOUS UTILISER SUR NOTRE SITE WEB ?",
+
+	"cookies_policy.sections.technical.title": "Cookies techniques :",
+	"cookies_policy.sections.technical.p1": "Les cookies techniques sont strictement nécessaires au bon fonctionnement de notre site web et vous permettent de naviguer sur celui-ci. Ils nous permettent, par exemple, de vous identifier, de vous donner accès à des zones restreintes lorsque cela est nécessaire ou de mémoriser des options ou services que vous avez déjà sélectionnés, tels que vos préférences de confidentialité. Ces cookies sont activés par défaut et ne nécessitent donc pas votre consentement.",
+	"cookies_policy.sections.technical.p2": "Vous pouvez bloquer ces cookies ou être averti de leur présence via les paramètres de votre navigateur ; toutefois, leur blocage peut affecter le bon fonctionnement de certaines fonctionnalités de notre site web.",
+
+	"cookies_policy.sections.analytics.title": "Cookies d’analyse :",
+	"cookies_policy.sections.analytics.p1": "Les cookies d’analyse nous permettent d’étudier la manière dont les utilisateurs naviguent sur notre site web (par exemple, quelles sections sont les plus consultées, quels services sont les plus utilisés et s’ils fonctionnent correctement).",
+	"cookies_policy.sections.analytics.p2": "Grâce aux informations statistiques sur l’utilisation du site, nous pouvons améliorer à la fois le site lui-même et les services que nous proposons. Ces cookies ne sont donc pas utilisés à des fins publicitaires, mais uniquement pour améliorer les performances de notre site et mieux l’adapter à nos utilisateurs. En les activant, vous contribuez à cette amélioration continue.",
+	"cookies_policy.sections.analytics.p3": "Vous pouvez activer ou désactiver ces cookies via l’option correspondante. Ils sont désactivés par défaut.",
+
+	"cookies_policy.sections.functionality.title": "Cookies de fonctionnalité et de personnalisation :",
+	"cookies_policy.sections.functionality.p1": "Les cookies de fonctionnalité nous permettent de mémoriser vos préférences afin de personnaliser certaines caractéristiques et options générales de notre site web à chaque visite (par exemple, la langue d’affichage des informations, vos sections favorites ou le type de navigateur utilisé).",
+	"cookies_policy.sections.functionality.p2": "Ces cookies ne sont pas utilisés à des fins publicitaires. En les activant, vous améliorez la fonctionnalité du site (par exemple, son adaptation à votre navigateur) ainsi que sa personnalisation selon vos préférences (par exemple, l’affichage des informations dans la langue choisie précédemment), ce qui rend votre navigation plus simple, plus pratique et plus confortable.",
+	"cookies_policy.sections.functionality.p3": "Vous pouvez activer ou désactiver ces cookies via l’option correspondante. Ils sont désactivés par défaut.",
+
+	"cookies_policy.sections.advertising.title": "Cookies publicitaires :",
+	"cookies_policy.sections.advertising.p1": "Les cookies publicitaires nous permettent de gérer les espaces publicitaires présents sur notre site web selon des critères tels que le contenu affiché ou la fréquence d’affichage des annonces.",
+	"cookies_policy.sections.advertising.p2": "Par exemple, si la même annonce vous a été affichée plusieurs fois sur notre site et que vous n’avez manifesté aucun intérêt en cliquant dessus, elle ne sera plus affichée. En résumé, l’activation de ces cookies permet de rendre les publicités plus pertinentes, plus variées et moins répétitives.",
+	"cookies_policy.sections.advertising.p3": "Vous pouvez activer ou désactiver ces cookies via l’option correspondante. Ils sont désactivés par défaut.",
+
+	"cookies_policy.sections.behavioural.title": "Cookies de publicité comportementale :",
+	"cookies_policy.sections.behavioural.p1": "Les cookies de publicité comportementale nous permettent de collecter des informations en observant vos habitudes et comportements de navigation afin d’afficher des contenus publicitaires mieux adaptés à vos centres d’intérêt et préférences.",
+	"cookies_policy.sections.behavioural.p2": "Pour l’expliquer simplement, imaginons que vos recherches récentes sur Internet concernaient des romans policiers. Dans ce cas, nous pourrions vous présenter des publicités pour des livres policiers.",
+	"cookies_policy.sections.behavioural.p3": "Ainsi, en activant ces cookies, les publicités affichées sur notre site ne seront pas génériques, mais spécifiquement adaptées à vos recherches, préférences et centres d’intérêt.",
+	"cookies_policy.sections.behavioural.p4": "Vous pouvez activer ou désactiver ces cookies via l’option correspondante. Ils sont désactivés par défaut.",
+
+	"cookies_policy.sections.manage.title": "QUE POUVEZ-VOUS FAIRE À PROPOS DES COOKIES ?",
+	"cookies_policy.sections.manage.p1": "Lors de votre première visite sur notre site web, un avis vous informe que les cookies peuvent être de différents types.",
+	"cookies_policy.sections.manage.p2": "Les cookies techniques sont nécessaires au fonctionnement de notre site web et ne nécessitent pas votre consentement. Ce sont les seuls cookies activés par défaut. Tous les autres cookies servent à améliorer notre site, à le personnaliser selon vos préférences ou à afficher des publicités adaptées à vos recherches, goûts et centres d’intérêt. Vous pouvez accepter tous les cookies en cliquant sur ACCEPTER, les refuser en cliquant sur REFUSER, ou les configurer en sélectionnant PARAMÈTRES DES COOKIES.",
+	"cookies_policy.sections.manage.p3": "Veuillez noter qu’une fois un type de cookie activé, vous pouvez le désactiver à tout moment en décochant simplement l’option correspondante dans la section PARAMÈTRES DES COOKIES de notre site web. L’activation et la désactivation de nos propres cookies sont toujours simples à effectuer.",
+	"cookies_policy.sections.manage.p4": "N’oubliez pas également que vous pouvez, via les paramètres de votre navigateur, bloquer les cookies ou être averti de leur présence. Toutefois, le blocage des cookies techniques peut affecter le bon fonctionnement de certaines fonctionnalités de notre site web.",
+	"cookies_policy.sections.manage.p5": "Enfin, si vous activez des cookies tiers (provenant de sociétés externes fournissant des services à notre site) et décidez ensuite de les désactiver, vous pourrez le faire soit via les outils de gestion des cookies de votre navigateur, soit via les systèmes proposés par ces prestataires tiers.",
+	"cookies_policy.sections.manage.browser_links_title": "Pour vous faciliter la tâche, vous trouverez ci-dessous des liens vers les instructions de gestion des cookies des navigateurs web les plus couramment utilisés :",
+
+	"cookies_policy.sections.manage.browser_links.chrome": "Google Chrome",
+	"cookies_policy.sections.manage.browser_links.firefox": "Mozilla Firefox",
+	"cookies_policy.sections.manage.browser_links.internet_explorer": "Internet Explorer",
+	"cookies_policy.sections.manage.browser_links.safari": "Safari",
+	"cookies_policy.sections.manage.browser_links.safari_ios": "Safari pour iPhone et iPad",
+	"cookies_policy.sections.manage.browser_links.chrome_android": "Google Chrome pour Android",
+	"cookies_policy.sections.manage.browser_links.chrome_ios": "Google Chrome pour iPhone et iPad"
 }
