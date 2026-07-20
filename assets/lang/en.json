@@ -713,5 +713,21 @@
 	"presupuesto.step7.label_nombre": "Full name",
 	"presupuesto.step7.label_telefono": "Contact phone number",
 	"presupuesto.step_counter.de": "of",
-	"presupuesto.step_counter.paso": "Step"
+	"presupuesto.step_counter.paso": "Step",
+	"presupuesto.title": "Budget | Green Solar",
+
+	"trabajos.title": "Our Installations | Green Solar",
+	"trabajos.banner.title": "Our Work",
+	"trabajos.filter.all": "All",
+	"trabajos.filter.residencial": "Residential",
+	"trabajos.filter.industrial": "Industrial",
+	"trabajos.filter.comunidad": "Community",
+	"trabajos.loading": "Loading installations…",
+	"trabajos.error": "We couldn't load the installations. Please try again later.",
+	"trabajos.empty": "There are no installations in this category yet.",
+	"trabajos.lightbox.aria_label": "Image gallery",
+	"trabajos.lightbox.close": "Close",
+	"trabajos.lightbox.prev": "Previous",
+	"trabajos.lightbox.next": "Next",
+	"trabajos.photos_label": "photos"
 }

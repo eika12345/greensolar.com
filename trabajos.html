@@ -2,9 +2,35 @@
 
 <html lang="es">
 	<head>
-		<title>Nuestras instalaciones - Green Solar</title>
+		<title data-i18n="trabajos.title">Nuestras instalaciones | Green Solar</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+
+		<!-- SEO Meta Tags -->
+		<meta name="description" content="Descubre nuestras instalaciones solares realizadas en Murcia, Alicante y Valencia: fotovoltaica residencial, industrial y en comunidades de vecinos. Consulta fotos reales de nuestros trabajos." />
+		<meta name="keywords" content="instalaciones solares Murcia, trabajos placas solares Alicante, fotovoltaica Valencia, Green Solar, galería instalaciones solares" />
+		<meta name="author" content="Green Solar" />
+		<meta name="robots" content="index, follow" />
+		<link rel="canonical" href="https://www.green-solar.es/trabajos.html" />
+		<meta name="language" content="Spanish" />
+		<meta name="geo.region" content="ES-MC" />
+		<meta name="geo.placename" content="Murcia, Alicante, Valencia" />
+
+		<!-- Open Graph / Facebook -->
+		<meta property="og:type" content="website" />
+		<meta property="og:url" content="https://www.green-solar.es/trabajos.html" />
+		<meta property="og:title" content="Nuestras instalaciones | Green Solar" />
+		<meta property="og:description" content="Descubre nuestras instalaciones solares realizadas en Murcia, Alicante y Valencia: fotovoltaica residencial, industrial y en comunidades de vecinos." />
+		<meta property="og:image" content="https://www.green-solar.es/images/logo_upscaled.png" />
+		<meta property="og:locale" content="es_ES" />
+		<meta property="og:site_name" content="Green Solar" />
+
+		<!-- Twitter Card -->
+		<meta name="twitter:card" content="summary_large_image" />
+		<meta name="twitter:title" content="Nuestras instalaciones | Green Solar" />
+		<meta name="twitter:description" content="Descubre nuestras instalaciones solares realizadas en Murcia, Alicante y Valencia: fotovoltaica residencial, industrial y en comunidades de vecinos." />
+		<meta name="twitter:image" content="https://www.green-solar.es/images/logo_upscaled.png" />
+
 		<link rel="stylesheet" href="assets/css/main.css" />
 		<link rel="stylesheet" href="assets/css/variables.css" />
 		<link rel="stylesheet" href="assets/css/wrapperstripped.css" />
@@ -91,7 +117,7 @@
 
 				<section id="banner">
 					<div class="inner">
-						<h2>Nuestros trabajos</h2>
+						<h2 data-i18n="trabajos.banner.title">Nuestros trabajos</h2>
 					</div>
 				</section>
 
@@ -101,21 +127,21 @@
 				<div class="inner">
                     <!-- Filter Buttons -->
                     <div class="inst-filters">
-                        <button class="inst-filter-btn active" data-filter="all">Todos</button>
-                        <button class="inst-filter-btn" data-filter="residencial">Residencial</button>
-                        <button class="inst-filter-btn" data-filter="industrial">Industrial</button>
-                        <button class="inst-filter-btn" data-filter="comunidad">Comunidad</button>
+                        <button class="inst-filter-btn active" data-filter="all" data-i18n="trabajos.filter.all">Todos</button>
+                        <button class="inst-filter-btn" data-filter="residencial" data-i18n="trabajos.filter.residencial">Residencial</button>
+                        <button class="inst-filter-btn" data-filter="industrial" data-i18n="trabajos.filter.industrial">Industrial</button>
+                        <button class="inst-filter-btn" data-filter="comunidad" data-i18n="trabajos.filter.comunidad">Comunidad</button>
                     </div>
 
                     <!-- Loading state -->
                     <div id="inst-loading" class="inst-loading">
                         <div class="inst-spinner"></div>
-                        <p>Cargando instalaciones…</p>
+                        <p data-i18n="trabajos.loading">Cargando instalaciones…</p>
                     </div>
 
                     <!-- Error state -->
                     <div id="inst-error" class="inst-error" style="display:none;">
-                        <p>No se pudieron cargar las instalaciones. Inténtalo de nuevo más tarde.</p>
+                        <p data-i18n="trabajos.error">No se pudieron cargar las instalaciones. Inténtalo de nuevo más tarde.</p>
                     </div>
 
                     <!-- Blog Grid -->
@@ -123,15 +149,15 @@
 
                     <!-- Empty state -->
                     <div id="inst-empty" class="inst-empty" style="display:none;">
-                        <p>No hay instalaciones en esta categoría todavía.</p>
+                        <p data-i18n="trabajos.empty">No hay instalaciones en esta categoría todavía.</p>
                     </div>
                     <br>
                 </div>                                                            
             </section>
 
             <!-- Lightbox -->
-            <div id="inst-lightbox" class="inst-lightbox" role="dialog" aria-modal="true" aria-label="Galería de imágenes">
-                <button class="inst-lightbox-close" id="inst-lightbox-close" aria-label="Cerrar">&times;</button>
+            <div id="inst-lightbox" class="inst-lightbox" role="dialog" aria-modal="true" aria-label="Galería de imágenes" data-i18n="trabajos.lightbox.aria_label" data-i18n-attr="aria-label">
+                <button class="inst-lightbox-close" id="inst-lightbox-close" aria-label="Cerrar" data-i18n="trabajos.lightbox.close" data-i18n-attr="aria-label">&times;</button>
                 <div class="inst-lightbox-content">
                     <img id="inst-lightbox-img" src="" alt="" />
                     <div class="inst-lightbox-caption">
@@ -141,8 +167,8 @@
                         <span id="inst-lightbox-counter"></span>
                     </div>
                     <div class="inst-lightbox-nav">
-                        <button class="inst-lightbox-prev" id="inst-lightbox-prev" aria-label="Anterior">&#8249;</button>
-                        <button class="inst-lightbox-next" id="inst-lightbox-next" aria-label="Siguiente">&#8250;</button>
+                        <button class="inst-lightbox-prev" id="inst-lightbox-prev" aria-label="Anterior" data-i18n="trabajos.lightbox.prev" data-i18n-attr="aria-label">&#8249;</button>
+                        <button class="inst-lightbox-next" id="inst-lightbox-next" aria-label="Siguiente" data-i18n="trabajos.lightbox.next" data-i18n-attr="aria-label">&#8250;</button>
                     </div>
                 </div>
             </div>
@@ -299,6 +325,17 @@
 			</button>
 
         <script>
+        // ─── i18n helper ──────────────────────────────────────────
+        // Same pattern as presupuesto.js: card markup below is built at
+        // runtime, so it can't rely on the data-i18n DOM scan. Falls back
+        // to the key itself if idioma.js hasn't initialized yet.
+        function t(key, params) {
+            if (window.i18n && typeof window.i18n.t === 'function') {
+                return window.i18n.t(key, params);
+            }
+            return key;
+        }
+
         // ─── CONFIG ───────────────────────────────────────────────
         const SHEET_ID = '13gH2h0Ve9FKyU-y3vAqj6JcFhFLe4f4Sn3v7ltBHYg8';
         // GID 0 = first sheet tab. If your sheet tab is not the first, change this.
@@ -380,16 +417,25 @@
 
                 const card = document.createElement('article');
                 card.className = 'inst-card';
+                let categoryLabel = '';
+                if (post.category) {
+                    const translatedCategory = t('trabajos.filter.' + post.category.toLowerCase());
+                    // t() returns the key itself when there's no matching translation
+                    // (e.g. a sheet category that doesn't match one of the filter buttons)
+                    categoryLabel = translatedCategory.indexOf('trabajos.filter.') === 0
+                        ? post.category
+                        : translatedCategory;
+                }
                 card.innerHTML = `
                     <div class="inst-card-thumb">
                         <img src="${thumb}" alt="${post.title}" loading="lazy" />
-                        ${images.length > 1 ? `<span class="inst-card-count">+${images.length} fotos</span>` : ''}
+                        ${images.length > 1 ? `<span class="inst-card-count">+${images.length} ${t('trabajos.photos_label')}</span>` : ''}
                     </div>
                     <div class="inst-card-body">
                         <h3>${post.title}</h3>
                         ${post.subtitle ? `<p class="inst-card-subtitle">${post.subtitle}</p>` : ''}
                         ${post.location ? `<p class="inst-card-location">📍 ${post.location}</p>` : ''}
-                        ${post.category ? `<span class="inst-card-badge">${post.category}</span>` : ''}
+                        ${categoryLabel ? `<span class="inst-card-badge">${categoryLabel}</span>` : ''}
                     </div>
                 `;
                 card.addEventListener('click', () => openLightbox(images, post.title, post.subtitle, post.location, 0));
@@ -452,6 +498,14 @@
                 activeFilter = btn.dataset.filter;
                 renderGrid();
             });
+        });
+
+        // ─── i18n ─────────────────────────────────────────────────
+        // Cards are built from sheet data at runtime, so if the user
+        // switches language after they've loaded, redraw them with the
+        // new translations for the "fotos" label and category badges.
+        document.addEventListener('i18n:change', () => {
+            if (allPosts.length) renderGrid();
         });
 
         // ─── INIT ─────────────────────────────────────────────────

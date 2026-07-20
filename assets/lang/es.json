@@ -648,6 +648,21 @@
 	"presupuesto.step7.label_telefono": "Teléfono de contacto",
 	"presupuesto.step_counter.de": "de",
 	"presupuesto.step_counter.paso": "Paso",
-	"presupuesto.title": "Presupuesto | Green Solar"
+	"presupuesto.title": "Presupuesto | Green Solar",
+
+	"trabajos.title": "Nuestras instalaciones | Green Solar",
+	"trabajos.banner.title": "Nuestros trabajos",
+	"trabajos.filter.all": "Todos",
+	"trabajos.filter.residencial": "Residencial",
+	"trabajos.filter.industrial": "Industrial",
+	"trabajos.filter.comunidad": "Comunidad",
+	"trabajos.loading": "Cargando instalaciones…",
+	"trabajos.error": "No se pudieron cargar las instalaciones. Inténtalo de nuevo más tarde.",
+	"trabajos.empty": "No hay instalaciones en esta categoría todavía.",
+	"trabajos.lightbox.aria_label": "Galería de imágenes",
+	"trabajos.lightbox.close": "Cerrar",
+	"trabajos.lightbox.prev": "Anterior",
+	"trabajos.lightbox.next": "Siguiente",
+	"trabajos.photos_label": "fotos"
 }
 
