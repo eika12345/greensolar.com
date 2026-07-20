@@ -2,7 +2,7 @@
 
 <html lang="es">
 	<head>
-		<title>Green Solar</title>
+		<title>Politica De Privacidad | Green Solar</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
@@ -16,22 +16,15 @@
 		<link rel="stylesheet" href="assets/css/counter.css" />
 		<link rel="stylesheet" href="assets/css/miscellaneous.css" />
         <link rel="stylesheet" href="assets/css/textos-legales.css" />
+        <link rel="stylesheet" href="assets/css/idioma.css" />
+		<link rel="stylesheet" href="assets/css/cookie.css" />
+
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flag-icons/7.2.3/css/flag-icons.min.css" />
 
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
 
-        <style>
-            #page-wrapper {
-                min-height: 100vh;
-                display: flex;
-                flex-direction: column;
-            }
-            #footer-nav {
-                margin-top: auto;
-            }
-            body {
-                background: #ffffff;
-            }
-        </style>
+		<link rel="icon" type="image/png" href="images/favicon.png">
+
 
 	</head>
 	<body class="is-preload">
@@ -39,23 +32,60 @@
 		<!-- Page Wrapper -->
 			<div id="page-wrapper">
 
-				<!-- Header Navbar -->
-					<header id="header">
+		<!----------------------------- Header Navbar ----------------------------->
+				<header id="header">
 						<h1><a href="index.html">Green Solar</a></h1>
-		<!-- Nav -->		
-		<nav>
-    		<a href="#menu">Menú</a>
-    			<ul>
-					<li><a href="#">Instalaciones</a></li>
-					<li><a href="#">Trabajos</a></li>
-					<li><a href="#">Pérgolas</a></li>
-					<li><a href="#">Conoce más</a></li>
-					<li><a href="financiacion.html">Financiación</a></li>
-					<li><a href="#footer">Contacto</a></li>
-					<li><a href="#" class="nav-presupuesto">Presupuesto</a></li>
-   				 </ul>
-		</nav>	
-					</header>
+
+							<div id="lang-picker">
+								<button id="lang-picker-toggle" type="button" aria-haspopup="listbox" aria-expanded="false">
+									<span class="fi fi-es lang-picker-flag"></span>
+									<span class="lang-picker-code">ES</span>
+								</button>
+								<ul id="lang-picker-list" role="listbox">
+									<li role="option" data-lang="es" aria-selected="true">
+										<span class="fi fi-es lang-picker-flag"></span> Español
+									</li>
+									<li role="option" data-lang="en" aria-selected="false">
+										<span class="fi fi-gb lang-picker-flag"></span> English
+									</li>
+									<li role="option" data-lang="fr" aria-selected="false">
+										<span class="fi fi-fr lang-picker-flag"></span> Français
+									</li>
+								</ul>
+							</div>
+
+					<nav>
+						<a href="#menu" data-i18n="nav.menu">Menú</a>
+							<ul>
+								<li><a href="trabajos.html" data-i18n="nav.trabajos">Trabajos</a></li>
+								<li><a href="calculadora.html" data-i18n="nav.calculadora">Calculadora</a></li>
+								<li class="has-dropdown">
+									<a href="instalaciones/index.html" data-i18n="nav.instalaciones">Instalaciones</a>
+								<ul class="dropdown">
+									<li><a href="instalaciones/valencia.html" data-i18n="nav.valencia">Valencia</a></li>
+									<li><a href="instalaciones/alicante.html" data-i18n="nav.alicante">Alicante</a></li>
+									<li><a href="instalaciones/murcia.html" data-i18n="nav.murcia">Murcia</a></li>
+								</ul>
+								</li>
+									<li class="mobile-only"><a href="instalaciones/valencia.html" data-i18n="nav.valencia_mobile">- Valencia</a></li>
+									<li class="mobile-only"><a href="instalaciones/alicante.html" data-i18n="nav.alicante_mobile">- Alicante</a></li>
+									<li class="mobile-only"><a href="instalaciones/murcia.html" data-i18n="nav.murcia_mobile">- Murcia</a></li>
+									<li class="has-dropdown">
+										<a href="pergola.html" data-i18n="nav.pergola">Pergola Solar</a>
+									<ul class="dropdown">
+										<li><a href="bomba-de-calor.html" data-i18n="nav.bomba_calor">Bomba de Calor</a></li>
+										<li><a href="carga-de-vehículos-eléctricos.html" data-i18n="nav.carga_vehiculos">Carga de Vehículos Eléctricos</a></li>
+									</ul>
+									</li>
+										<li class="mobile-only"><a href="bomba-de-calor.html" data-i18n="nav.bomba_calor_mobile">- Bomba de Calor</a></li>
+										<li class="mobile-only"><a href="carga-de-vehículos-eléctricos.html" data-i18n="nav.carga_vehiculos_mobile">- Carga de Vehículos Eléctricos</a></li>
+									<li><a href="conoce-más.html" data-i18n="nav.conoce_mas">Conoce más</a></li>
+									<li><a href="financiacion.html" data-i18n="nav.financiacion">Financiación</a></li>
+									<li><a href="contacto.html" data-i18n="nav.contacto">Contacto</a></li>
+									<li><a href="presupuesto.html" class="nav-presupuesto" data-i18n="nav.presupuesto">Presupuesto</a></li>
+							</ul>
+					</nav>
+				</header>
 
 				
 
@@ -134,50 +164,156 @@
     </div>
 </section>
 
+<!------------------------------- Footer Nav ------------------------------->
+		<footer id="footer-nav">
+			<div class="footer-nav-inner">
+				<div class="footer-col footer-brand">
+					<img src="/images/logo_upscaled.png" alt="Green Solar logo" class="footer-nav-logo" data-i18n="footer.brand.logo_alt" data-i18n-attr="alt" />
+					<a href="presupuesto.html" class="footer-cta" data-i18n="footer.cta">Solicita tu presupuesto</a>
+				</div>
 
-				
+				<div class="footer-col">
+					<h4 data-i18n="footer.company.heading">Empresa</h4>
+						<ul>
+							<li><a href="index.html" data-i18n="footer.company.link1">Green Solar</a></li>
+							<li><a href="contacto.html" data-i18n="footer.company.link3">Dónde estamos</a></li>
+						</ul>
+				</div>
 
-					<footer id="footer-nav">
-    <div class="footer-nav-inner">
+				<div class="footer-col">
+					<h4 data-i18n="footer.services.heading">Servicios</h4>
+						<ul>
+							<li><a href="instalaciones/index.html" data-i18n="footer.services.link1">Instalaciones</a></li>
+							<li><a href="trabajos.html" data-i18n="footer.services.link2">Nuestros trabajos</a></li>
+							<li><a href="conoce-más.html" data-i18n="footer.services.link3">Blog</a></li>
+						</ul>
+				</div>
 
-        <div class="footer-col footer-brand">
-            <img src="/images/logo_upscaled.png" alt="Green Solar logo" class="footer-nav-logo" />
-            <a href="https://green-solar.es/presupuesto" class="footer-cta">Solicita tu presupuesto</a>
-        </div>
+				<div class="footer-col">
+					<h4 data-i18n="footer.legal.heading">Textos Legales</h4>
+						<ul>
+							<li><a href="politica-de-privacidad.html" data-i18n="footer.legal.link1">Política de privacidad</a></li>
+							<li><a href="politica-de-cookies.html" data-i18n="footer.legal.link2">Política de cookies</a></li>
+							<li><a href="compromiso-con-la-proteccion-de-datos-personales.html" data-i18n="footer.legal.link3">Compromiso con la protección de datos personales</a></li>
+						</ul>
+				</div>
+			</div>
 
-        <div class="footer-col">
-            <h4>Empresa</h4>
-            <ul>
-                <li><a href="index.html">Green Solar</a></li>
-                <li><a href="">Sobre Nosotros</a></li>
-                <li><a href="">Dónde estamos</a></li>
-            </ul>
-        </div>
+			<div class="footer-nav-bottom">
+				<span data-i18n="footer.copyright">&copy; Green Solar 2026. All Rights Reserved.</span>
+				<span data-i18n="footer.tagline">Diseñado con energía solar ☀️</span>
+			</div>
+		</footer>
 
-        <div class="footer-col">
-            <h4>Servicios</h4>
-            <ul>
-                <li><a href="">Instalaciones</a></li>
-                <li><a href="">Nuestros trabajos</a></li>
-                <li><a href="">Blog</a></li>
-            </ul>
-        </div>
+<!------------------------------- Cookie Consent ------------------------------->
+			<div id="cookie-banner" role="dialog" aria-label="Aviso de cookies" data-i18n="cookie.banner_aria_label" data-i18n-attr="aria-label">
+				<p id="cookie-banner-text"><span data-i18n="cookie.banner_text">Usamos cookies propias y de terceros para mejorar tu experiencia. Puedes aceptarlas, rechazarlas o personalizarlas. Más información en nuestra </span><a href="politica-de-cookies.html" data-i18n="cookie.banner_link">Política de Cookies</a>.</p>
+				<div id="cookie-banner-actions">
+					<button type="button" class="cookie-btn cookie-btn-text" data-cookie-action="customize" data-i18n="cookie.customize">Personalizar</button>
+					<button type="button" class="cookie-btn cookie-btn-outline" data-cookie-action="reject-all" data-i18n="cookie.reject">Rechazar</button>
+					<button type="button" class="cookie-btn cookie-btn-solid" data-cookie-action="accept-all" data-i18n="cookie.accept">Aceptar</button>
+				</div>
+			</div>
 
-        <div class="footer-col">
-            <h4>Textos Legales</h4>
-            <ul>
-                <li><a href="politica-de-privacidad.html">Política de privacidad</a></li>
-                <li><a href="">Política de cookies</a></li>
-                <li><a href="">Compromiso con la protección de datos personales</a></li>
-            </ul>
-        </div>
+			<div id="cookie-modal-overlay">
+				<div id="cookie-modal" role="dialog" aria-modal="true" aria-labelledby="cookie-modal-title">
+					<div id="cookie-modal-header">
+						<h2 id="cookie-modal-title" data-i18n="cookie.modal_title">Configuración de cookies</h2>
+						<button type="button" id="cookie-modal-close" aria-label="Cerrar" data-i18n="cookie.modal_close" data-i18n-attr="aria-label">&times;</button>
+					</div>
 
-    </div>
-    <div class="footer-nav-bottom">
-        <span>&copy; Green Solar 2026. All Rights Reserved.</span>
-        <span>Diseñado con energía solar ☀️</span>
-    </div>
-</footer>
+					<div id="cookie-modal-body">
+						<p><span data-i18n="cookie.modal_desc">Usamos cookies para que la web funcione correctamente y, con tu consentimiento, para analizarla, personalizarla y mostrar publicidad ajustada. Puedes activar o desactivar cada tipo a continuación. Para más detalle, consulta nuestra </span><a href="politica-de-cookies.html" data-i18n="cookie.modal_desc_link">Política de Cookies</a>.</p>
+
+						<div class="cookie-category" id="cookie-category-tecnicas">
+							<div class="cookie-category-header">
+								<div class="cookie-category-header-left">
+									<span class="cookie-category-caret">&#10095;</span>
+									<span class="cookie-category-name" data-i18n="cookie.category.tecnicas.name">Técnicas</span>
+								</div>
+								<span class="cookie-category-status" data-i18n="cookie.category.tecnicas.status">Siempre activas</span>
+							</div>
+							<div class="cookie-category-desc">
+								<p style="margin:0;" data-i18n="cookie.category.tecnicas.desc">Necesarias para que la web funcione correctamente (navegación, recordar tus preferencias de cookies, etc.). No requieren tu autorización y no pueden desactivarse.</p>
+							</div>
+						</div>
+
+						<div class="cookie-category" id="cookie-category-analisis">
+							<div class="cookie-category-header">
+								<div class="cookie-category-header-left">
+									<span class="cookie-category-caret">&#10095;</span>
+									<span class="cookie-category-name" data-i18n="cookie.category.analisis.name">Análisis</span>
+								</div>
+								<label class="cookie-toggle">
+									<input type="checkbox" id="cookie-toggle-analisis" />
+									<span class="cookie-toggle-slider"></span>
+								</label>
+							</div>
+							<div class="cookie-category-desc">
+								<p style="margin:0;" data-i18n="cookie.category.analisis.desc">Nos permiten estudiar cómo navegan los usuarios por la web (secciones más visitadas, funcionamiento de los servicios, etc.) para mejorarla. No tienen finalidad publicitaria.</p>
+							</div>
+						</div>
+
+						<div class="cookie-category" id="cookie-category-funcionalidad">
+							<div class="cookie-category-header">
+								<div class="cookie-category-header-left">
+									<span class="cookie-category-caret">&#10095;</span>
+									<span class="cookie-category-name" data-i18n="cookie.category.funcionalidad.name">Funcionalidad y Personalización</span>
+								</div>
+								<label class="cookie-toggle">
+									<input type="checkbox" id="cookie-toggle-funcionalidad" />
+									<span class="cookie-toggle-slider"></span>
+								</label>
+							</div>
+							<div class="cookie-category-desc">
+								<p style="margin:0;" data-i18n="cookie.category.funcionalidad.desc">Recuerdan tus preferencias (idioma, secciones favoritas, tipo de navegador, etc.) para personalizar tu experiencia en la web.</p>
+							</div>
+						</div>
+
+						<div class="cookie-category" id="cookie-category-publicidad">
+							<div class="cookie-category-header">
+								<div class="cookie-category-header-left">
+									<span class="cookie-category-caret">&#10095;</span>
+									<span class="cookie-category-name" data-i18n="cookie.category.publicidad.name">Publicidad</span>
+								</div>
+								<label class="cookie-toggle">
+									<input type="checkbox" id="cookie-toggle-publicidad" />
+									<span class="cookie-toggle-slider"></span>
+								</label>
+							</div>
+							<div class="cookie-category-desc">
+								<p style="margin:0;" data-i18n="cookie.category.publicidad.desc">Gestionan los espacios publicitarios según el contenido mostrado y la frecuencia de los anuncios, para que sean más útiles y menos repetitivos.</p>
+							</div>
+						</div>
+
+						<div class="cookie-category" id="cookie-category-publicidad_comportamental">
+							<div class="cookie-category-header">
+								<div class="cookie-category-header-left">
+									<span class="cookie-category-caret">&#10095;</span>
+									<span class="cookie-category-name" data-i18n="cookie.category.publicidad_comportamental.name">Publicidad Comportamental</span>
+								</div>
+								<label class="cookie-toggle">
+									<input type="checkbox" id="cookie-toggle-publicidad_comportamental" />
+									<span class="cookie-toggle-slider"></span>
+								</label>
+							</div>
+							<div class="cookie-category-desc">
+								<p style="margin:0;" data-i18n="cookie.category.publicidad_comportamental.desc">Recogen información sobre tus hábitos de navegación para mostrarte publicidad ajustada a tus gustos e intereses personales.</p>
+							</div>
+						</div>
+					</div>
+
+					<div id="cookie-modal-footer">
+						<button type="button" class="cookie-btn cookie-btn-outline" data-cookie-action="reject-all" data-i18n="cookie.reject_all">Rechazar todas</button>
+						<button type="button" class="cookie-btn cookie-btn-outline" data-cookie-action="save" data-i18n="cookie.save">Guardar preferencias</button>
+						<button type="button" class="cookie-btn cookie-btn-solid" data-cookie-action="accept-all" data-i18n="cookie.accept_all">Aceptar todas</button>
+					</div>
+				</div>
+			</div>
+
+			<button type="button" id="cookie-reopen-tab" aria-label="Configuración de cookies" title="Configuración de cookies" data-i18n="cookie.reopen_tab" data-i18n-attr="aria-label,title">
+				<i class="fas fa-cookie-bite"></i>
+			</button>
 
 			</div>
 
@@ -188,6 +324,8 @@
 			<script src="assets/js/breakpoints.min.js"></script>
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
+            <script src="assets/js/cookie.js"></script>
+			<script src="assets/js/idioma.js"></script>
 
 	</body>
 </html>

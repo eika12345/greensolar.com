@@ -1,34 +1,65 @@
-/* reset banner.css negative margins for this page */
-.page-contact #banner {
+input[type="submit"],
+	input[type="reset"],
+	input[type="button"],
+	.button {
+		-moz-appearance: none;
+		-webkit-appearance: none;
+		-ms-appearance: none;
+		appearance: none;
+		-moz-transition: background-color 0.2s ease-in-out;
+		-webkit-transition: background-color 0.2s ease-in-out;
+		-ms-transition: background-color 0.2s ease-in-out;
+		transition: background-color 0.2s ease-in-out;
+		background-color: transparent;
+		border-radius: 5px;
+		border: 0;
+		box-shadow: inset 0 0 0 2px rgba(255, 255, 255, 0.125);
+		color: #ffffff !important;
+		cursor: pointer;
+		display: inline-block;
+		font-family: "Title";
+		font-size: 0.8em;
+		font-weight: 700;
+		height: 3.75em;
+		letter-spacing: 0.1em;
+		line-height: 3.75em;
+		padding: 0 2.25em;
+		text-align: center;
+		text-decoration: none;
+		text-transform: uppercase;
+		white-space: nowrap;
+	}
+
+.page-trabajos #banner {
     margin-bottom: 0;
     height: auto;
 }
 @media screen and (max-width: 1100px) {
-    .page-contact #banner {
+    .page-trabajos #banner {
         height: 13em;
     }
 }
-/* only override where actually needed */
 @media screen and (max-width: 736px) {
-    .page-contact #banner {
+    .page-trabajos #banner {
         height: 13em;
     }
 }
 
 @media screen and (max-width: 400px) {
-    .page-contact #banner {
-        height: 10em;
+    .page-trabajos #banner {
+        height: 13em;
     }
 }
+ #footer-nav {
+         margin-top: auto;
+    }
 
-/* ── trabajos SECTION ───────────────────────────────────── */
 #\Nuestras\ trabajos .inner {
     width: 100%;
     max-width: 1100px;
     padding-bottom: 30px;
 }
 
-/* ── FILTER BUTTONS ──────────────────────────────────────────── */
 .inst-filters {
     display: flex;
     flex-wrap: wrap;
@@ -59,7 +90,6 @@
     font-weight: 600;
 }
 
-/* ── GRID ────────────────────────────────────────────────────── */
 .inst-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
@@ -67,7 +97,6 @@
     width: 100%;
 }
 
-/* ── CARD ────────────────────────────────────────────────────── */
 .inst-card {
     background: var(--color-background-dark);
     border-radius: 8px;
@@ -100,7 +129,6 @@
     transform: scale(1.04);
 }
 
-/*turned off card count*/
 .inst-card-count {
     position: absolute;
     bottom: 0.6em;
@@ -266,7 +294,6 @@
     height: 2em;
 }
 
-/* Arrows sit below caption in a centred row */
 .inst-lightbox-nav {
     display: flex;
     gap: 1.5em;

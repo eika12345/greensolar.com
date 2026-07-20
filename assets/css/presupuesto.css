@@ -1,12 +1,12 @@
 @media screen and (max-width: 980px) {
-    #banner {
+    .page-presupuesto #banner {
         padding: 5em 3em 4em 3em;
         margin-bottom: -2.75em;
     }
 }
 
 @media screen and (max-width: 736px) {
-    #banner {
+    .page-presupuesto #banner {
         height: auto;
         padding: 4em 2em 3em 2em;
         margin-bottom: 0;
@@ -14,11 +14,14 @@
 }
 
 @media screen and (max-width: 400px) {
-    #banner {
+    .page-presupuesto #banner {
         height: auto;
         padding: 3.5em 1.5em 2.5em 1.5em;
     }
 }
+ #footer-nav {
+                margin-top: auto;
+            }
 
 #presupuesto .inner h2,
 #presupuesto .inner p {
