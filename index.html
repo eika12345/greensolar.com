@@ -444,24 +444,81 @@
 							<h2 class="major" data-i18n="contact.title">Ahorra con Green Solar</h2>
 							<p data-i18n="contact.desc">Te asesoramos a elegir tus placas y la tarifa solar ideal para ti ¡así de fácil!</p>
 							
-							<form method="post" action="#">
+							<form id="contact-form" method="post">
+
+								<!-- Honeypot (hidden spam trap) -->
+								<div style="position:absolute; left:-9999px;" aria-hidden="true">
+									<label for="website">Website</label>
+									<input
+										type="text"
+										name="website"
+										id="website"
+										tabindex="-1"
+										autocomplete="off">
+								</div>
+
 								<div class="fields">
+
 									<div class="field">
 										<label for="name" data-i18n="contact.form.name_label">Nombre</label>
-										<input type="text" name="name" id="name" />
+										<input
+											type="text"
+											name="name"
+											id="name"
+											autocomplete="name"
+											required />
 									</div>
+
 									<div class="field">
 										<label for="email" data-i18n="contact.form.email_label">Email</label>
-										<input type="email" name="email" id="email" />
+										<input
+											type="email"
+											name="email"
+											id="email"
+											autocomplete="email"
+											required />
 									</div>
+
 									<div class="field">
 										<label for="message" data-i18n="contact.form.message_label">Mensaje</label>
-										<textarea name="message" id="message" rows="4"></textarea>
+										<textarea
+											name="message"
+											id="message"
+											rows="4"
+											required></textarea>
 									</div>
+
+									<div class="field">
+										<input
+											type="checkbox"
+											name="consent"
+											id="consent"
+											required />
+										<label for="consent">
+											<span data-i18n="contact.form.consent_text">
+												He leído y acepto la
+											</span>
+											<a href="politica-de-privacidad.html"
+											data-i18n="contact.form.consent_link">
+												política de privacidad
+											</a>
+										</label>
+									</div>
+
 								</div>
+
 								<ul class="actions">
-									<li><input type="submit" value="Enviar Mensaje" data-i18n="contact.form.submit" data-i18n-attr="value" /></li>
+									<li>
+										<input
+											type="submit"
+											value="Enviar Mensaje"
+											data-i18n="contact.form.submit"
+											data-i18n-attr="value" />
+									</li>
 								</ul>
+
+								<p id="form-status" aria-live="polite"></p>
+
 							</form>
 							
 							<ul class="contact">
@@ -633,7 +690,9 @@
 			<script src="assets/js/main.js"></script>
 			<script src="assets/js/carousel.js"></script>
 			<script src="assets/js/cookie.js"></script>
+			<script src="assets/js/contacto.js"></script>
 			<script src="assets/js/idioma.js"></script>
+			
 
 	</body>
 </html>
